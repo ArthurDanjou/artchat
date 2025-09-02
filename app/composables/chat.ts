@@ -136,9 +136,10 @@ export function useChat(t: any) {
     ]
   })
 
-  const { addMessage } = useChatStore()
+  const { addMessage, checkForDuplicateMessages } = useChatStore()
 
   async function submitMessage(type: ChatType, prompt: string, fetchStates: ChatFetchState[]) {
+    checkForDuplicateMessages(type)
     addMessage(
       type,
       prompt,

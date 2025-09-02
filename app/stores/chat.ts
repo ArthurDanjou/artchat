@@ -9,6 +9,13 @@ export const useChatStore = defineStore('chat', () => {
     return !messages.value.some(msg => msg.state === ChatState.LOADING)
   })
 
+  function checkForDuplicateMessages(type: ChatType) {
+    const duplicate = messages.value.findLast(msg => msg.type === type)
+    if (duplicate) {
+      messages.value.splice(messages.value.indexOf(duplicate) - 1, 2)
+    }
+  }
+
   function addMessage(type: ChatType, content: string, sender: ChatSender, fetchStates: ChatFetchState[]) {
     if (sender === ChatSender.ARTHUR) {
       const message: ChatMessage = {
@@ -46,5 +53,5 @@ export const useChatStore = defineStore('chat', () => {
     }
   }
 
-  return { messages, addMessage, clearMessages, canSend, setLoadingState }
+  return { messages, addMessage, clearMessages, canSend, setLoadingState, checkForDuplicateMessages }
 })
