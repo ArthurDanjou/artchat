@@ -46,7 +46,7 @@ const commandPaletteUi = {
 
 <template>
   <nav class="fixed bottom-0 left-1/2 z-50 -translate-x-1/2 pb-8">
-    <UCard class="rounded-xl" :ui="{ body: 'p-2 sm:p-2' }">
+    <UCard variant="subtle" class="rounded-xl" :ui="{ body: 'p-2 sm:p-2' }">
       <UFieldGroup>
         <UModal v-model:open="openMessageModal" :ui="modalUi" title="Hey" description="Hey">
           <UButton
