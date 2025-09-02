@@ -1,0 +1,41 @@
+{
+  "name": "nuxt-app",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@iconify-json/devicon": "^1.2.43",
+    "@iconify-json/logos": "^1.2.9",
+    "@iconify-json/lucide": "^1.2.66",
+    "@iconify-json/ph": "^1.2.2",
+    "@iconify-json/twemoji": "^1.2.4",
+    "@iconify-json/vscode-icons": "^1.2.30",
+    "@nuxt/content": "3.6.3",
+    "@nuxt/eslint": "1.9.0",
+    "@nuxt/ui": "^4.0.0-alpha.1",
+    "@nuxtjs/i18n": "10.0.6",
+    "@pinia/nuxt": "^0.11.2",
+    "@tailwindcss/typography": "^0.5.16",
+    "eslint": "^9.0.0",
+    "nuxt": "^4.0.3",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "typescript": "^5.6.3",
+    "vue": "^3.5.20",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@vueuse/math": "14.0.0-alpha.0",
+    "@vueuse/nuxt": "^13.9.0",
+    "vue-tsc": "^3.0.6"
+  }
+}
