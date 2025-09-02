@@ -60,7 +60,7 @@ Tailwind provides everything I need out of the box, but I've gradually added a b
 
 #### Nuxt UI
 
-Nuxt UI is a new tool I've been using since its release to enhance and streamline my Nuxt projects. It’s a module that offers a collection of Vue components and composables built with Tailwind CSS and Headless UI, designed to help you create beautiful and accessible user interfaces.
+Nuxt UI is a new tool I've been using since its release to enhance and streamline my Nuxt projects. It's a module that offers a collection of Vue components and composables built with Tailwind CSS and Headless UI, designed to help you create beautiful and accessible user interfaces.
 
 Nuxt UI aims to provide everything you need for the UI when building a Nuxt app, including components, icons, colors, dark mode, and keyboard shortcuts. It's an excellent tool for both beginners and experienced developers.
 

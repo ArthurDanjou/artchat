@@ -13,7 +13,7 @@ favorite: false
 
 Committed to digital innovation, Sevetys leverages centralized data systems to optimize clinic operations, improve patient data management, and enhance the overall client experience. This combination of medical excellence and operational efficiency supports veterinarians in delivering the highest quality care nationwide.
 
-During my two-month internship as a Data Engineer, I focused primarily on cleaning and standardizing customer and patient data — a critical task, as this data is extensively used by clinics, Marketing, and Performance teams. Ensuring data quality was therefore essential to the company’s operations.
+During my two-month internship as a Data Engineer, I focused primarily on cleaning and standardizing customer and patient data — a critical task, as this data is extensively used by clinics, Marketing, and Performance teams. Ensuring data quality was therefore essential to the company's operations.
 
 Additionally, I took charge of revising and enhancing an existing data quality report designed to evaluate the effectiveness of my cleaning processes. The report encompassed 47 detailed metrics assessing data completeness and consistency, providing valuable insights that helped maintain high standards across the organization.
 

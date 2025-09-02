@@ -27,7 +27,7 @@ A **Large Language Model (LLM)** is a machine learning model trained on vast amo
 
 LLMs work by predicting the next token (word or part of a word) based on the input they receive. This ability allows them to generate text, summarize documents, answer questions, and even carry on conversations that seem remarkably human.
 
-However, LLMs have their limitations. They can sometimes generate **hallucinations** (incorrect or fabricated information), and their knowledge is **static**, meaning they can become outdated as they don’t automatically update from the web.
+However, LLMs have their limitations. They can sometimes generate **hallucinations** (incorrect or fabricated information), and their knowledge is **static**, meaning they can become outdated as they don't automatically update from the web.
 
 ## 3 - Messages and Tokens
 
@@ -101,7 +101,7 @@ Here's how it works:
 
 RAG solves a major problem with LLMs: the **outdated or incomplete information** they may have. By pulling in real-time data, RAG ensures that the generated content is relevant and grounded in current knowledge.
 
-A classic example of RAG is when you ask an AI to summarize the latest research on a particular topic. Instead of relying on the model’s static knowledge base, the model can retrieve relevant papers or articles and generate an accurate summary.
+A classic example of RAG is when you ask an AI to summarize the latest research on a particular topic. Instead of relying on the model's static knowledge base, the model can retrieve relevant papers or articles and generate an accurate summary.
 
 ## 7 - Synergy Between RAG and AI Agents
 
@@ -112,7 +112,7 @@ Here's how they complement each other:
 - **RAG** acts as an external memory or knowledge source for AI agents, providing them with up-to-date information to improve their decision-making and outputs.
 - **AI agents**, powered by LLMs, can process this information and take actions based on it, whether it's generating a response, making a decision, or interacting with other systems.
 
-For example, imagine an AI agent that's tasked with assisting a business in handling customer inquiries. It could use RAG to retrieve relevant customer information and FAQs, then generate a response based on that data. It might then take action by sending an email or updating a CRM system based on the customer’s query.
+For example, imagine an AI agent that's tasked with assisting a business in handling customer inquiries. It could use RAG to retrieve relevant customer information and FAQs, then generate a response based on that data. It might then take action by sending an email or updating a CRM system based on the customer's query.
 
 This synergy leads to **autonomous, efficient systems** that can process, reason, and act in a dynamic environment.
 

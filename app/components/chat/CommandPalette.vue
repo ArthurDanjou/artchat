@@ -156,6 +156,10 @@ const commandPaletteUi = {
             "label": "Change theme",
             "prompt": "How can I change the theme?"
         },
+        "uses": {
+          "label": "View setup",
+          "prompt": "How can I view the setup of Arthur?"
+        },
         "stats": {
           "label": "View statistics",
           "prompt": "How can I view the statistics concerning Arthur?"
@@ -195,10 +199,6 @@ const commandPaletteUi = {
         "skills": {
             "label": "Skills",
             "prompt": "What are your skills?"
-        },
-        "stack": {
-            "label": "Tech Stack",
-            "prompt": "What tech stack are you currently using?"
         },
         "status": {
             "label": "Homelab status",
@@ -242,6 +242,10 @@ const commandPaletteUi = {
         "label": "Changer de thème",
         "prompt": "Comment puis-je changer le thème ?"
       },
+      "uses": {
+        "label": "Voir la configuration",
+        "prompt": "Comment puis-je voir la configuration d'Arthur ?"
+      },
       "stats": {
         "label": "Voir les statistiques",
         "prompt": "Comment puis-je voir les statistiques concernant Arthur ?"
@@ -281,10 +285,6 @@ const commandPaletteUi = {
       "skills": {
         "label": "Compétences",
         "prompt": "Quelles sont tes compétences ?"
-      },
-      "stack": {
-        "label": "Tech Stack",
-        "prompt": "Quelle est stack technique utilises-tu en ce moment ?"
       },
       "status": {
         "label": "Statut du homelab",
@@ -328,6 +328,10 @@ const commandPaletteUi = {
             "label": "Cambiar tema",
             "prompt": "¿Cómo puedo cambiar el tema?"
         },
+        "uses": {
+            "label": "Ver la configuración",
+            "prompt": "¿Cómo puedo ver la configuración de Arthur?"
+        },
         "stats": {
             "label": "Ver estadísticas",
             "prompt": "¿Cómo puedo ver las estadísticas sobre Arthur?"
@@ -367,10 +371,6 @@ const commandPaletteUi = {
         "skills": {
             "label": "Habilidades",
             "prompt": "¿Cuáles son tus habilidades?"
-        },
-        "stack": {
-            "label": "Stack tecnológico",
-            "prompt": "¿Qué stack tecnológico estás usando actualmente?"
         },
         "status": {
             "label": "Estado del homelab",

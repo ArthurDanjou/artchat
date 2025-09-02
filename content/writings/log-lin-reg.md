@@ -144,7 +144,7 @@ Interpreting the results in logistic regression differs from linear regression d
 
 ### **Understanding Odds Ratios**
 
-In logistic regression, odds ratios provide insights into the relationship between the independent variables and the likelihood of the outcome variable belonging to the positive class. An odds ratio greater than 1 indicates that an increase in the independent variable’s value leads to higher odds of the positive outcome, while an odds ratio less than 1 suggests a decrease in the odds of the positive outcome. Additionally, odds ratios close to 1 indicate a weaker or negligible impact of the independent variable on the outcome.
+In logistic regression, odds ratios provide insights into the relationship between the independent variables and the likelihood of the outcome variable belonging to the positive class. An odds ratio greater than 1 indicates that an increase in the independent variable's value leads to higher odds of the positive outcome, while an odds ratio less than 1 suggests a decrease in the odds of the positive outcome. Additionally, odds ratios close to 1 indicate a weaker or negligible impact of the independent variable on the outcome.
 
 ### **Confidence Intervals and Significance**
 

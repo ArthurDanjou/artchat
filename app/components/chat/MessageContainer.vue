@@ -23,9 +23,7 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
         class="rounded-xl mt-1 bg-sky-500 md:max-w-3/4 text-white font-medium"
         :ui="{ body: 'sm:p-2', header: 'sm:p-2', footer: 'sm:p-2' }"
       >
-        <div class="text-justify">
-          {{ message.content }}
-        </div>
+        {{ message.content }}
       </UCard>
     </div>
     <div class="opacity-0 group-hover:opacity-80 duration-500 flex text-sm italic justify-end">
@@ -56,6 +54,9 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
         </div>
         <div v-else-if="message.type === ChatType.THEME">
           <ToolTheme />
+        </div>
+        <div v-else-if="message.type === ChatType.USES">
+          <ToolUses />
         </div>
         <div v-else-if="message.type === ChatType.LANGUAGE">
           <ToolLanguage />

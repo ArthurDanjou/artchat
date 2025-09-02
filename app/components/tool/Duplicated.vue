@@ -4,7 +4,7 @@ const { t } = useI18n({ useScope: 'local' })
 
 <template>
   <section class="prose dark:prose-invert">
-    <h2>{{ t('duplicated.title') }}</h2>
+    <h3>{{ t('duplicated.title') }}</h3>
     <p>{{ t('duplicated.description') }}</p>
   </section>
 </template>

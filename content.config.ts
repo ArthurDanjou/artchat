@@ -1,10 +1,6 @@
 import { defineCollection, z } from '@nuxt/content'
 
 export const collections = {
-  main: defineCollection({
-    type: 'page',
-    source: 'home/*.md',
-  }),
   projects: defineCollection({
     type: 'page',
     source: 'projects/*.md',
@@ -32,7 +28,7 @@ export const collections = {
       tags: z.array(z.string()),
     }),
   }),
-  categories: defineCollection({
+  usesCategories: defineCollection({
     type: 'data',
     source: 'uses/categories/*.json',
     schema: z.object({
@@ -42,7 +38,6 @@ export const collections = {
         fr: z.string(),
         es: z.string(),
       }),
-      carousel: z.string().optional(),
     }),
   }),
   uses: defineCollection({
@@ -56,6 +51,19 @@ export const collections = {
         es: z.string(),
       }),
       category: z.string(),
+    }),
+  }),
+  skills: defineCollection({
+    type: 'data',
+    source: 'skills/*.json',
+    schema: z.object({
+      name: z.string(),
+      description: z.string(),
+      items: z.object({
+        name: z.string(),
+        icon: z.string(),
+        color: z.string(),
+      }),
     }),
   }),
 }

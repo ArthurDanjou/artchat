@@ -43,7 +43,7 @@ caption: The different types of machine learning models
 ---
 ::
 
-With this overview of ML types, let’s now focus on supervised learning, the most widely used approach, and explore how to choose the right model.
+With this overview of ML types, let's now focus on supervised learning, the most widely used approach, and explore how to choose the right model.
 
 ## 3 - Three Considerations for Choosing a Supervised Learning Model
 
@@ -59,7 +59,7 @@ Selecting the right supervised learning model is critical and depends on several
 
 3. **Algorithmic Approach**
    - Should you choose a feature-based or similarity-based model?
-   - **Key Point**: The choice of the model (e.g., linear regressions vs k-NN) depends on the dataset’s size and complexity.
+   - **Key Point**: The choice of the model (e.g., linear regressions vs k-NN) depends on the dataset's size and complexity.
 
 Once the model type is defined, the next step is to delve into the full workflow of developing an ML model.
 
@@ -89,12 +89,12 @@ Evaluation is a crucial step to verify the performance of a model. For regressio
 
 ## 5 - Evaluating Models: The R² Score
 
-For regression problems, the **R² score** measures the proportion of the target’s variance explained by the model:
+For regression problems, the **R² score** measures the proportion of the target's variance explained by the model:
 
 $$R^2 = 1 - \frac{\text{SS}_{\text{residual}}}{\text{SS}_{\text{total}}}$$ where:
 
 - $$\text{SS}_{\text{residual}}$$ : Sum of squared residuals between actual and predicted values.
-- $$\text{SS}_{\text{total}}$$ : Total sum of squares relative to the target’s mean.
+- $$\text{SS}_{\text{total}}$$ : Total sum of squares relative to the target's mean.
 
 A $$R^2$$ close to 1 indicates a good fit.
 
