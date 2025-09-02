@@ -1,11 +1,12 @@
 <script lang="ts" setup>
-const props = withDefaults(defineProps<{
-  user?: 'user' | 'arthur'
-}>(), {
-  user: 'user',
-})
+import type { ChatMessage } from '~~/types'
+import { ChatSender, ChatState, ChatType } from '~~/types'
 
-const isArthur = computed(() => props.user === 'arthur')
+const props = defineProps<{
+  message: ChatMessage
+}>()
+
+const isArthur = computed(() => props.message.sender === ChatSender.ARTHUR)
 
 const { locale, locales } = useI18n({
   useScope: 'local',
@@ -15,22 +16,69 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
 </script>
 
 <template>
-  <div class="group flex flex-col gap-4">
+  <div v-if="!isArthur" class="group flex flex-col gap-4">
+    <div class="flex flex-col-reverse gap-4 md:flex-row-reverse items-end">
+      <UCard
+        variant="solid"
+        class="rounded-xl mt-1 bg-sky-300 md:max-w-3/4"
+        :ui="{ body: 'sm:p-2', header: 'sm:p-2', footer: 'sm:p-2' }"
+      >
+        <div class="text-justify">
+          {{ message.content }}
+        </div>
+      </UCard>
+    </div>
+    <div class="opacity-0 group-hover:opacity-80 duration-500 flex text-sm italic justify-end">
+      {{ formatted }}
+    </div>
+  </div>
+  <div v-else>
     <div class="flex flex-col-reverse gap-4 items-start md:flex-row-reverse">
       <UCard
-        :variant="isArthur ? 'soft' : 'solid'"
-        class="rounded-xl p-2 mt-1"
-        :class="isArthur ? 'w-full bg-transparent !p-0' : 'bg-sky-300 md:max-w-3/4'"
-        :ui="{ body: isArthur ? 'p-0 sm:p-0' : 'sm:p-2', header: isArthur ? 'p-0 sm:p-0' : 'sm:p-2', footer: isArthur ? 'p-0 sm:p-0' : 'sm:p-2' }"
+        v-if="message.state === ChatState.LOADING && message.fetchStates && message.fetchStates.length > 0"
+        variant="soft"
+        class="mt-1 w-full bg-transparent"
+        :ui="{ body: 'p-0 sm:p-0', header: 'p-0 sm:p-0', footer: 'p-0 sm:p-0' }"
       >
-        <slot />
+        <ChatLoading :fetch-states="message.fetchStates" :message-id="message.id" />
       </UCard>
-      <div v-if="isArthur" class="flex items-center gap-2">
+      <UCard
+        v-else
+        variant="soft"
+        class="mt-1 w-full bg-transparent"
+        :ui="{ body: 'p-0 sm:p-0', header: 'p-0 sm:p-0', footer: 'p-0 sm:p-0' }"
+      >
+        <div v-if="message.type === ChatType.INIT">
+          {{ message.content }}
+        </div>
+        <div v-else-if="message.type === ChatType.THEME">
+          <ToolTheme />
+        </div>
+        <div v-else-if="message.type === ChatType.LANGUAGE">
+          <ToolLanguage />
+        </div>
+        <div v-else-if="message.type === ChatType.STATS">
+          <ToolStats />
+        </div>
+        <div v-else-if="message.type === ChatType.ACTIVITY">
+          <ToolActivity />
+        </div>
+        <div v-else-if="message.type === ChatType.CONTACT">
+          <ToolContact />
+        </div>
+        <div v-else-if="message.type === ChatType.WEATHER">
+          <ToolWeather />
+        </div>
+        <div v-else>
+          {{ message }}
+        </div>
+      </UCard>
+      <div class="flex items-center gap-2">
         <UAvatar src="/arthur.webp" size="lg" />
         <span class="md:hidden">Arthur DANJOU</span>
       </div>
     </div>
-    <div class="opacity-0 group-hover:opacity-100 duration-500 flex" :class="isArthur ? 'justify-start ml-12' : 'justify-end'">
+    <div class="opacity-0 group-hover:opacity-80 duration-500 flex text-sm italic justify-start ml-12">
       {{ formatted }}
     </div>
   </div>

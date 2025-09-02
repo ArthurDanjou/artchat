@@ -23,12 +23,10 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/google-fonts',
     '@nuxt/image',
-    'nuxt-visitors',
     'motion-v/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/i18n',
   ],
-
 
   // Nuxt Content
   content: {
@@ -124,16 +122,13 @@ export default defineNuxtConfig({
       languages: '',
       os: '',
     },
+    openWeather: {
+      apiKey: '',
+    },
     public: {
       i18n: {
         baseUrl: '',
       },
     },
-  },
-
-  // Nuxt Visitors
-  visitors: {
-    // Set to true to enable tracking of visitor locations
-    locations: true,
   },
 })

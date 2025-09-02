@@ -8,7 +8,6 @@ useHead({
   <UApp>
     <NuxtLoadingIndicator color="#808080" />
     <AppBackground />
-    <AppVisitors />
     <UContainer class="z-50 relative">
       <NuxtPage class="mt-12" />
     </UContainer>

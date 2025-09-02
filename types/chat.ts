@@ -16,11 +16,31 @@ export enum ChatType {
   STATS = 'stats',
   ACTIVITY = 'activity',
   RESUME = 'resume',
+  INIT = 'init',
+}
+
+export enum ChatState {
+  SENT = 'sent',
+  LOADING = 'loading',
+}
+
+export enum ChatSender {
+  USER = 'user',
+  ARTHUR = 'arthur',
+}
+
+export enum ChatFetchState {
+  THINKING = 'Thinking...',
+  FETCHING = 'Fetching the data...',
+  GENERATING = 'Generating the component...',
+  DONE = 'Done!',
 }
 
 export interface ChatMessage {
   id: number
-  content: string
-  sender: string
+  content: string | null
+  sender: ChatSender
   type: ChatType
+  state: ChatState
+  fetchStates?: ChatFetchState[]
 }

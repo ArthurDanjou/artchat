@@ -1,5 +1,6 @@
 export * from './chat'
 export * from './lanyard'
+export * from './openweather'
 export * from './time'
 export * from './wakatime'
 
@@ -31,4 +32,5 @@ export const socials = [
   { icon: 'i-ph:github-logo-duotone', label: 'GitHub', to: 'https://github.com/ArthurDanjou' },
   { icon: 'i-ph:linkedin-logo-duotone', label: 'LinkedIn', to: 'https://www.linkedin.com/in/arthurdanjou/' },
   { icon: 'i-ph:discord-logo-duotone', label: 'Discord', to: 'https://discordapp.com/users/179635349100691456' },
+  { icon: 'i-ph-envelope-duotone', label: 'Email', to: 'mailto:arthur.danjou@example.com' },
 ] as const
