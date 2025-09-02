@@ -9,20 +9,14 @@ useSeoMeta({
 const { messages } = useChatStore()
 const { t } = useI18n({ useScope: 'local' })
 
-const scrollParents = ref<HTMLElement | null>(null)
-const lastMessage = computed(() => messages[messages.length - 1])
+const parents = useTemplateRef('parents')
+const { height } = useElementBounding(parents)
 
 watch(
-  () => lastMessage.value?.state,
+  height,
   async () => {
     await nextTick()
-    const container = scrollParents.value
-    if (container) {
-      const lastChild = container.lastElementChild
-      if (lastChild) {
-        lastChild.scrollIntoView({ behavior: 'smooth' })
-      }
-    }
+    window.scrollTo({ top: parents.value?.scrollHeight, behavior: 'smooth' })
   },
 )
 </script>
@@ -30,7 +24,7 @@ watch(
 <template>
   <main class="!max-w-none">
     <ChatCommandPalette />
-    <div ref="scrollParents" class="space-y-8 max-h-[calc(100vh-10rem)] overflow-y-auto">
+    <div ref="parents" class="space-y-8 my-32">
       <ChatMessageContainer
         :message="{
           content: t('init'),
@@ -58,7 +52,11 @@ watch(
           type: ChatType.INIT,
         }"
       />
-      <ChatMessageContainer v-for="message in messages" :key="message.id" :message="message" />
+      <ChatMessageContainer
+        v-for="message in messages"
+        :key="message.id"
+        :message="message"
+      />
     </div>
   </main>
 </template>

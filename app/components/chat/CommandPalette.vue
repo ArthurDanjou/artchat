@@ -9,9 +9,9 @@ const openClearModal = ref(false)
 const { t } = useI18n({ useScope: 'local' })
 
 const { messages, submitMessage } = useChat(t)
-
 const { clearMessages, messages: storeMessages } = useChatStore()
 const loading = computed(() => storeMessages.some(msg => msg.state === ChatState.LOADING))
+
 function handleDelete() {
   clearMessages()
   openClearModal.value = false
@@ -22,6 +22,7 @@ function onSelect(item: CommandPaletteItem) {
   openMessageModal.value = false
   submitMessage(item.type, item.prompt, item.fetchStates ?? [])
 }
+
 defineShortcuts({
   meta_enter: () => {
     openMessageModal.value = !openMessageModal.value
@@ -45,88 +46,91 @@ const commandPaletteUi = {
 
 <template>
   <nav class="fixed bottom-0 left-1/2 z-50 -translate-x-1/2 pb-8">
-    <UFieldGroup>
-      <UModal v-model:open="openMessageModal" :ui="modalUi">
-        <UButton
-          :label="loading ? t('cmd.sending') : t('cmd.send')"
-          variant="outline"
-          color="neutral"
-          size="xl"
-          icon="i-ph-paper-plane-tilt-duotone"
-          class="rounded-full cursor-pointer"
-          :disabled="loading"
-        >
-          <template #trailing>
-            <UKbd value="meta" color="neutral" />
-            <UKbd value="enter" color="neutral" />
-          </template>
-        </UButton>
-
-        <template #content>
-          <UCommandPalette
-            close
-            :ui="commandPaletteUi"
-            :groups="messages"
-            @update:model-value="onSelect"
-            @update:open="openMessageModal = $event"
+    <UCard class="rounded-xl" :ui="{ body: 'p-2 sm:p-2' }">
+      <UFieldGroup>
+        <UModal v-model:open="openMessageModal" :ui="modalUi" title="Hey" description="Hey">
+          <UButton
+            :label="loading ? t('cmd.sending') : t('cmd.send')"
+            variant="outline"
+            color="neutral"
+            size="xl"
+            icon="i-ph-paper-plane-tilt-duotone"
+            class="rounded-lg cursor-pointer"
+            :disabled="loading"
           >
-            <template #item="{ item }">
-              <div class="relative flex items-center justify-between w-full p-1">
-                <div class="absolute inset-0 -m-1" />
-                <div class="flex items-center gap-2.5">
+            <template #trailing>
+              <UKbd value="meta" color="neutral" />
+              <UKbd value="enter" color="neutral" />
+            </template>
+          </UButton>
+
+          <template #content>
+            <UCommandPalette
+              close
+              :ui="commandPaletteUi"
+              :groups="messages"
+              @update:model-value="onSelect"
+              @update:open="openMessageModal = $event"
+            >
+              <template #item="{ item }">
+                <div class="relative flex items-center justify-between w-full p-1">
+                  <div class="absolute inset-0 -m-1" />
                   <div class="flex items-center gap-2.5">
-                    <UIcon :name="item.icon!" size="20" />
-                    <span>{{ item.label }}</span>
+                    <div class="flex items-center gap-2.5">
+                      <UIcon :name="item.icon!" size="20" />
+                      <span>{{ item.label }}</span>
+                    </div>
+                  </div>
+                  <span class="text-muted text-xs font-medium">
+                    {{ item.prompt }}
+                  </span>
+                </div>
+              </template>
+              <template #footer>
+                <div class="flex items-center justify-between gap-2">
+                  <UIcon name="i-simple-icons-nuxtdotjs" class="size-5 text-dimmed ml-1" />
+                  <div class="flex items-center gap-1">
+                    <UButton color="neutral" variant="ghost" :label="t('cmd.send')" class="text-dimmed" size="xs">
+                      <template #trailing>
+                        <UKbd value="enter" />
+                      </template>
+                    </UButton>
                   </div>
                 </div>
-                <span class="text-muted text-xs font-medium">
-                  {{ item.prompt }}
-                </span>
-              </div>
-            </template>
-            <template #footer>
-              <div class="flex items-center justify-between gap-2">
-                <UIcon name="i-simple-icons-nuxtdotjs" class="size-5 text-dimmed ml-1" />
-                <div class="flex items-center gap-1">
-                  <UButton color="neutral" variant="ghost" :label="t('cmd.send')" class="text-dimmed" size="xs">
-                    <template #trailing>
-                      <UKbd value="enter" />
-                    </template>
-                  </UButton>
-                </div>
-              </div>
-            </template>
-          </UCommandPalette>
-        </template>
-      </UModal>
-      <UModal
-        v-model:open="openClearModal"
-        :title="t('clear.title')"
-        :description="t('clear.description')"
-      >
-        <UButton
-          :label="t('clear.button')"
-          variant="subtle"
-          color="error"
-          leading-icon="i-ph-trash-duotone"
-          size="xl"
-          class="rounded-full"
-          :disabled="storeMessages.length === 0"
-        >
-          <template #trailing>
-            <UKbd value="meta" color="error" />
-            <UKbd value="D" color="error" />
+              </template>
+            </UCommandPalette>
           </template>
-        </UButton>
+        </UModal>
+        <UModal
+          v-model:open="openClearModal"
+          :title="t('clear.title')"
+          :description="t('clear.description')"
+        >
+          <UButton
+            :label="t('clear.button')"
+            variant="subtle"
+            color="error"
+            leading-icon="i-ph-trash-duotone"
+            size="xl"
+            class="rounded-lg"
+            :class="storeMessages.length !== 0 ? 'cursor-pointer' : 'cursor-default'"
+            :disabled="storeMessages.length === 0"
+          >
+            <template #trailing>
+              <UKbd value="meta" color="error" />
+              <UKbd value="D" color="error" />
+            </template>
+          </UButton>
 
-        <template #footer="{ close }">
-          <UFieldGroup>
-            <UButton :label="t('clear.cancel')" color="neutral" variant="outline" @click="close" />
-            <UButton :label="t('clear.submit')" color="error" @click.prevent="handleDelete()" />
-          </UFieldGroup>
-        </template>
-      </UModal>
-    </UFieldGroup>
+          <template #footer="{ close }">
+            <UFieldGroup>
+              <UButton :label="t('clear.cancel')" color="neutral" variant="outline" @click="close" />
+              <UButton :label="t('clear.submit')" color="error" @click.prevent="handleDelete()" />
+            </UFieldGroup>
+          </template>
+        </UModal>
+      </UFieldGroup>
+    </UCard>
   </nav>
 </template>
 
@@ -145,7 +149,7 @@ const commandPaletteUi = {
       "sending": "Sending..."
     },
     "chat": {
-        "action": "Components",
+        "actions": "Components",
         "arthur": "More about Arthur",
         "interface": "Change the interface",
         "theme": {
@@ -231,7 +235,7 @@ const commandPaletteUi = {
       "sending": "Envoi..."
     },
     "chat": {
-      "action": "Composants",
+      "actions": "Composants",
       "arthur": "En savoir plus sur Arthur",
       "interface": "Changer l'interface",
       "theme": {
@@ -317,7 +321,7 @@ const commandPaletteUi = {
       "sending": "Enviando..."
     },
     "chat": {
-        "action": "Componentes",
+        "actions": "Componentes",
         "arthur": "Más sobre Arthur",
         "interface": "Cambiar la interfaz",
         "theme": {

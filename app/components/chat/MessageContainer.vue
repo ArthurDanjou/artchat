@@ -51,6 +51,9 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
         <div v-if="message.type === ChatType.INIT">
           {{ message.content }}
         </div>
+        <div v-else-if="message.type === ChatType.DUPLICATED">
+          <ToolDuplicated />
+        </div>
         <div v-else-if="message.type === ChatType.THEME">
           <ToolTheme />
         </div>

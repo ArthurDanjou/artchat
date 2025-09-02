@@ -1,4 +1,5 @@
 export enum ChatType {
+  DUPLICATED = 'duplicated',
   WEATHER = 'weather',
   LOCATION = 'location',
   THEME = 'theme',

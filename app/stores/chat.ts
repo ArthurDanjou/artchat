@@ -1,5 +1,5 @@
-import type { ChatMessage, ChatType } from '~~/types'
-import { ChatFetchState, ChatSender, ChatState } from '~~/types'
+import type { ChatMessage } from '~~/types'
+import { ChatFetchState, ChatSender, ChatState, ChatType } from '~~/types'
 
 export const useChatStore = defineStore('chat', () => {
   const messages = ref<ChatMessage[]>([])
@@ -10,10 +10,17 @@ export const useChatStore = defineStore('chat', () => {
   })
 
   function checkForDuplicateMessages(type: ChatType) {
-    const duplicate = messages.value.findLast(msg => msg.type === type)
-    if (duplicate) {
-      messages.value.splice(messages.value.indexOf(duplicate) - 1, 2)
-    }
+    return messages.value.filter(msg => msg.type === type)
+  }
+
+  function deleteMessage(id: number, type: ChatType) {
+    const message = messages.value.find(msg => msg.id === id && msg.type === type)
+    messages.value.splice(messages.value.indexOf(message!), 1)
+  }
+
+  function cleanDuplicatedMessages() {
+    const duplicated = messages.value.filter(msg => msg.type === ChatType.DUPLICATED)
+    duplicated.forEach(msg => messages.value.splice(messages.value.indexOf(msg), 1))
   }
 
   function addMessage(type: ChatType, content: string, sender: ChatSender, fetchStates: ChatFetchState[]) {
@@ -52,6 +59,5 @@ export const useChatStore = defineStore('chat', () => {
       message.state = loadingState
     }
   }
-
-  return { messages, addMessage, clearMessages, canSend, setLoadingState, checkForDuplicateMessages }
+  return { messages, addMessage, clearMessages, canSend, setLoadingState, checkForDuplicateMessages, deleteMessage, cleanDuplicatedMessages }
 })

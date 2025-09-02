@@ -136,10 +136,10 @@ export function useChat(t: any) {
     ]
   })
 
-  const { addMessage, checkForDuplicateMessages } = useChatStore()
+  const { addMessage, checkForDuplicateMessages, deleteMessage, cleanDuplicatedMessages } = useChatStore()
 
   async function submitMessage(type: ChatType, prompt: string, fetchStates: ChatFetchState[]) {
-    checkForDuplicateMessages(type)
+    const duplicates = checkForDuplicateMessages(type)
     addMessage(
       type,
       prompt,
@@ -147,6 +147,17 @@ export function useChat(t: any) {
       [],
     )
     await new Promise(resolve => setTimeout(resolve, 700))
+    if (duplicates.length > 0) {
+      duplicates.forEach(msg => deleteMessage(msg.id, msg.type))
+      cleanDuplicatedMessages()
+      addMessage(
+        ChatType.DUPLICATED,
+        '',
+        ChatSender.ARTHUR,
+        [ChatFetchState.THINKING, ChatFetchState.DONE],
+      )
+      await new Promise(resolve => setTimeout(resolve, 700))
+    }
     addMessage(
       type,
       '',
