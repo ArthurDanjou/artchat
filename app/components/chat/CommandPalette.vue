@@ -8,6 +8,11 @@ const openClearModal = ref(false)
 
 const { t } = useI18n({ useScope: 'local' })
 
+const { isDark, toggleDark } = useTheme()
+defineShortcuts({
+  t: () => toggleDark({ clientX: window.innerWidth, clientY: 0 }),
+})
+
 const { messages, submitMessage } = useChat(t)
 const { clearMessages, messages: storeMessages } = useChatStore()
 const loading = computed(() => storeMessages.some(msg => msg.state === ChatState.LOADING))
@@ -46,7 +51,7 @@ const commandPaletteUi = {
 
 <template>
   <nav class="fixed bottom-0 left-1/2 z-50 -translate-x-1/2 pb-8">
-    <UCard variant="subtle" class="rounded-xl" :ui="{ body: 'p-2 sm:p-2' }">
+    <UCard variant="subtle" class="rounded-xl bg-neutral-100 dark:bg-neutral-800 shadow-lg" :ui="{ body: 'p-2 sm:p-2 flex gap-2' }">
       <UFieldGroup>
         <UModal v-model:open="openMessageModal" :ui="modalUi" title="Hey" description="Hey">
           <UButton
@@ -130,6 +135,13 @@ const commandPaletteUi = {
           </template>
         </UModal>
       </UFieldGroup>
+      <UButton
+        :icon="isDark ? 'i-ph-moon-duotone' : 'i-ph-sun-duotone'"
+        color="neutral"
+        variant="solid"
+        size="xl"
+        @click.prevent="toggleDark"
+      />
     </UCard>
   </nav>
 </template>
