@@ -19,7 +19,7 @@ const { t } = useI18n({ useScope: 'local' })
           variant="subtle"
           color="neutral"
           target="_blank"
-          class=""
+          class="m-1 shadow-sm"
           :href="social.to"
           :aria-label="social.label"
         />

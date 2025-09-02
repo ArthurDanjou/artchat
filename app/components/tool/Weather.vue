@@ -8,7 +8,7 @@ const { data: weather } = await useAsyncData<Weather>('weather', () =>
 </script>
 
 <template>
-  <UCard v-if="weather" variant="outline" class="md:max-w-2/3">
+  <UCard v-if="weather" variant="outline" class="md:max-w-2/3 m-1 shadow-sm">
     <template #header>
       <div class="flex gap-4 items-center">
         <UIcon name="i-ph-cloud-duotone" size="24" />

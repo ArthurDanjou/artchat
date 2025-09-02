@@ -93,7 +93,7 @@ const getActivity = computed(() => {
       </UTooltip>
     </div>
     <ClientOnly>
-      <UCard variant="outline" class="md:max-w-1/2" :ui="{ body: 'flex gap-8 items-center' }">
+      <UCard v-if="getActivity" variant="outline" class="md:max-w-1/2 m-1 shadow-sm" :ui="{ body: 'flex gap-8 items-center' }">
         <UIcon
           :name="IDEs.find(ide => ide.name === getActivity!.name)!.icon"
           size="64"
@@ -150,7 +150,7 @@ const getActivity = computed(() => {
 {
   "en": {
     "offline": "I'm currently offline. Come back later to see what I'm working on. {maths}",
-    "working": "I'm actually online!",
+    "working": "I'm actually online! Check what I'm working on just below.",
     "idling": "I'm idling on my computer with {editor} running in background.",
     "maths": "I am probably doing some maths or sleeping.",
     "tooltip": {
@@ -163,7 +163,7 @@ const getActivity = computed(() => {
   },
   "fr": {
     "offline": "Je suis actuellement hors ligne. Revenez plus tard pour voir sur quoi je travaille. {maths}",
-    "working": "Je travaille actuellement en ligne !",
+    "working": "Je suis actuellement en ligne ! Découvrez ce sur quoi je travaille juste en dessous.",
     "idling": "Je suis en veille sur mon ordinateur avec {editor} en arrière-plan.",
     "maths": "Je suis probablement en train de faire des maths ou en train de dormir.",
     "tooltip": {
@@ -176,7 +176,7 @@ const getActivity = computed(() => {
   },
   "es": {
     "offline": "Ahora mismo estoy desconectado. Vuelve más tarde para ver en lo que estoy trabajando. {maths}",
-    "working": "Estoy trabajando en línea.",
+    "working": "Estoy trabajando en línea. ¡Mira lo que estoy haciendo justo debajo!",
     "idling": "Estoy en reposo en mi ordenador con {editor} en segundo plano.",
     "maths": "Estoy probablemente haciendo matemáticas o durmiendo.",
     "tooltip": {

@@ -49,16 +49,16 @@ const commandPaletteUi = {
       <UModal v-model:open="openMessageModal" :ui="modalUi">
         <UButton
           :label="loading ? t('cmd.sending') : t('cmd.send')"
-          variant="solid"
+          variant="outline"
           color="neutral"
           size="xl"
           icon="i-ph-paper-plane-tilt-duotone"
-          class="rounded-full"
+          class="rounded-full cursor-pointer"
           :disabled="loading"
         >
           <template #trailing>
-            <UKbd value="meta" />
-            <UKbd value="enter" />
+            <UKbd value="meta" color="neutral" />
+            <UKbd value="enter" color="neutral" />
           </template>
         </UButton>
 
@@ -106,7 +106,7 @@ const commandPaletteUi = {
       >
         <UButton
           :label="t('clear.button')"
-          variant="solid"
+          variant="subtle"
           color="error"
           leading-icon="i-ph-trash-duotone"
           size="xl"
@@ -114,8 +114,8 @@ const commandPaletteUi = {
           :disabled="storeMessages.length === 0"
         >
           <template #trailing>
-            <UKbd value="meta" />
-            <UKbd value="D" />
+            <UKbd value="meta" color="error" />
+            <UKbd value="D" color="error" />
           </template>
         </UButton>
 

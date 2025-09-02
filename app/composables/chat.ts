@@ -60,7 +60,7 @@ export function useChat(t: any) {
             icon: 'i-ph-warning-duotone',
             prompt: t('chat.status.prompt'),
             type: ChatType.STATUS,
-            fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
+            fetchStates: [ChatFetchState.FETCHING],
           },
         ].sort((a, b) => a.label.localeCompare(b.label)),
       },

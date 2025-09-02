@@ -35,7 +35,7 @@ defineShortcuts({
       </ul>
     </div>
     <ClientOnly>
-      <UCard variant="outline" class="md:max-w-1/2" :ui="{ body: 'flex justify-between items-center gap-2' }">
+      <UCard variant="outline" class="md:max-w-1/2 m-1 shadow-sm" :ui="{ body: 'flex justify-between items-center gap-2' }">
         <p class="block">
           {{ t('change') }}
         </p>
