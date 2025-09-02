@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { nextTick, watch } from 'vue'
 import { ChatSender, ChatState, ChatType } from '~~/types'
 
 useSeoMeta({

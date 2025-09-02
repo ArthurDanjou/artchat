@@ -13,7 +13,7 @@ onMounted(() => {
   function nextState() {
     index++
     if (index < props.fetchStates.length) {
-      const delay = Math.random() * 3000 + 500
+      const delay = Math.random() * 1050 + 400
       setTimeout(() => {
         currentState.value = props.fetchStates[index]
         nextState()
@@ -27,7 +27,6 @@ onMounted(() => {
     nextState()
   }
   else {
-    // If only one state, call setLoadingState immediately
     setLoadingState(props.messageId, ChatState.SENT)
   }
 })

@@ -72,77 +72,82 @@ const getActivity = computed(() => {
 </script>
 
 <template>
-  <section v-if="getActivity" class="space-y-4">
-    <div class="prose dark:prose-invert flex items-center gap-2">
-      <div>
-        {{ isActive ? t('working') : t('idling', {
-          editor: getActivity.name,
-        }) }}
+  <section>
+    <div class="prose dark:prose-invert">
+      <p>{{ t('response') }}</p>
+    </div>
+    <div v-if="getActivity" class="space-y-4">
+      <div v-if="getActivity" class="prose dark:prose-invert flex items-center gap-2">
+        <div>
+          {{ isActive ? t('working') : t('idling', {
+            editor: getActivity.name,
+          }) }}
+        </div>
+        <UTooltip :text="isActive ? t('tooltip.online') : t('tooltip.idling')">
+          <div class="relative flex h-3 w-3">
+            <div
+              v-if="isActive"
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"
+            />
+            <div
+              :class="isActive ? 'bg-green-500' : 'bg-amber-500'"
+              class="relative inline-flex rounded-full h-3 w-3"
+            />
+          </div>
+        </UTooltip>
       </div>
-      <UTooltip :text="isActive ? t('tooltip.online') : t('tooltip.idling')">
-        <div class="relative flex h-3 w-3">
-          <div
-            v-if="isActive"
-            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"
+      <ClientOnly>
+        <UCard v-if="getActivity" variant="outline" class="md:max-w-1/2 m-1 shadow-sm" :ui="{ body: 'flex gap-8 items-center' }">
+          <UIcon
+            :name="IDEs.find(ide => ide.name === getActivity!.name)!.icon"
+            size="64"
           />
+          <div class="">
+            <div class="font-bold text-xl">
+              {{ getActivity.name }}
+            </div>
+            <div v-if="isActive">
+              {{ getActivity.state!.split(' ').map((word: string) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ') }}
+            </div>
+            <div>{{ getActivity.project }}</div>
+            <div class="italic text-xs">
+              {{ getActivity.start.ago }}
+            </div>
+          </div>
+
+          <template #footer>
+            <div class="flex justify-end text-sm">
+              <i18n-t keypath="started" tag="p">
+                <template #date>
+                  {{ getActivity.start.formated.date }}
+                </template>
+                <template #hour>
+                  {{ getActivity.start.formated.time }}
+                </template>
+              </i18n-t>
+            </div>
+          </template>
+        </UCard>
+      </ClientOnly>
+    </div>
+    <div v-else class="flex md:items-start gap-2">
+      <i18n-t
+        keypath="offline"
+        tag="p"
+        class="not-prose"
+      >
+        <template #maths>
+          <i>{{ t('maths') }}</i>
+        </template>
+      </i18n-t>
+      <UTooltip :text="t('tooltip.offline')">
+        <div class="relative flex h-3 w-3 mt-2">
           <div
-            :class="isActive ? 'bg-green-500' : 'bg-amber-500'"
-            class="relative inline-flex rounded-full h-3 w-3"
+            class="relative inline-flex rounded-full h-3 w-3 bg-red-500"
           />
         </div>
       </UTooltip>
     </div>
-    <ClientOnly>
-      <UCard v-if="getActivity" variant="outline" class="md:max-w-1/2 m-1 shadow-sm" :ui="{ body: 'flex gap-8 items-center' }">
-        <UIcon
-          :name="IDEs.find(ide => ide.name === getActivity!.name)!.icon"
-          size="64"
-        />
-        <div class="">
-          <div class="font-bold text-xl">
-            {{ getActivity.name }}
-          </div>
-          <div v-if="isActive">
-            {{ getActivity.state!.split(' ').map((word: string) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ') }}
-          </div>
-          <div>{{ getActivity.project }}</div>
-          <div class="italic text-xs">
-            {{ getActivity.start.ago }}
-          </div>
-        </div>
-
-        <template #footer>
-          <div class="flex justify-end text-sm">
-            <i18n-t keypath="started" tag="p">
-              <template #date>
-                {{ getActivity.start.formated.date }}
-              </template>
-              <template #hour>
-                {{ getActivity.start.formated.time }}
-              </template>
-            </i18n-t>
-          </div>
-        </template>
-      </UCard>
-    </ClientOnly>
-  </section>
-  <section v-else class="flex md:items-start gap-2">
-    <i18n-t
-      keypath="offline"
-      tag="p"
-      class="not-prose"
-    >
-      <template #maths>
-        <i>{{ t('maths') }}</i>
-      </template>
-    </i18n-t>
-    <UTooltip :text="t('tooltip.offline')">
-      <div class="relative flex h-3 w-3 mt-2">
-        <div
-          class="relative inline-flex rounded-full h-3 w-3 bg-red-500"
-        />
-      </div>
-    </UTooltip>
   </section>
 </template>
 
@@ -153,6 +158,7 @@ const getActivity = computed(() => {
     "working": "I'm actually online! Check what I'm working on just below.",
     "idling": "I'm idling on my computer with {editor} running in background.",
     "maths": "I am probably doing some maths or sleeping.",
+    "response": "The statistics are powered and saved by WakaTime.",
     "tooltip": {
       "online": "I'm online 👋",
       "offline": "I'm offline 🫥",
@@ -166,6 +172,7 @@ const getActivity = computed(() => {
     "working": "Je suis actuellement en ligne ! Découvrez ce sur quoi je travaille juste en dessous.",
     "idling": "Je suis en veille sur mon ordinateur avec {editor} en arrière-plan.",
     "maths": "Je suis probablement en train de faire des maths ou en train de dormir.",
+    "response": "Les statistiques sont propulsées et enregistrées par WakaTime.",
     "tooltip": {
       "online": "Je suis connecté 👋",
       "offline": "Je suis déconnecté 🫥",
@@ -179,6 +186,7 @@ const getActivity = computed(() => {
     "working": "Estoy trabajando en línea. ¡Mira lo que estoy haciendo justo debajo!",
     "idling": "Estoy en reposo en mi ordenador con {editor} en segundo plano.",
     "maths": "Estoy probablemente haciendo matemáticas o durmiendo.",
+    "response": "Las estadísticas son propulsadas y registradas por WakaTime.",
     "tooltip": {
       "online": "Estoy conectado 👋",
       "offline": "Estoy desconectado 🫥",
