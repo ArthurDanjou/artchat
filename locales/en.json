@@ -139,7 +139,7 @@
     "location": "I'm currently based in {location}. See below for more details.",
     "contact": "There are different ways to contact me. Here is a list:",
     "duplicated": {
-      "title": "⚠️ I detected duplicated messages",
+      "title": "⚠️ I have detected duplicated messages",
       "description": "I have therefore removed the older duplicated messages to lighten the application."
     },
     "stats": {
