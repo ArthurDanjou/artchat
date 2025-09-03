@@ -22,16 +22,8 @@ watch(
 <template>
   <main class="!max-w-none">
     <ChatCommandPalette />
-    <div ref="parents" class="space-y-8 my-32">
-      <ChatMessageContainer
-        :message="{
-          content: 'main.init',
-          id: 0,
-          sender: ChatSender.ARTHUR,
-          state: ChatState.SENT,
-          type: ChatType.INIT,
-        }"
-      />
+    <ChatMain />
+    <div ref="parents" class="space-y-8 my-16 md:my-32">
       <ChatMessageContainer
         :message="{
           id: 0,

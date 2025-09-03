@@ -60,7 +60,7 @@ const commandPaletteUi = {
         <UModal v-model:open="openMessageModal" :ui="modalUi" title="Hey" description="Hey">
           <UButton
             :label="loading ? t('palette.cmd.sending') : t('palette.cmd.send')"
-            variant="solid"
+            variant="outline"
             color="neutral"
             size="xl"
             icon="i-ph-paper-plane-tilt-duotone"
@@ -68,8 +68,8 @@ const commandPaletteUi = {
             :disabled="loading"
           >
             <template #trailing>
-              <UKbd value="meta" color="neutral" />
-              <UKbd value="enter" color="neutral" />
+              <UKbd value="meta" color="info" />
+              <UKbd value="enter" color="info" />
             </template>
           </UButton>
 
@@ -78,30 +78,41 @@ const commandPaletteUi = {
               close
               :ui="commandPaletteUi"
               :groups="messages"
+              :autofocus="false"
+              icon="i-ph-paper-plane-tilt-duotone"
+              :placeholder="t('palette.cmd.placeholder')"
               @update:model-value="onSelect"
               @update:open="openMessageModal = $event"
             >
               <template #item="{ item }">
-                <div class="relative flex items-center justify-between w-full p-1">
+                <div class="relative flex flex-col sm:flex-row sm:justify-between sm:items-center w-full cursor-pointer my-1">
                   <div class="absolute inset-0 -m-1" />
                   <div class="flex items-center gap-2.5">
-                    <div class="flex items-center gap-2.5">
-                      <UIcon :name="item.icon!" size="20" />
-                      <span>{{ t(item.label) }}</span>
-                    </div>
+                    <UIcon :name="item.icon!" size="20" />
+                    <span>{{ t(item.label) }}</span>
                   </div>
-                  <span class="text-muted text-xs font-medium">
+                  <div class="text-muted text-xs font-medium">
                     {{ t(item.prompt) }}
-                  </span>
+                  </div>
+                </div>
+              </template>
+              <template #group-arthur="{ group }">
+                <div>
+                  {{ t(group) }}
                 </div>
               </template>
               <template #footer>
                 <div class="flex items-center justify-between gap-2">
-                  <UIcon name="i-simple-icons-nuxtdotjs" class="size-5 text-dimmed ml-1" />
+                  <div class="flex items-center gap-1">
+                    <UIcon name="i-simple-icons-nuxtdotjs" class="size-5 ml-1 text-green-500" />
+                    <p class="text-xs font-medium text-dimmed">
+                      {{ t('main.powered') }}
+                    </p>
+                  </div>
                   <div class="flex items-center gap-1">
                     <UButton color="neutral" variant="ghost" :label="t('palette.cmd.send')" class="text-dimmed" size="xs">
                       <template #trailing>
-                        <UKbd value="enter" />
+                        <UKbd value="enter" color="info" />
                       </template>
                     </UButton>
                   </div>

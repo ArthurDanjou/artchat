@@ -1,8 +1,8 @@
 {
   "main": {
-    "init": "Salut, bienvenue sur ArtChat. Je suis un assistant IA connaissant tout sur Arthur Danjou. Pose moi des questions et j'y répondrai comme si j'étais lui.",
     "question": "Génial ! Parle moi un peu plus de toi.",
-    "about": "Je suis étudiant en Mathématiques et en Statistiques à l'Université Paris-Dauphine en France. Avec une compréhension approfondie des technologies émergentes, je suis au cœur d'un domaine en pleine expansion. Mon parcours en mathématiques me donne un avantage pour comprendre les concepts et les théories derrière ces technologies et pour les concevoir efficacement."
+    "about": "Je suis étudiant en Mathématiques et en Statistiques à l'Université Paris-Dauphine en France. Avec une compréhension approfondie des technologies émergentes, je suis au cœur d'un domaine en pleine expansion. Mon parcours en mathématiques me donne un avantage pour comprendre les concepts et les théories derrière ces technologies et pour les concevoir efficacement.",
+    "powered": "Propulsé par Nuxt"
   },
   "palette": {
     "clear": {
@@ -12,6 +12,7 @@
       "description": "Cette action ne peut pas être annulée."
     },
     "cmd": {
+      "placeholder": "Utilisez les flèches pour naviguer parmi les prompts préfaits. Appuyez sur Entrer pour envoyer le message.",
       "send": "Envoyer le message",
       "sending": "Envoi..."
     }

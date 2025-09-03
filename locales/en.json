@@ -1,8 +1,8 @@
 {
   "main": {
-    "init": "Hey, welcome to ArtChat. I'm an AI assistant that knows everything about Arthur Danjou. Ask me anything and I'll answer as if I were him!",
     "question": "Awesome! Tell me a bit more about you.",
-    "about": "I'm a student in Mathematics and Statistics at Université Paris-Dauphine in France. With a deep understanding of emerging technologies, I'm at the heart of a rapidly expanding field. My background in mathematics gives me an edge in understanding the concepts and theories behind these technologies and designing them effectively."
+    "about": "I'm a student in Mathematics and Statistics at Université Paris-Dauphine in France. With a deep understanding of emerging technologies, I'm at the heart of a rapidly expanding field. My background in mathematics gives me an edge in understanding the concepts and theories behind these technologies and designing them effectively.",
+    "powered": "Powered by Nuxt"
   },
   "palette": {
     "clear": {
@@ -12,6 +12,7 @@
       "description": "This action cannot be undone."
     },
     "cmd": {
+      "placeholder": "Use the arrow keys to navigate through the preset prompts. Press Enter to send the message.",
       "send": "Send message",
       "sending": "Sending..."
     }
