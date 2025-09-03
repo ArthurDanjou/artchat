@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/google-fonts',
     '@nuxt/image',
-    'motion-v/nuxt',
+    '@vueuse/motion/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/i18n',
   ],
