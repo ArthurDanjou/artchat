@@ -170,12 +170,6 @@
       "high": "Haut",
       "humidity": "Humidité",
       "wind": "Vent"
-    },
-    "uses": {
-      "homelab": "Voici une liste d'équipements dans HomeLab d'Arthur",
-      "hardware": "Voici une liste d'équipements matériels qu'Arthur utilise",
-      "ide": "Voici la liste des ides et la police qu'Arthur utilise",
-      "software": "Voici la liste des logiciels et applications qu'Arthur utilise"
     }
   },
   "error": {

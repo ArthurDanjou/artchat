@@ -137,12 +137,6 @@
       "secret": "Secret Project"
     },
     "location": "I'm currently based in {location}. See below for more details.",
-    "uses": {
-      "hardware": "Here is a list of hardware equipment that Arthur uses",
-      "software": "Here is the list of software and applications that Arthur uses",
-      "homelab": "Here is a list of equipment in Arthur's Homelab",
-      "ide": "Here is the list of IDEs and the font that Arthur uses"
-    },
     "contact": "There are different ways to contact me. Here is a list:",
     "duplicated": {
       "title": "⚠️ I detected duplicated messages",

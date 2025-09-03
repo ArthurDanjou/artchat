@@ -6,7 +6,7 @@ const props = defineProps({
   },
 })
 
-const { t, locale } = useI18n()
+const { locale } = useI18n()
 
 const { data: items } = await useAsyncData(`uses-${props.category}`, async () => await queryCollection('uses').where('category', '=', props.category).all())
 const { data: categoryData } = await useAsyncData(`category-${props.category}`, async () => await queryCollection('usesCategories').where('slug', '=', props.category).first())
@@ -14,10 +14,7 @@ const { data: categoryData } = await useAsyncData(`category-${props.category}`, 
 
 <template>
   <section>
-    <div class="prose dark:prose-invert">
-      <p>{{ t(`uses.${props.category}`) }}</p>
-    </div>
-    <div v-if="items && categoryData" class="space-y-12 mt-4">
+    <div v-if="items && categoryData" class="space-y-4">
       <USeparator
         :label="locale === 'en' ? categoryData.name.en : locale === 'es' ? categoryData.name.es : categoryData.name.fr"
         size="xs"
