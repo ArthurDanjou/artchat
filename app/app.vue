@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import { Analytics } from '@vercel/analytics/nuxt'
+import { SpeedInsights } from '@vercel/speed-insights/nuxt'
+
 useHead({
   link: [{ rel: 'icon', type: 'image/webp', href: '/favicon.webp' }],
 })
@@ -11,6 +14,8 @@ useHead({
     <UContainer>
       <NuxtPage />
     </UContainer>
+    <SpeedInsights />
+    <Analytics />
   </UApp>
 </template>
 
