@@ -18,7 +18,7 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
     <div class="flex flex-col-reverse md:flex-row-reverse items-end">
       <UCard
         variant="solid"
-        class="rounded-xl mt-1 bg-sky-500 md:max-w-3/4 text-white font-medium"
+        class="rounded-xl mt-1 bg-sky-600 text-neutral-100 md:max-w-3/4 font-medium"
         :ui="{ body: 'sm:p-2', header: 'sm:p-2', footer: 'sm:p-2' }"
       >
         {{ t(message.content || '') }}
