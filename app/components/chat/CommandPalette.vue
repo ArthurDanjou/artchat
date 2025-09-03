@@ -78,27 +78,22 @@ const commandPaletteUi = {
               close
               :ui="commandPaletteUi"
               :groups="messages"
-              :autofocus="false"
+              autofocus="false"
               icon="i-ph-paper-plane-tilt-duotone"
               :placeholder="t('palette.cmd.placeholder')"
               @update:model-value="onSelect"
               @update:open="openMessageModal = $event"
             >
               <template #item="{ item }">
-                <div class="relative flex flex-col sm:flex-row sm:justify-between sm:items-center w-full cursor-pointer my-1">
+                <div class="relative flex flex-col sm:flex-row items-start sm:justify-between sm:items-center w-full cursor-pointer my-1">
                   <div class="absolute inset-0 -m-1" />
                   <div class="flex items-center gap-2.5">
                     <UIcon :name="item.icon!" size="20" />
                     <span>{{ t(item.label) }}</span>
                   </div>
-                  <div class="text-muted text-xs font-medium">
+                  <div class="text-dimmed text-xs font-medium text-start">
                     {{ t(item.prompt) }}
                   </div>
-                </div>
-              </template>
-              <template #group-arthur="{ group }">
-                <div>
-                  {{ t(group) }}
                 </div>
               </template>
               <template #footer>
