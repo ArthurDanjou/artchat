@@ -38,7 +38,7 @@ watch(
       }"
     />
     <ChatMain />
-    <div ref="parents" class="space-y-8 my-16 md:my-32">
+    <div ref="parents" class="space-y-4 my-32">
       <ChatMessageContainer
         v-motion
         :initial="{
