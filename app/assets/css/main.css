@@ -18,6 +18,10 @@
 
     --ui-font-family: 'DM Sans', sans-serif;
     transition-duration: 0.7s;
+
+    .prose {
+      max-width: none;
+    }
 }
 
 .dark {
@@ -31,6 +35,10 @@
 
     --ui-font-family: 'DM Sans', sans-serif;
     transition-duration: 0.7s;
+
+    .prose {
+      max-width: none;
+    }
 }
 
 @keyframes wave {

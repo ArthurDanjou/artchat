@@ -14,7 +14,7 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
 </script>
 
 <template>
-  <div v-if="!isArthur" class="group flex flex-col gap-2">
+  <div v-if="!isArthur" class="group flex flex-col gap-2 duration-200">
     <div class="flex flex-col-reverse md:flex-row-reverse items-end">
       <UCard
         variant="solid"
@@ -28,7 +28,7 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
       {{ formatted }}
     </div>
   </div>
-  <div v-else class="group space-y-2">
+  <div v-else class="group space-y-2 duration-200">
     <div class="flex flex-col-reverse gap-2 items-start md:flex-row-reverse">
       <UCard
         v-if="message.state === ChatState.LOADING && message.fetchStates && message.fetchStates.length > 0"
@@ -41,7 +41,7 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
       <UCard
         v-else
         variant="soft"
-        class="mt-1 w-full bg-transparent"
+        class="mt-1 w-full max-w-none bg-transparent"
         :ui="{ body: 'p-0 sm:p-0', header: 'p-0 sm:p-0', footer: 'p-0 sm:p-0' }"
       >
         <div v-if="message.type === ChatType.INIT">
@@ -73,6 +73,9 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
         </div>
         <div v-else-if="message.type === ChatType.LOCATION">
           <ToolLocation />
+        </div>
+        <div v-else-if="message.type === ChatType.SKILLS">
+          <ToolSkills />
         </div>
         <div v-else>
           {{ message }}

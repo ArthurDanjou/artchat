@@ -55,14 +55,19 @@ export const collections = {
   }),
   skills: defineCollection({
     type: 'data',
-    source: 'skills/*.json',
+    source: 'skills.json',
     schema: z.object({
-      name: z.string(),
-      description: z.string(),
       items: z.object({
-        name: z.string(),
-        icon: z.string(),
-        color: z.string(),
+        id: z.string(),
+        name: z.object({
+          en: z.string(),
+          fr: z.string(),
+          es: z.string(),
+        }),
+        items: z.array(z.object({
+          name: z.string(),
+          icon: z.string(),
+        })),
       }),
     }),
   }),

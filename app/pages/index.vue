@@ -34,8 +34,10 @@ watch(
         scale: 1,
         transition: {
           delay: 1600,
+          ease: 'easeOut',
         },
       }"
+      :active="messages.length > 0"
     />
     <ChatMain />
     <div ref="parents" class="space-y-4 my-32">
@@ -52,6 +54,7 @@ watch(
           scale: 1,
           transition: {
             delay: 800,
+            ease: 'easeOut',
           },
         }"
         :message="{
@@ -75,6 +78,7 @@ watch(
           scale: 1,
           transition: {
             delay: 1200,
+            ease: 'easeOut',
           },
         }"
         :message="{
@@ -97,6 +101,7 @@ watch(
         :enter="{
           opacity: 1,
           scale: 1,
+          transition: { ease: 'easeOut' },
         }"
       />
     </div>

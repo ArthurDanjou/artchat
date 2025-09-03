@@ -149,6 +149,7 @@ export const ChatMessages = [
         icon: 'i-ph-rocket-duotone',
         prompt: 'command.skills.prompt',
         type: ChatType.SKILLS,
+        fetchStates: [ChatFetchState.FETCHING],
       },
       {
         label: 'command.resume.label',

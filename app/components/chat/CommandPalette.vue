@@ -2,6 +2,13 @@
 import type { CommandPaletteItem } from '@nuxt/ui'
 import { ChatState } from '~~/types'
 
+defineProps({
+  active: {
+    type: Boolean,
+    default: false,
+  },
+})
+
 const searchTerm = ref('')
 const openMessageModal = ref(false)
 const openClearModal = ref(false)
@@ -51,10 +58,15 @@ const commandPaletteUi = {
   item: 'data-highlighted:not-data-disabled:before:bg-muted',
   content: 'flex-1 overflow-y-auto',
 }
+
+// const isDesktop = computed(() => window.innerWidth >= 768)
 </script>
 
 <template>
-  <nav class="fixed bottom-0 left-1/2 z-50 -translate-x-1/2 pb-8">
+  <nav
+    class="fixed z-50 pb-8 duration-700"
+    :class="active ? 'bottom-0 left-1/2 -translate-x-1/2' : 'md:bottom-1/4 left-1/2 -translate-x-1/2 bottom-0'"
+  >
     <UCard variant="outline" class="rounded-xl shadow-lg" :ui="{ body: 'p-2 sm:p-2 flex gap-2' }">
       <UFieldGroup>
         <UModal v-model:open="openMessageModal" :ui="modalUi" title="Hey" description="Hey">
@@ -65,6 +77,7 @@ const commandPaletteUi = {
             size="xl"
             icon="i-ph-paper-plane-tilt-duotone"
             class="rounded-lg cursor-pointer"
+            :class="active ? '' : 'p-6'"
             :disabled="loading"
           >
             <template #trailing>
@@ -119,6 +132,7 @@ const commandPaletteUi = {
           </template>
         </UModal>
         <UModal
+          v-if="active"
           v-model:open="openClearModal"
           :title="t('palette.clear.title')"
           :description="t('palette.clear.description')"
@@ -142,7 +156,7 @@ const commandPaletteUi = {
         </UModal>
       </UFieldGroup>
       <ClientOnly>
-        <UFieldGroup>
+        <UFieldGroup class="flex items-center justify-center" :orientation="active ? 'horizontal' : 'vertical'">
           <UButton
             :icon="isDark ? 'i-ph-moon-duotone' : 'i-ph-sun-duotone'"
             color="neutral"

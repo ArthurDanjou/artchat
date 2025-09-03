@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
+
 <template>
   <div class="flex flex-col my-16 md:my-32">
     <h1
@@ -11,10 +15,11 @@
         opacity: 1,
         y: 0,
         scale: 1,
+        transition: { ease: 'linear' },
       }"
-      class="font-bold text-3xl sm:text-4xl"
+      class="font-bold text-3xl sm:text-4xl duration-200"
     >
-      Welcome to ArtChat
+      {{ t('chat.welcome') }}
     </h1>
     <h3
       v-motion
@@ -29,11 +34,12 @@
         scale: 1,
         transition: {
           delay: 400,
+          ease: 'linear',
         },
       }"
-      class="text-3xl sm:text-4xl bg-gradient-to-r from-inverted/40 to-inverted/75 to-50% bg-clip-text text-transparent font-medium"
+      class="text-3xl sm:text-4xl bg-gradient-to-r from-inverted/40 to-inverted/75 to-50% bg-clip-text text-transparent font-medium duration-200"
     >
-      Ask me anything about Arthur DANJOU
+      {{ t('chat.ask') }}
     </h3>
   </div>
 </template>

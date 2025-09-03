@@ -13,7 +13,7 @@
     },
     "cmd": {
       "placeholder": "Utilisez les flèches pour naviguer parmi les prompts préfaits. Appuyez sur Entrer pour envoyer le message.",
-      "send": "Envoyer le message",
+      "send": "Envoyer un nouveau message",
       "sending": "Envoi..."
     }
   },
@@ -96,7 +96,9 @@
       "fetching": "Récupération des données...",
       "generating": "Génération du composant...",
       "done": "Terminé !"
-    }
+    },
+    "welcome": "Bienvenue sur Artchat",
+    "ask": "Demandez-moi n'importe quoi sur Arthur Danjou"
   },
   "tool": {
     "language": {
@@ -161,5 +163,8 @@
   "error": {
     "main": "Je pense que vous êtes perdu, retournons en arrière à la",
     "redirect": "page d'accueil"
+  },
+  "skills": {
+    "main": "En tant qu’ingénieur logiciel et étudiant en mathématiques, j’allie rigueur scientifique et pragmatisme technique pour concevoir des solutions adaptées aux enjeux des projets data et mathématiques. Mon approche repose sur une compréhension approfondie des besoins, de la préparation des données à la mise en production, en passant par la modélisation et l’optimisation des performances. Passionné par l’intelligence artificielle et la data science, je m’attache à concilier innovation et robustesse statistique. Toujours en quête d’apprentissage, je m’intéresse autant aux avancées technologiques qu’aux défis entrepreneuriaux ou financiers. Curieux et enthousiaste, j’aime partager mes connaissances et explorer de nouveaux concepts, qu’il s’agisse de théorèmes ou de technologies émergentes."
   }
 }
