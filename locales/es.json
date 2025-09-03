@@ -156,5 +156,9 @@
       "humidity": "Humedad",
       "wind": "Viento"
     }
+  },
+  "error": {
+    "main": "Creo que estás perdido, volvamos a la",
+    "redirect": "página de inicio"
   }
 }

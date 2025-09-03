@@ -156,5 +156,9 @@
       "humidity": "Humidity",
       "wind": "Wind"
     }
+  },
+  "error": {
+    "main": "I think you're lost, let's go back to the",
+    "redirect": "homepage"
   }
 }

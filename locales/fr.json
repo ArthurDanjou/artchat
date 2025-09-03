@@ -156,5 +156,9 @@
       "humidity": "Humidité",
       "wind": "Vent"
     }
+  },
+  "error": {
+    "main": "Je pense que vous êtes perdu, retournons en arrière à la",
+    "redirect": "page d'accueil"
   }
 }
