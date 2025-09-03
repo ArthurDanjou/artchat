@@ -33,8 +33,8 @@ watch(
         y: 0,
         scale: 1,
         transition: {
-          delay: 1600,
-          ease: 'easeOut',
+          delay: 1800,
+          ease: 'easeInOut',
         },
       }"
       :active="messages.length > 0"
@@ -53,7 +53,7 @@ watch(
           y: 0,
           scale: 1,
           transition: {
-            delay: 800,
+            delay: 900,
             ease: 'easeOut',
           },
         }"

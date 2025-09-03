@@ -33,7 +33,7 @@ const { t } = useI18n()
         y: 0,
         scale: 1,
         transition: {
-          delay: 400,
+          delay: 300,
           ease: 'linear',
         },
       }"
