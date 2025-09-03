@@ -82,7 +82,6 @@ const commandPaletteUi = {
           >
             <template #trailing>
               <div class="hidden md:flex gap-1">
-                <UKbd value="meta" color="info" />
                 <UKbd value="enter" color="info" />
               </div>
             </template>
@@ -93,7 +92,7 @@ const commandPaletteUi = {
               close
               :ui="commandPaletteUi"
               :groups="messages"
-              autofocus="false"
+              :autofocus="false"
               icon="i-ph-paper-plane-tilt-duotone"
               :placeholder="t('palette.cmd.placeholder')"
               @update:model-value="onSelect"
