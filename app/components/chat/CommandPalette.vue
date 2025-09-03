@@ -68,8 +68,10 @@ const commandPaletteUi = {
             :disabled="loading"
           >
             <template #trailing>
-              <UKbd value="meta" color="info" />
-              <UKbd value="enter" color="info" />
+              <div class="hidden md:flex gap-1">
+                <UKbd value="meta" color="info" />
+                <UKbd value="enter" color="info" />
+              </div>
             </template>
           </UButton>
 

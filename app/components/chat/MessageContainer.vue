@@ -24,7 +24,7 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
         {{ t(message.content || '') }}
       </UCard>
     </div>
-    <div class="opacity-0 group-hover:opacity-80 duration-500 flex text-xs italic justify-end">
+    <div class="text-muted opacity-0 group-hover:opacity-80 duration-500 flex text-xs italic justify-end">
       {{ formatted }}
     </div>
   </div>
@@ -83,7 +83,7 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
         <span class="md:hidden">Arthur DANJOU</span>
       </div>
     </div>
-    <div class="opacity-0 group-hover:opacity-80 duration-500 flex text-xs italic justify-start ml-12">
+    <div class="text-muted opacity-0 group-hover:opacity-80 duration-500 flex text-xs italic justify-start ml-12">
       {{ formatted }}
     </div>
   </div>

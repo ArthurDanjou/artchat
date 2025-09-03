@@ -75,13 +75,8 @@ const getActivity = computed(() => {
     </div>
     <div v-if="getActivity" class="space-y-4">
       <div v-if="getActivity" class="prose dark:prose-invert flex items-center gap-2">
-        <div>
-          {{ isActive ? t('tool.activity.working') : t('tool.activity.idling', {
-            editor: getActivity.name,
-          }) }}
-        </div>
         <UTooltip :text="isActive ? t('tool.activity.tooltip.online') : t('tool.activity.tooltip.idling')">
-          <div class="relative flex h-3 w-3">
+          <div class="relative flex h-3 w-3 mx-1">
             <div
               v-if="isActive"
               class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"
@@ -92,6 +87,11 @@ const getActivity = computed(() => {
             />
           </div>
         </UTooltip>
+        <div>
+          {{ isActive ? t('tool.activity.working') : t('tool.activity.idling', {
+            editor: getActivity.name,
+          }) }}
+        </div>
       </div>
       <ClientOnly>
         <UCard v-if="getActivity" variant="outline" class="md:max-w-1/2 m-1 shadow-sm" :ui="{ body: 'flex gap-8 items-center' }">
@@ -128,15 +128,6 @@ const getActivity = computed(() => {
       </ClientOnly>
     </div>
     <div v-else class="flex md:items-start gap-2">
-      <i18n-t
-        keypath="tool.activity.offline"
-        tag="p"
-        class="not-prose"
-      >
-        <template #maths>
-          <i>{{ t('maths') }}</i>
-        </template>
-      </i18n-t>
       <UTooltip :text="t('tool.activity.tooltip.offline')">
         <div class="relative flex h-3 w-3 mt-2">
           <div
@@ -144,6 +135,15 @@ const getActivity = computed(() => {
           />
         </div>
       </UTooltip>
+      <i18n-t
+        keypath="tool.activity.offline"
+        tag="p"
+        class="not-prose"
+      >
+        <template #maths>
+          <i>{{ t('tool.activity.maths') }}</i>
+        </template>
+      </i18n-t>
     </div>
   </section>
 </template>

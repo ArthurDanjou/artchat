@@ -20,7 +20,7 @@ watch(
 </script>
 
 <template>
-  <main class="!max-w-none">
+  <main>
     <ChatCommandPalette
       v-motion
       :initial="{
