@@ -160,7 +160,7 @@ const commandPaletteUi = {
             color="neutral"
             variant="outline"
             size="xl"
-            @click.prevent="changeLocale"
+            @click.prevent="changeLocale(currentLocale!.code === 'en' ? 'fr' : currentLocale!.code === 'fr' ? 'es' : 'en')"
           />
         </UFieldGroup>
       </ClientOnly>
