@@ -1,23 +1,37 @@
 <script lang="ts" setup>
-const { t } = useI18n()
+const props = defineProps({
+  category: {
+    type: String,
+    required: true,
+  },
+})
 
-const { data: items } = await useAsyncData('uses', async () => await queryCollection('uses').all())
-const { data: categories } = await useAsyncData('categories', async () => await queryCollection('usesCategories').all())
+const { t, locale } = useI18n()
+
+const { data: items } = await useAsyncData(`uses-${props.category}`, async () => await queryCollection('uses').where('category', '=', props.category).all())
+const { data: categoryData } = await useAsyncData(`category-${props.category}`, async () => await queryCollection('usesCategories').where('slug', '=', props.category).first())
 </script>
 
 <template>
   <section>
     <div class="prose dark:prose-invert">
-      <p>{{ t('uses') }}</p>
+      <p>{{ t(`uses.${props.category}`) }}</p>
     </div>
-    <div v-if="items" class="space-y-12 mt-4">
-      <UsesList v-for="category in categories" :key="category.id" :title="category.name">
-        <UsesItem
-          v-for="(item, id) in items.filter(item => item.category === String(category.meta.title).toLowerCase())"
-          :key="id"
-          :item="item"
-        />
-      </UsesList>
+    <div v-if="items && categoryData" class="space-y-12 mt-4">
+      <USeparator
+        :label="locale === 'en' ? categoryData.name.en : locale === 'es' ? categoryData.name.es : categoryData.name.fr"
+        size="xs"
+      />
+      <ul class="space-y-8">
+        <li v-for="item in items" :key="item.id">
+          <p class="text-base font-semibold">
+            {{ item.name }}
+          </p>
+          <p class="text-sm">
+            {{ locale === 'en' ? item.description.en : locale === 'es' ? item.description.es : item.description.fr }}
+          </p>
+        </li>
+      </ul>
     </div>
   </section>
 </template>

@@ -25,10 +25,6 @@
       "label": "Cambiar tema",
       "prompt": "¿Cómo puedo cambiar el tema?"
     },
-    "uses": {
-      "label": "Ver la configuración",
-      "prompt": "¿Cómo puedo ver la configuración de Arthur?"
-    },
     "stats": {
       "label": "Ver estadísticas",
       "prompt": "¿Cómo puedo ver las estadísticas sobre Arthur?"
@@ -88,6 +84,22 @@
     "credits": {
       "label": "Créditos",
       "prompt": "¿Cómo se ha hecho este chat?"
+    },
+    "hardware": {
+      "label": "Hardware",
+      "prompt": "¿Cómo puedo ver la configuración de hardware de Arthur?"
+    },
+    "homelab": {
+      "label": "Cosas de Homelab",
+      "prompt": "¿Cómo puedo ver el Homelab de Arthur?"
+    },
+    "ide": {
+      "label": "IDEs y fuente",
+      "prompt": "¿Cuéntame más sobre el IDE y la fuente que usa Arthur?"
+    },
+    "software": {
+      "label": "Softwares y aplicaciones",
+      "prompt": "¿Qué software y aplicaciones usa Arthur?"
     }
   },
   "chat": {
@@ -125,7 +137,6 @@
       "secret": "Proyecto Secreto"
     },
     "location": "Actualmente estoy basado en {location}. Consulta más detalles a continuación.",
-    "uses": "Aquí hay una gran lista de todo el software que uso, gadgets que amo y otras cosas que recomiendo.",
     "contact": "Existen diferentes formas de contactarme. Aquí hay una lista:",
     "duplicated": {
       "title": "⚠️ He detectado mensajes duplicados",
@@ -159,6 +170,12 @@
       "high": "Alto",
       "humidity": "Humedad",
       "wind": "Viento"
+    },
+    "uses": {
+      "homelab": "Aquí hay una lista de equipos en Homelab de Arthur",
+      "hardware": "Aquí hay una lista de equipos de hardware que usa Arthur",
+      "software": "Aquí está la lista de software y aplicaciones que Arthur usa",
+      "ide": "Aquí está la lista de IDES y la fuente que usa Arthur"
     }
   },
   "error": {

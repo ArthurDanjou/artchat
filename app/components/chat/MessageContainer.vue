@@ -53,8 +53,17 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
         <div v-else-if="message.type === ChatType.THEME">
           <ToolTheme />
         </div>
-        <div v-else-if="message.type === ChatType.USES">
-          <ToolUses />
+        <div v-else-if="message.type === ChatType.HARDWARE">
+          <ToolUses category="hardware" />
+        </div>
+        <div v-else-if="message.type === ChatType.SOFTWARE">
+          <ToolUses category="software" />
+        </div>
+        <div v-else-if="message.type === ChatType.HOMELAB">
+          <ToolUses category="homelab" />
+        </div>
+        <div v-else-if="message.type === ChatType.IDE">
+          <ToolUses category="ide" />
         </div>
         <div v-else-if="message.type === ChatType.LANGUAGE">
           <ToolLanguage />

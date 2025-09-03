@@ -32,7 +32,7 @@ export const collections = {
     type: 'data',
     source: 'uses/categories/*.json',
     schema: z.object({
-      id: z.string(),
+      slug: z.string(),
       name: z.object({
         en: z.string(),
         fr: z.string(),

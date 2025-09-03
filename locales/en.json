@@ -25,20 +25,32 @@
       "label": "Change theme",
       "prompt": "How can I change the theme?"
     },
-    "uses": {
-      "label": "View setup",
-      "prompt": "How can I view the setup of Arthur?"
+    "homelab": {
+      "label": "Homelab stuff",
+      "prompt": "How can I view the homelab of Arthur?"
+    },
+    "hardware": {
+      "label": "Hardware setup",
+      "prompt": "How can I view the hardware setup of Arthur?"
+    },
+    "software": {
+      "label": "Softwares and Apps",
+      "prompt": "Which softwares and apps does Arthur use?"
+    },
+    "ide": {
+      "label": "IDEs and Font",
+      "prompt": "Tell me more about the IDE and font that Arthur uses?"
     },
     "stats": {
-      "label": "View statistics",
+      "label": "Dev Statistics",
       "prompt": "How can I view the statistics concerning Arthur?"
     },
     "weather": {
-      "label": "View weather",
+      "label": "Weather",
       "prompt": "How can I view the weather conditions near Arthur?"
     },
     "location": {
-      "label": "View location",
+      "label": "Location",
       "prompt": "How can I view the location of Arthur?"
     },
     "language": {
@@ -125,7 +137,12 @@
       "secret": "Secret Project"
     },
     "location": "I'm currently based in {location}. See below for more details.",
-    "uses": "Here is a comprehensive list of all the software I use, gadgets I love, and other things I recommend.",
+    "uses": {
+      "hardware": "Here is a list of hardware equipment that Arthur uses",
+      "software": "Here is the list of software and applications that Arthur uses",
+      "homelab": "Here is a list of equipment in Arthur's Homelab",
+      "ide": "Here is the list of IDEs and the font that Arthur uses"
+    },
     "contact": "There are different ways to contact me. Here is a list:",
     "duplicated": {
       "title": "⚠️ I detected duplicated messages",
