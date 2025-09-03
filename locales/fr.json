@@ -14,7 +14,7 @@
     "cmd": {
       "placeholder": "Utilisez les flèches pour naviguer parmi les prompts préfaits. Appuyez sur Entrer pour envoyer le message.",
       "send": "Envoyer un nouveau message",
-      "sending": "Envoi..."
+      "sending": "Envoi en cours..."
     }
   },
   "command": {

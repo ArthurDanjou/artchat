@@ -13,10 +13,10 @@ const searchTerm = ref('')
 const openMessageModal = ref(false)
 const openClearModal = ref(false)
 
-const { t, locale, locales, setLocale } = useI18n()
-
+const { t, locale, locales } = useI18n()
 const { messages, submitMessage } = useChat()
 const { clearMessages, messages: storeMessages } = useChatStore()
+
 const loading = computed(() => storeMessages.some(msg => msg.state === ChatState.LOADING))
 
 function handleDelete() {
@@ -31,20 +31,13 @@ function onSelect(item: CommandPaletteItem) {
 }
 
 const currentLocale = computed(() => locales.value.filter(l => l.code === locale.value)[0])
+const { changeLocale } = useLanguage()
+const { dark, toggleDark } = useTheme()
 
-async function changeLocale() {
-  await setLocale(currentLocale.value!.code === 'en' ? 'fr' : currentLocale.value!.code === 'fr' ? 'es' : 'en')
-}
-
-const { isDark, toggleDark } = useTheme()
 defineShortcuts({
-  meta_enter: () => {
-    openMessageModal.value = !openMessageModal.value
-  },
-  meta_d: () => {
-    openClearModal.value = !openClearModal.value
-  },
-  l: () => changeLocale(),
+  meta_enter: () => openMessageModal.value = !openMessageModal.value,
+  meta_d: () => openClearModal.value = !openClearModal.value,
+  l: () => changeLocale(currentLocale.value!.code === 'en' ? 'fr' : currentLocale.value!.code === 'fr' ? 'es' : 'en'),
   t: () => toggleDark({ clientX: window.innerWidth, clientY: 0 }),
 })
 
@@ -58,17 +51,15 @@ const commandPaletteUi = {
   item: 'data-highlighted:not-data-disabled:before:bg-muted',
   content: 'flex-1 overflow-y-auto',
 }
-
-// const isDesktop = computed(() => window.innerWidth >= 768)
 </script>
 
 <template>
   <nav
-    class="fixed z-50 pb-8 duration-700"
-    :class="active ? 'bottom-0 left-1/2 -translate-x-1/2' : 'md:bottom-1/4 left-1/2 -translate-x-1/2 bottom-0'"
+    class="fixed z-50 pb-8 duration-700 mx-auto p-8"
+    :class="active ? 'bottom-0 left-1/2 -translate-x-1/2' : 'max-w-[40rem] w-full md:bottom-1/5 left-1/2 -translate-x-1/2 bottom-0'"
   >
-    <UCard variant="outline" class="rounded-xl shadow-lg" :ui="{ body: 'p-2 sm:p-2 flex gap-2' }">
-      <UFieldGroup>
+    <UCard variant="outline" class="rounded-xl shadow-lg w-full" :ui="{ body: 'p-2 sm:p-2 flex gap-2 w-full' }">
+      <UFieldGroup class="w-full">
         <UModal v-model:open="openMessageModal" :ui="modalUi" title="Hey" description="Hey">
           <UButton
             :label="loading ? t('palette.cmd.sending') : t('palette.cmd.send')"
@@ -76,8 +67,7 @@ const commandPaletteUi = {
             color="neutral"
             size="xl"
             icon="i-ph-paper-plane-tilt-duotone"
-            class="rounded-lg cursor-pointer"
-            :class="active ? '' : 'p-6'"
+            class="rounded-lg cursor-pointer p-2 w-full justify-center"
             :disabled="loading"
           >
             <template #trailing>
@@ -121,7 +111,7 @@ const commandPaletteUi = {
                   <div class="flex items-center gap-1">
                     <UButton color="neutral" variant="ghost" :label="t('palette.cmd.send')" class="text-dimmed" size="xs">
                       <template #trailing>
-                        <UKbd value="enter" color="info" />
+                        <UKbd size="lg" value="enter" color="info" />
                       </template>
                     </UButton>
                   </div>
@@ -157,7 +147,7 @@ const commandPaletteUi = {
       <ClientOnly>
         <UFieldGroup class="flex items-center justify-center" :orientation="active ? 'horizontal' : 'vertical'">
           <UButton
-            :icon="isDark ? 'i-ph-moon-duotone' : 'i-ph-sun-duotone'"
+            :icon="dark ? 'i-ph-moon-duotone' : 'i-ph-sun-duotone'"
             color="neutral"
             variant="outline"
             size="xl"

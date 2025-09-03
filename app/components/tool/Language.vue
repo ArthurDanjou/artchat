@@ -1,11 +1,8 @@
 <script lang="ts" setup>
 import { en, es, fr } from '@nuxt/ui/locale'
 
-const { locale, setLocale, t } = useI18n()
-
-async function changeLocale(newLocale: string) {
-  await setLocale(newLocale as 'en' | 'fr' | 'es')
-}
+const { locale, t } = useI18n()
+const { changeLocale } = useLanguage()
 </script>
 
 <template>

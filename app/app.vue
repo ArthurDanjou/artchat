@@ -8,15 +8,16 @@ useHead({
   <UApp>
     <NuxtLoadingIndicator color="#808080" />
     <AppBackground />
-    <UContainer class="z-50 relative">
-      <NuxtPage class="mt-12" />
+    <UContainer>
+      <NuxtPage />
     </UContainer>
   </UApp>
 </template>
 
-<style scoped>
+<style>
 @reference "@/assets/css/main.css";
 
+/* Transition switcher */
 .page-enter-active,
 .page-leave-active {
   transition: all 0.2s;
@@ -30,5 +31,24 @@ useHead({
 .page-enter-from {
   opacity: 0;
   transform: translateY(5px);
+}
+
+/* Theme switcher */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 9999;
+}
+.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+.dark::view-transition-new(root) {
+  z-index: 1;
 }
 </style>
