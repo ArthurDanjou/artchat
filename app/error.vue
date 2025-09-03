@@ -10,7 +10,6 @@ const { t } = useI18n()
       </h1>
       <p class="text-center flex gap-0.5">
         {{ t('error.main') }}
-        <HomeLink label="home" href="/" />
         <NuxtLink href="/" class="sofia flex items-center group">
           <span class="duration-300 underline-offset-2 font-semibold text-md text-black dark:text-white underline decoration-gray-300 dark:decoration-neutral-700 group-hover:decoration-black dark:group-hover:decoration-white">
             {{ t('error.redirect') }}
