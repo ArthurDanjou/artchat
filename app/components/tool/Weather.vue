@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import type { Weather } from '~~/types'
 
-const { t } = useI18n({ useScope: 'local' })
-
+const { t } = useI18n()
 const { data: weather } = await useAsyncData<Weather>('weather', () =>
   $fetch('/api/weather'))
 </script>
@@ -13,7 +12,7 @@ const { data: weather } = await useAsyncData<Weather>('weather', () =>
       <div class="flex gap-4 items-center">
         <UIcon name="i-ph-cloud-duotone" size="24" />
         <h3 class="text-lg font-semibold">
-          {{ t('weather') }}
+          {{ t('tool.weather.main') }}
         </h3>
       </div>
     </template>
@@ -30,7 +29,7 @@ const { data: weather } = await useAsyncData<Weather>('weather', () =>
       <div class="grid grid-cols-3 gap-2 mt-4">
         <div class="bg-zinc-200 dark:bg-zinc-800 rounded-md p-2 text-center">
           <p class="text-sm text-zinc-800 dark:text-zinc-400">
-            {{ t('high') }}
+            {{ t('tool.weather.high') }}
           </p>
           <p class="font-semibold">
             {{ weather.temp_max }}°C
@@ -38,7 +37,7 @@ const { data: weather } = await useAsyncData<Weather>('weather', () =>
         </div>
         <div class="bg-zinc-200 dark:bg-zinc-800 rounded-md p-2 text-center">
           <p class="text-sm text-zinc-800 dark:text-zinc-400">
-            {{ t('low') }}
+            {{ t('tool.weather.low') }}
           </p>
           <p class="font-semibold">
             {{ weather.temp_min }}°C
@@ -46,7 +45,7 @@ const { data: weather } = await useAsyncData<Weather>('weather', () =>
         </div>
         <div class="bg-zinc-200 dark:bg-zinc-800 rounded-md p-2 text-center">
           <p class="text-sm text-zinc-800 dark:text-zinc-400">
-            {{ t('humidity') }}
+            {{ t('tool.weather.humidity') }}
           </p>
           <p class="font-semibold">
             {{ weather.humidity }}%
@@ -58,41 +57,12 @@ const { data: weather } = await useAsyncData<Weather>('weather', () =>
     <template #footer>
       <div class="flex items-center justify-between">
         <p class="text-sm text-zinc-600 dark:text-zinc-400">
-          {{ t('wind') }}: {{ weather.wind }} km/h
+          {{ t('tool.weather.wind') }}: {{ weather.wind }} km/h
         </p>
         <p class="text-sm text-zinc-600 dark:text-zinc-400">
-          {{ t('powered_by') }}
+          {{ t('tool.weather.powered_by') }}
         </p>
       </div>
     </template>
   </UCard>
 </template>
-
-<i18n lang="json">
-{
-  "en": {
-    "weather": "Weather",
-    "powered_by": "Powered by OpenWeatherMap",
-    "low": "Low",
-    "high": "High",
-    "humidity": "Humidity",
-    "wind": "Wind"
-  },
-  "fr": {
-    "weather": "Météo",
-    "powered_by": "Alimenté par OpenWeatherMap",
-    "low": "Bas",
-    "high": "Haut",
-    "humidity": "Humidité",
-    "wind": "Vent"
-  },
-  "es": {
-    "weather": "Tiempo",
-    "powered_by": "Impulsado por OpenWeatherMap",
-    "low": "Bajo",
-    "high": "Alto",
-    "humidity": "Humedad",
-    "wind": "Viento"
-  }
-}
-</i18n>

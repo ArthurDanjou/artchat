@@ -8,9 +8,7 @@ const props = defineProps<{
 
 const isArthur = computed(() => props.message.sender === ChatSender.ARTHUR)
 
-const { locale, locales } = useI18n({
-  useScope: 'local',
-})
+const { t, locale, locales } = useI18n()
 const currentLocale = computed(() => locales.value.find((l: { code: string }) => l.code === locale.value))
 const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', { locales: currentLocale.value?.code ?? 'en' }).value)
 </script>
@@ -23,7 +21,7 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
         class="rounded-xl mt-1 bg-sky-500 md:max-w-3/4 text-white font-medium"
         :ui="{ body: 'sm:p-2', header: 'sm:p-2', footer: 'sm:p-2' }"
       >
-        {{ message.content }}
+        {{ t(message.content || '') }}
       </UCard>
     </div>
     <div class="opacity-0 group-hover:opacity-80 duration-500 flex text-sm italic justify-end">
@@ -47,7 +45,7 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
         :ui="{ body: 'p-0 sm:p-0', header: 'p-0 sm:p-0', footer: 'p-0 sm:p-0' }"
       >
         <div v-if="message.type === ChatType.INIT">
-          {{ message.content }}
+          {{ t(message.content || '') }}
         </div>
         <div v-else-if="message.type === ChatType.DUPLICATED">
           <ToolDuplicated />

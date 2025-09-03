@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-const { t } = useI18n({ useScope: 'local' })
+const { t } = useI18n()
 const { dark, toggleDark } = useTheme()
 </script>
 
 <template>
   <section class="space-y-4">
     <div class="prose dark:prose-invert">
-      <p>{{ t('response.control') }}</p>
+      <p>{{ t('tool.theme.response.control') }}</p>
       <ul>
-        <li>{{ t('response.choose') }}</li>
-        <i18n-t keypath="response.kbd" tag="li">
+        <li>{{ t('tool.theme.response.choose') }}</li>
+        <i18n-t keypath="tool.theme.response.kbd" tag="li">
           <template #kbd>
             <UKbd>T</UKbd>
           </template>
@@ -21,10 +21,10 @@ const { dark, toggleDark } = useTheme()
         <div class="flex items-center gap-2">
           <UIcon v-if="dark" name="i-ph-moon-duotone" size="24" />
           <UIcon v-else name="i-ph-sun-duotone" size="24" />
-          <span>{{ t('switch') }}</span>
+          <span>{{ t('tool.theme.switch') }}</span>
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-xs text-muted">{{ t('light') }}</span>
+          <span class="text-xs text-muted">{{ t('tool.theme.light') }}</span>
           <USwitch
             v-model="dark"
             color="neutral"
@@ -32,47 +32,12 @@ const { dark, toggleDark } = useTheme()
             aria-label="switch theme"
             @click.prevent="toggleDark"
           />
-          <span class="text-xs text-muted">{{ t('dark') }}</span>
+          <span class="text-xs text-muted">{{ t('tool.theme.dark') }}</span>
         </div>
       </UCard>
     </ClientOnly>
   </section>
 </template>
-
-<i18n lang="json">
-{
-  "en": {
-    "switch": "Switch theme",
-    "light": "Light",
-    "dark": "Dark",
-    "response": {
-      "control": "I added the theme toggle control above so you can switch directly.",
-      "choose": "Choose Light (sun icon) or Dark (moon icon)",
-      "kbd": "Press {kbd} on your keyboard"
-    }
-  },
-  "fr": {
-    "switch": "Changer de thème",
-    "light": "Clair",
-    "dark": "Sombre",
-    "response": {
-      "control": "J'ai ajouté le contrôle de basculement de thème ci-dessus afin que vous puissiez basculer directement.",
-      "choose": "Choisissez Clair (icône de soleil) ou Sombre (icône de lune)",
-      "kbd": "Appuyez sur {kbd} sur votre clavier"
-    }
-  },
-  "es": {
-    "switch": "Cambiar tema",
-    "light": "Claro",
-    "dark": "Oscuro",
-    "response": {
-      "control": "He añadido el control de alternancia de tema arriba para que puedas cambiar directamente.",
-      "choose": "Elige Claro (icono de sol) u Oscuro (icono de luna)",
-      "kbd": "Presiona {kbd} en tu teclado"
-    }
-  }
-}
-</i18n>
 
 <style scoped>
 ::view-transition-old(root),

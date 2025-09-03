@@ -72,21 +72,26 @@ export default defineNuxtConfig({
         code: 'en',
         language: 'en-EN',
         icon: 'i-twemoji-flag-united-kingdom',
+        file: 'en.json',
       },
       {
         label: 'Français',
         code: 'fr',
         language: 'fr-FR',
         icon: 'i-twemoji-flag-france',
+        file: 'fr.json',
       },
       {
         label: 'Español',
         code: 'es',
         language: 'es-ES',
         icon: 'i-twemoji-flag-spain',
+        file: 'es.json',
       },
     ],
     defaultLocale: 'en',
+    langDir: 'locales',
+    restructureDir: '',
   },
 
   // Nuxt Google Fonts

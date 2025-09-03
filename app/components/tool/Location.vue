@@ -1,11 +1,7 @@
-<script lang="ts" setup>
-useI18n({ useScope: 'local' })
-</script>
-
 <template>
   <section>
     <div class="prose dark:prose-invert mb-4">
-      <i18n-t keypath="location" tag="p">
+      <i18n-t keypath="tool.location" tag="p">
         <template #location>
           <strong>Paris, France 🇫🇷</strong>
         </template>
@@ -19,17 +15,3 @@ useI18n({ useScope: 'local' })
     </div>
   </section>
 </template>
-
-<i18n lang="json">
-{
-  "en": {
-    "location": "I'm currently based in {location}. See below for more details."
-  },
-  "fr": {
-    "location": "Je suis actuellement basé à {location}. Voir ci-dessous pour plus de détails."
-  },
-  "es": {
-    "location": "Actualmente estoy basado en {location}. Consulta más detalles a continuación."
-  }
-}
-</i18n>

@@ -3,10 +3,7 @@ import type { UseTimeAgoMessages } from '@vueuse/core'
 import type { Activity } from '~~/types'
 import { activityMessages, IDEs } from '~~/types'
 
-const { locale, locales, t } = useI18n({
-  useScope: 'local',
-})
-
+const { locale, locales, t } = useI18n()
 const { data: activity, refresh } = await useAsyncData<Activity>('activity', () => $fetch<Activity>('/api/activity'))
 
 useIntervalFn(async () => await refresh(), 5000)
@@ -50,7 +47,7 @@ const getActivity = computed(() => {
         .trim()
     : ''
 
-  const stateWord = state && state.split(' ').length >= 2 ? state.split(' ')[1] : t('secret')
+  const stateWord = state && state.split(' ').length >= 2 ? state.split(' ')[1] : t('tool.activity.secret')
   const ago = useTimeAgo(timestamps.start, {
     messages: activityMessages[locale.value as keyof typeof activityMessages] as UseTimeAgoMessages,
   }).value
@@ -74,16 +71,16 @@ const getActivity = computed(() => {
 <template>
   <section>
     <div class="prose dark:prose-invert">
-      <p>{{ t('response') }}</p>
+      <p>{{ t('tool.activity.response') }}</p>
     </div>
     <div v-if="getActivity" class="space-y-4">
       <div v-if="getActivity" class="prose dark:prose-invert flex items-center gap-2">
         <div>
-          {{ isActive ? t('working') : t('idling', {
+          {{ isActive ? t('tool.activity.working') : t('tool.activity.idling', {
             editor: getActivity.name,
           }) }}
         </div>
-        <UTooltip :text="isActive ? t('tooltip.online') : t('tooltip.idling')">
+        <UTooltip :text="isActive ? t('tool.activity.tooltip.online') : t('tool.activity.tooltip.idling')">
           <div class="relative flex h-3 w-3">
             <div
               v-if="isActive"
@@ -117,7 +114,7 @@ const getActivity = computed(() => {
 
           <template #footer>
             <div class="flex justify-end text-sm">
-              <i18n-t keypath="started" tag="p">
+              <i18n-t keypath="tool.activity.started" tag="p">
                 <template #date>
                   {{ getActivity.start.formated.date }}
                 </template>
@@ -132,7 +129,7 @@ const getActivity = computed(() => {
     </div>
     <div v-else class="flex md:items-start gap-2">
       <i18n-t
-        keypath="offline"
+        keypath="tool.activity.offline"
         tag="p"
         class="not-prose"
       >
@@ -140,7 +137,7 @@ const getActivity = computed(() => {
           <i>{{ t('maths') }}</i>
         </template>
       </i18n-t>
-      <UTooltip :text="t('tooltip.offline')">
+      <UTooltip :text="t('tool.activity.tooltip.offline')">
         <div class="relative flex h-3 w-3 mt-2">
           <div
             class="relative inline-flex rounded-full h-3 w-3 bg-red-500"
@@ -150,50 +147,3 @@ const getActivity = computed(() => {
     </div>
   </section>
 </template>
-
-<i18n lang="json">
-{
-  "en": {
-    "offline": "I'm currently offline. Come back later to see what I'm working on. {maths}",
-    "working": "I'm actually online! Check what I'm working on just below.",
-    "idling": "I'm idling on my computer with {editor} running in background.",
-    "maths": "I am probably doing some maths or sleeping.",
-    "response": "The statistics are powered and saved by WakaTime.",
-    "tooltip": {
-      "online": "I'm online 👋",
-      "offline": "I'm offline 🫥",
-      "idling": "I'm sleeping 😴"
-    },
-    "started": "Started the {date} at {hour}",
-    "secret": "Secret Project"
-  },
-  "fr": {
-    "offline": "Je suis actuellement hors ligne. Revenez plus tard pour voir sur quoi je travaille. {maths}",
-    "working": "Je suis actuellement en ligne ! Découvrez ce sur quoi je travaille juste en dessous.",
-    "idling": "Je suis en veille sur mon ordinateur avec {editor} en arrière-plan.",
-    "maths": "Je suis probablement en train de faire des maths ou en train de dormir.",
-    "response": "Les statistiques sont propulsées et enregistrées par WakaTime.",
-    "tooltip": {
-      "online": "Je suis connecté 👋",
-      "offline": "Je suis déconnecté 🫥",
-      "idling": "Je dors 😴"
-    },
-    "started": "Commencé le {date} à {hour}",
-    "secret": "Projet Secret"
-  },
-  "es": {
-    "offline": "Ahora mismo estoy desconectado. Vuelve más tarde para ver en lo que estoy trabajando. {maths}",
-    "working": "Estoy trabajando en línea. ¡Mira lo que estoy haciendo justo debajo!",
-    "idling": "Estoy en reposo en mi ordenador con {editor} en segundo plano.",
-    "maths": "Estoy probablemente haciendo matemáticas o durmiendo.",
-    "response": "Las estadísticas son propulsadas y registradas por WakaTime.",
-    "tooltip": {
-      "online": "Estoy conectado 👋",
-      "offline": "Estoy desconectado 🫥",
-      "idling": "Estoy durmiendo 😴"
-    },
-    "started": "Comenzado el {date} a {hour}",
-    "secret": "Proyecto Secreto"
-  }
-}
-</i18n>

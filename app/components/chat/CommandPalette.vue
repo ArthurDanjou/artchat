@@ -6,14 +6,9 @@ const searchTerm = ref('')
 const openMessageModal = ref(false)
 const openClearModal = ref(false)
 
-const { t } = useI18n({ useScope: 'local' })
+const { t, locale, locales, setLocale } = useI18n()
 
-const { isDark, toggleDark } = useTheme()
-defineShortcuts({
-  t: () => toggleDark({ clientX: window.innerWidth, clientY: 0 }),
-})
-
-const { messages, submitMessage } = useChat(t)
+const { messages, submitMessage } = useChat()
 const { clearMessages, messages: storeMessages } = useChatStore()
 const loading = computed(() => storeMessages.some(msg => msg.state === ChatState.LOADING))
 
@@ -28,6 +23,13 @@ function onSelect(item: CommandPaletteItem) {
   submitMessage(item.type, item.prompt, item.fetchStates ?? [])
 }
 
+const currentLocale = computed(() => locales.value.filter(l => l.code === locale.value)[0])
+
+async function changeLocale() {
+  await setLocale(currentLocale.value!.code === 'en' ? 'fr' : currentLocale.value!.code === 'fr' ? 'es' : 'en')
+}
+
+const { isDark, toggleDark } = useTheme()
 defineShortcuts({
   meta_enter: () => {
     openMessageModal.value = !openMessageModal.value
@@ -35,6 +37,8 @@ defineShortcuts({
   meta_d: () => {
     openClearModal.value = !openClearModal.value
   },
+  l: () => changeLocale(),
+  t: () => toggleDark({ clientX: window.innerWidth, clientY: 0 }),
 })
 
 const modalUi = {
@@ -55,8 +59,8 @@ const commandPaletteUi = {
       <UFieldGroup>
         <UModal v-model:open="openMessageModal" :ui="modalUi" title="Hey" description="Hey">
           <UButton
-            :label="loading ? t('cmd.sending') : t('cmd.send')"
-            variant="outline"
+            :label="loading ? t('palette.cmd.sending') : t('palette.cmd.send')"
+            variant="solid"
             color="neutral"
             size="xl"
             icon="i-ph-paper-plane-tilt-duotone"
@@ -83,11 +87,11 @@ const commandPaletteUi = {
                   <div class="flex items-center gap-2.5">
                     <div class="flex items-center gap-2.5">
                       <UIcon :name="item.icon!" size="20" />
-                      <span>{{ item.label }}</span>
+                      <span>{{ t(item.label) }}</span>
                     </div>
                   </div>
                   <span class="text-muted text-xs font-medium">
-                    {{ item.prompt }}
+                    {{ t(item.prompt) }}
                   </span>
                 </div>
               </template>
@@ -95,7 +99,7 @@ const commandPaletteUi = {
                 <div class="flex items-center justify-between gap-2">
                   <UIcon name="i-simple-icons-nuxtdotjs" class="size-5 text-dimmed ml-1" />
                   <div class="flex items-center gap-1">
-                    <UButton color="neutral" variant="ghost" :label="t('cmd.send')" class="text-dimmed" size="xs">
+                    <UButton color="neutral" variant="ghost" :label="t('palette.cmd.send')" class="text-dimmed" size="xs">
                       <template #trailing>
                         <UKbd value="enter" />
                       </template>
@@ -108,11 +112,10 @@ const commandPaletteUi = {
         </UModal>
         <UModal
           v-model:open="openClearModal"
-          :title="t('clear.title')"
-          :description="t('clear.description')"
+          :title="t('palette.clear.title')"
+          :description="t('palette.clear.description')"
         >
           <UButton
-            :label="t('clear.button')"
             variant="subtle"
             color="error"
             leading-icon="i-ph-trash-duotone"
@@ -120,291 +123,34 @@ const commandPaletteUi = {
             class="rounded-lg"
             :class="storeMessages.length !== 0 ? 'cursor-pointer' : 'cursor-default'"
             :disabled="storeMessages.length === 0"
-          >
-            <template #trailing>
-              <UKbd value="meta" color="error" />
-              <UKbd value="D" color="error" />
-            </template>
-          </UButton>
+          />
 
           <template #footer="{ close }">
             <UFieldGroup>
-              <UButton :label="t('clear.cancel')" color="neutral" variant="outline" @click="close" />
-              <UButton :label="t('clear.submit')" color="error" @click.prevent="handleDelete()" />
+              <UButton :label="t('palette.clear.cancel')" color="neutral" variant="outline" @click="close" />
+              <UButton :label="t('palette.clear.submit')" color="error" @click.prevent="handleDelete()" />
             </UFieldGroup>
           </template>
         </UModal>
       </UFieldGroup>
-      <UButton
-        :icon="isDark ? 'i-ph-moon-duotone' : 'i-ph-sun-duotone'"
-        color="neutral"
-        variant="solid"
-        size="xl"
-        @click.prevent="toggleDark"
-      />
+      <ClientOnly>
+        <UFieldGroup>
+          <UButton
+            :icon="isDark ? 'i-ph-moon-duotone' : 'i-ph-sun-duotone'"
+            color="neutral"
+            variant="outline"
+            size="xl"
+            @click.prevent="toggleDark"
+          />
+          <UButton
+            icon="i-ph-translate-duotone"
+            color="neutral"
+            variant="outline"
+            size="xl"
+            @click.prevent="changeLocale"
+          />
+        </UFieldGroup>
+      </ClientOnly>
     </UCard>
   </nav>
 </template>
-
-<i18n lang="json">
-{
-  "en": {
-    "clear": {
-      "button": "Clear",
-      "cancel": "Cancel",
-      "submit": "Delete",
-      "title": "Are you sure you want to delete this conversation?",
-      "description": "This action cannot be undone."
-    },
-    "cmd": {
-      "send": "Send message",
-      "sending": "Sending..."
-    },
-    "chat": {
-        "actions": "Components",
-        "arthur": "More about Arthur",
-        "interface": "Change the interface",
-        "theme": {
-            "label": "Change theme",
-            "prompt": "How can I change the theme?"
-        },
-        "uses": {
-          "label": "View setup",
-          "prompt": "How can I view the setup of Arthur?"
-        },
-        "stats": {
-          "label": "View statistics",
-          "prompt": "How can I view the statistics concerning Arthur?"
-        },
-        "weather": {
-          "label": "View weather",
-          "prompt": "How can I view the weather conditions near Arthur?"
-        },
-        "location": {
-            "label": "View location",
-            "prompt": "How can I view the location of Arthur?"
-        },
-        "language": {
-            "label": "Change language",
-            "prompt": "How can I change the chat language?"
-        },
-        "activity": {
-            "label": "Activity",
-            "prompt": "What are you currently doing?"
-        },
-        "about": {
-            "label": "About Arthur",
-            "prompt": "I want you to tell me about yourself."
-        },
-        "projects": {
-            "label": "Projects",
-            "prompt": "Tell me about your projects."
-        },
-        "writings": {
-            "label": "Writings",
-            "prompt": "What are your latest articles?"
-        },
-        "experiences": {
-            "label": "Experiences",
-            "prompt": "What experiences do you have in your career?"
-        },
-        "skills": {
-            "label": "Skills",
-            "prompt": "What are your skills?"
-        },
-        "status": {
-            "label": "Homelab status",
-            "prompt": "I saw you have a homelab, is it currently working?"
-        },
-        "resume": {
-            "label": "Resume",
-            "prompt": "Can you send me your resume?"
-        },
-        "contact": {
-            "label": "Contact",
-            "prompt": "How can I contact you?"
-        },
-        "hobbies": {
-            "label": "Hobbies and passions",
-            "prompt": "What are your hobbies? Your passions? Your interests?"
-        },
-        "credits": {
-            "label": "Credits",
-            "prompt": "How is this chat made?"
-        }
-    }
-  },
-  "fr": {
-    "clear": {
-      "button": "Effacer",
-      "cancel": "Annuler",
-      "submit": "Supprimer",
-      "title": "Êtes-vous sûr de vouloir supprimer cette conversation ?",
-      "description": "Cette action ne peut pas être annulée."
-    },
-    "cmd": {
-      "send": "Envoyer le message",
-      "sending": "Envoi..."
-    },
-    "chat": {
-      "actions": "Composants",
-      "arthur": "En savoir plus sur Arthur",
-      "interface": "Changer l'interface",
-      "theme": {
-        "label": "Changer de thème",
-        "prompt": "Comment puis-je changer le thème ?"
-      },
-      "uses": {
-        "label": "Voir la configuration",
-        "prompt": "Comment puis-je voir la configuration d'Arthur ?"
-      },
-      "stats": {
-        "label": "Voir les statistiques",
-        "prompt": "Comment puis-je voir les statistiques concernant Arthur ?"
-      },
-      "weather": {
-        "label": "Voir la météo",
-        "prompt": "Comment puis-je voir les conditions météorologiques près d'Arthur ?"
-      },
-      "location": {
-        "label": "Voir la localisation",
-        "prompt": "Comment puis-je voir la localisation d'Arthur ?"
-      },
-      "language": {
-        "label": "Changer de langue",
-        "prompt": "Comment puis-je changer la langue du chat ?"
-      },
-      "activity": {
-        "label": "Activité",
-        "prompt": "Que fais-tu actuellement ?"
-      },
-      "about": {
-        "label": "A propos d'Arthur",
-        "prompt": "Je veux que tu me parles de toi."
-      },
-      "projects": {
-        "label": "Projets",
-        "prompt": "Je veux que tu me parles de tes projets."
-      },
-      "writings": {
-        "label": "Écrits",
-        "prompt": "Quels sont tes derniers articles ?"
-      },
-      "experiences": {
-        "label": "Expériences",
-        "prompt": "Quelles expériences as-tu lors de ta carrière ?"
-      },
-      "skills": {
-        "label": "Compétences",
-        "prompt": "Quelles sont tes compétences ?"
-      },
-      "status": {
-        "label": "Statut du homelab",
-        "prompt": "J'ai vu que tu avais un homelab, est-il actuellement fonctionnel ?"
-      },
-      "resume": {
-        "label": "CV",
-        "prompt": "Peux-tu m'envoyer ton CV ?"
-      },
-      "contact": {
-        "label": "Contact",
-        "prompt": "Comment puis-je te contacter ?"
-      },
-      "hobbies": {
-        "label": "Loisirs et passions",
-        "prompt": "Quels sont tes loisirs ? Tes passions ? Tes intérêts ?"
-      },
-      "credits": {
-        "label": "Crédits",
-        "prompt": "Comment est réalisé ce chat ?"
-      }
-    }
-  },
-  "es": {
-    "clear": {
-      "button": "Borrar",
-      "cancel": "Cancelar",
-      "submit": "Eliminar",
-      "title": "¿Estás seguro de que deseas eliminar esta conversación?",
-      "description": "Esta acción no se puede deshacer."
-    },
-    "cmd": {
-      "send": "Enviar el mensaje",
-      "sending": "Enviando..."
-    },
-    "chat": {
-        "actions": "Componentes",
-        "arthur": "Más sobre Arthur",
-        "interface": "Cambiar la interfaz",
-        "theme": {
-            "label": "Cambiar tema",
-            "prompt": "¿Cómo puedo cambiar el tema?"
-        },
-        "uses": {
-            "label": "Ver la configuración",
-            "prompt": "¿Cómo puedo ver la configuración de Arthur?"
-        },
-        "stats": {
-            "label": "Ver estadísticas",
-            "prompt": "¿Cómo puedo ver las estadísticas sobre Arthur?"
-        },
-        "weather": {
-            "label": "Ver el clima",
-            "prompt": "¿Cómo puedo ver las condiciones climáticas cerca de Arthur?"
-        },
-        "location": {
-            "label": "Ver ubicación",
-            "prompt": "¿Cómo puedo ver la ubicación de Arthur?"
-        },
-        "language": {
-            "label": "Cambiar idioma",
-            "prompt": "¿Cómo puedo cambiar el idioma del chat?"
-        },
-        "activity": {
-            "label": "Actividad",
-            "prompt": "¿Qué estás haciendo actualmente?"
-        },
-        "about": {
-            "label": "Sobre Arthur",
-            "prompt": "Quiero que me hables de ti."
-        },
-        "projects": {
-            "label": "Proyectos",
-            "prompt": "Háblame de tus proyectos."
-        },
-        "writings": {
-            "label": "Escritos",
-            "prompt": "¿Cuáles son tus últimos artículos?"
-        },
-        "experiences": {
-            "label": "Experiencias",
-            "prompt": "¿Qué experiencias tienes en tu carrera?"
-        },
-        "skills": {
-            "label": "Habilidades",
-            "prompt": "¿Cuáles son tus habilidades?"
-        },
-        "status": {
-            "label": "Estado del homelab",
-            "prompt": "Vi que tienes un homelab, ¿está funcionando actualmente?"
-        },
-        "resume": {
-            "label": "CV",
-            "prompt": "¿Puedes enviarme tu CV?"
-        },
-        "contact": {
-            "label": "Contacto",
-            "prompt": "¿Cómo puedo contactarte?"
-        },
-        "hobbies": {
-            "label": "Pasatiempos y pasiones",
-            "prompt": "¿Cuáles son tus pasatiempos? ¿Tus pasiones? ¿Tus intereses?"
-        },
-        "credits": {
-            "label": "Créditos",
-            "prompt": "¿Cómo se ha hecho este chat?"
-        }
-    }
-  }
-}
-</i18n>

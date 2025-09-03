@@ -1,8 +1,6 @@
 import { ChatFetchState, ChatMessages, ChatSender, ChatType } from '~~/types/chat'
 
-export function useChat(t: any) {
-  const messages = computed(() => ChatMessages(t))
-
+export function useChat() {
   const { addMessage, checkForDuplicateMessages, deleteMessage, cleanDuplicatedMessages } = useChatStore()
 
   async function submitMessage(type: ChatType, prompt: string, fetchStates: ChatFetchState[]) {
@@ -34,7 +32,7 @@ export function useChat(t: any) {
   }
 
   return {
-    messages,
+    messages: ChatMessages,
     submitMessage,
   }
 }

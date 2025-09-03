@@ -31,10 +31,10 @@ export enum ChatSender {
 }
 
 export enum ChatFetchState {
-  THINKING = 'Thinking...',
-  FETCHING = 'Fetching the data...',
-  GENERATING = 'Generating the component...',
-  DONE = 'Done!',
+  THINKING = 'chat.state.thinking',
+  FETCHING = 'chat.state.fetching',
+  GENERATING = 'chat.state.generating',
+  DONE = 'chat.state.done',
 }
 
 export interface ChatMessage {
@@ -46,137 +46,135 @@ export interface ChatMessage {
   fetchStates?: ChatFetchState[]
 }
 
-export function ChatMessages(t: any) {
-  return [
-    {
-      id: 'interface',
-      label: t('chat.interface'),
-      items: [
-        {
-          label: t('chat.theme.label'),
-          icon: 'i-ph-lightbulb-filament-duotone',
-          prompt: t('chat.theme.prompt'),
-          type: ChatType.THEME,
-          fetchStates: [ChatFetchState.THINKING, ChatFetchState.GENERATING],
-        },
-        {
-          label: t('chat.language.label'),
-          icon: 'i-ph-translate-duotone',
-          prompt: t('chat.language.prompt'),
-          type: ChatType.LANGUAGE,
-          fetchStates: [ChatFetchState.THINKING, ChatFetchState.GENERATING],
-        },
-      ],
-    },
-    {
-      id: 'actions',
-      label: t('chat.actions'),
-      items: [
-        {
-          label: t('chat.location.label'),
-          icon: 'i-ph-map-pin-area-duotone',
-          prompt: t('chat.location.prompt'),
-          type: ChatType.LOCATION,
-          fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
-        },
-        {
-          label: t('chat.stats.label'),
-          icon: 'i-ph-projector-screen-chart-duotone',
-          prompt: t('chat.stats.prompt'),
-          type: ChatType.STATS,
-          fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
-        },
-        {
-          label: t('chat.weather.label'),
-          icon: 'i-ph-cloud-rain-duotone',
-          prompt: t('chat.weather.prompt'),
-          type: ChatType.WEATHER,
-          fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
-        },
-        {
-          label: t('chat.activity.label'),
-          icon: 'i-ph-activity',
-          prompt: t('chat.activity.prompt'),
-          type: ChatType.ACTIVITY,
-          fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
-        },
-        {
-          label: t('chat.status.label'),
-          icon: 'i-ph-warning-duotone',
-          prompt: t('chat.status.prompt'),
-          type: ChatType.STATUS,
-          fetchStates: [ChatFetchState.FETCHING],
-        },
-      ].sort((a, b) => a.label.localeCompare(b.label)),
-    },
-    {
-      id: 'arthur',
-      label: t('chat.arthur'),
-      items: [
-        {
-          label: t('chat.credits.label'),
-          icon: 'i-ph-star-duotone',
-          prompt: t('chat.credits.prompt'),
-          type: ChatType.CREDITS,
-        },
-        {
-          label: t('chat.about.label'),
-          icon: 'i-ph-person-arms-spread-duotone',
-          prompt: t('chat.about.prompt'),
-          type: ChatType.ABOUT,
-        },
-        {
-          label: t('chat.projects.label'),
-          icon: 'i-ph-code-duotone',
-          prompt: t('chat.projects.prompt'),
-          type: ChatType.PROJECTS,
-          fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
-        },
-        {
-          label: t('chat.writings.label'),
-          icon: 'i-ph-books-duotone',
-          prompt: t('chat.writings.prompt'),
-          type: ChatType.WRITINGS,
-          fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
-        },
-        {
-          label: t('chat.experiences.label'),
-          icon: 'i-ph-briefcase-duotone',
-          prompt: t('chat.experiences.prompt'),
-          type: ChatType.EXPERIENCES,
-        },
-        {
-          label: t('chat.skills.label'),
-          icon: 'i-ph-rocket-duotone',
-          prompt: t('chat.skills.prompt'),
-          type: ChatType.SKILLS,
-        },
-        {
-          label: t('chat.resume.label'),
-          icon: 'i-ph-address-book-duotone',
-          prompt: t('chat.resume.prompt'),
-          type: ChatType.RESUME,
-        },
-        {
-          label: t('chat.contact.label'),
-          icon: 'i-ph-envelope-duotone',
-          prompt: t('chat.contact.prompt'),
-          type: ChatType.CONTACT,
-        },
-        {
-          label: t('chat.hobbies.label'),
-          icon: 'i-ph-heart-duotone',
-          prompt: t('chat.hobbies.prompt'),
-          type: ChatType.HOBBIES,
-        },
-        {
-          label: t('chat.uses.label'),
-          icon: 'i-ph-chalkboard-simple-duotone',
-          prompt: t('chat.uses.prompt'),
-          type: ChatType.USES,
-          fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
-        },
-      ].sort((a, b) => a.label.localeCompare(b.label)),
-    },
-  ]
-}
+export const ChatMessages = [
+  {
+    id: 'interface',
+    label: 'command.interface',
+    items: [
+      {
+        label: 'command.theme.label',
+        icon: 'i-ph-lightbulb-filament-duotone',
+        prompt: 'command.theme.prompt',
+        type: ChatType.THEME,
+        fetchStates: [ChatFetchState.THINKING, ChatFetchState.GENERATING],
+      },
+      {
+        label: 'command.language.label',
+        icon: 'i-ph-translate-duotone',
+        prompt: 'command.language.prompt',
+        type: ChatType.LANGUAGE,
+        fetchStates: [ChatFetchState.THINKING, ChatFetchState.GENERATING],
+      },
+    ],
+  },
+  {
+    id: 'actions',
+    label: 'command.actions',
+    items: [
+      {
+        label: 'command.location.label',
+        icon: 'i-ph-map-pin-area-duotone',
+        prompt: 'command.location.prompt',
+        type: ChatType.LOCATION,
+        fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
+      },
+      {
+        label: 'command.stats.label',
+        icon: 'i-ph-projector-screen-chart-duotone',
+        prompt: 'command.stats.prompt',
+        type: ChatType.STATS,
+        fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
+      },
+      {
+        label: 'command.weather.label',
+        icon: 'i-ph-cloud-rain-duotone',
+        prompt: 'command.weather.prompt',
+        type: ChatType.WEATHER,
+        fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
+      },
+      {
+        label: 'command.activity.label',
+        icon: 'i-ph-activity',
+        prompt: 'command.activity.prompt',
+        type: ChatType.ACTIVITY,
+        fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
+      },
+      {
+        label: 'command.status.label',
+        icon: 'i-ph-warning-duotone',
+        prompt: 'command.status.prompt',
+        type: ChatType.STATUS,
+        fetchStates: [ChatFetchState.FETCHING],
+      },
+    ].sort((a, b) => a.label.localeCompare(b.label)),
+  },
+  {
+    id: 'arthur',
+    label: 'command.arthur',
+    items: [
+      {
+        label: 'command.credits.label',
+        icon: 'i-ph-star-duotone',
+        prompt: 'command.credits.prompt',
+        type: ChatType.CREDITS,
+      },
+      {
+        label: 'command.about.label',
+        icon: 'i-ph-person-arms-spread-duotone',
+        prompt: 'command.about.prompt',
+        type: ChatType.ABOUT,
+      },
+      {
+        label: 'command.projects.label',
+        icon: 'i-ph-code-duotone',
+        prompt: 'command.projects.prompt',
+        type: ChatType.PROJECTS,
+        fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
+      },
+      {
+        label: 'command.writings.label',
+        icon: 'i-ph-books-duotone',
+        prompt: 'command.writings.prompt',
+        type: ChatType.WRITINGS,
+        fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
+      },
+      {
+        label: 'command.experiences.label',
+        icon: 'i-ph-briefcase-duotone',
+        prompt: 'command.experiences.prompt',
+        type: ChatType.EXPERIENCES,
+      },
+      {
+        label: 'command.skills.label',
+        icon: 'i-ph-rocket-duotone',
+        prompt: 'command.skills.prompt',
+        type: ChatType.SKILLS,
+      },
+      {
+        label: 'command.resume.label',
+        icon: 'i-ph-address-book-duotone',
+        prompt: 'command.resume.prompt',
+        type: ChatType.RESUME,
+      },
+      {
+        label: 'command.contact.label',
+        icon: 'i-ph-envelope-duotone',
+        prompt: 'command.contact.prompt',
+        type: ChatType.CONTACT,
+      },
+      {
+        label: 'command.hobbies.label',
+        icon: 'i-ph-heart-duotone',
+        prompt: 'command.hobbies.prompt',
+        type: ChatType.HOBBIES,
+      },
+      {
+        label: 'command.uses.label',
+        icon: 'i-ph-chalkboard-simple-duotone',
+        prompt: 'command.uses.prompt',
+        type: ChatType.USES,
+        fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
+      },
+    ].sort((a, b) => a.label.localeCompare(b.label)),
+  },
+]

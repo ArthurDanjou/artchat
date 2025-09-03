@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import { socials } from '~~/types'
 
-const { t } = useI18n({ useScope: 'local' })
+const { t } = useI18n()
 </script>
 
 <template>
   <section>
     <div>
       <p class="prose dark:prose-invert">
-        {{ t('contact') }}
+        {{ t('tool.contact') }}
       </p>
       <div class="flex gap-2 flex-wrap my-2">
         <UButton
@@ -27,17 +27,3 @@ const { t } = useI18n({ useScope: 'local' })
     </div>
   </section>
 </template>
-
-<i18n lang="json">
-{
-  "en": {
-    "contact": "There are different ways to contact me. Here is a list:"
-  },
-  "fr": {
-    "contact": "Il existe différents façons de me contacter. Voici une liste :"
-  },
-  "es": {
-    "contact": "Existen diferentes formas de contactarme. Aquí hay una lista:"
-  }
-}
-</i18n>

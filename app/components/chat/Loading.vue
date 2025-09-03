@@ -3,10 +3,9 @@ import type { ChatFetchState } from '~~/types'
 import { ChatState } from '~~/types'
 
 const props = defineProps<{ messageId: number, fetchStates: ChatFetchState[] }>()
-
 const currentState = ref<ChatFetchState | undefined>(props.fetchStates[0] ?? undefined)
-
 const { setLoadingState } = useChatStore()
+const { t } = useI18n()
 
 onMounted(() => {
   let index = 0
@@ -38,7 +37,7 @@ onMounted(() => {
     <span
       class="relative inline-block overflow-hidden animate-shine italic bg-[linear-gradient(110deg,#bfbfbf,35%,#000,50%,#bfbfbf,75%,#bfbfbf)] dark:bg-[linear-gradient(110deg,#404040,35%,#fff,50%,#404040,75%,#404040)] bg-[length:200%_100%] bg-clip-text text-transparent"
     >
-      <slot>{{ currentState }}</slot>
+      <slot>{{ t(currentState || '') }}</slot>
     </span>
   </div>
 </template>

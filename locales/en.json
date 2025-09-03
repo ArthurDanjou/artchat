@@ -1,0 +1,160 @@
+{
+  "main": {
+    "init": "Hey, welcome to ArtChat. I'm an AI assistant that knows everything about Arthur Danjou. Ask me anything and I'll answer as if I were him!",
+    "question": "Awesome! Tell me a bit more about you.",
+    "about": "I'm a student in Mathematics and Statistics at Université Paris-Dauphine in France. With a deep understanding of emerging technologies, I'm at the heart of a rapidly expanding field. My background in mathematics gives me an edge in understanding the concepts and theories behind these technologies and designing them effectively."
+  },
+  "palette": {
+    "clear": {
+      "cancel": "Cancel",
+      "submit": "Delete",
+      "title": "Are you sure you want to delete this conversation?",
+      "description": "This action cannot be undone."
+    },
+    "cmd": {
+      "send": "Send message",
+      "sending": "Sending..."
+    }
+  },
+  "command": {
+    "actions": "Components",
+    "arthur": "More about Arthur",
+    "interface": "Change the interface",
+    "theme": {
+      "label": "Change theme",
+      "prompt": "How can I change the theme?"
+    },
+    "uses": {
+      "label": "View setup",
+      "prompt": "How can I view the setup of Arthur?"
+    },
+    "stats": {
+      "label": "View statistics",
+      "prompt": "How can I view the statistics concerning Arthur?"
+    },
+    "weather": {
+      "label": "View weather",
+      "prompt": "How can I view the weather conditions near Arthur?"
+    },
+    "location": {
+      "label": "View location",
+      "prompt": "How can I view the location of Arthur?"
+    },
+    "language": {
+      "label": "Change language",
+      "prompt": "How can I change the chat language?"
+    },
+    "activity": {
+      "label": "Activity",
+      "prompt": "What are you currently doing?"
+    },
+    "about": {
+      "label": "About Arthur",
+      "prompt": "I want you to tell me about yourself."
+    },
+    "projects": {
+      "label": "Projects",
+      "prompt": "Tell me about your projects."
+    },
+    "writings": {
+      "label": "Writings",
+      "prompt": "What are your latest articles?"
+    },
+    "experiences": {
+      "label": "Experiences",
+      "prompt": "What experiences do you have in your career?"
+    },
+    "skills": {
+      "label": "Skills",
+      "prompt": "What are your skills?"
+    },
+    "status": {
+      "label": "Homelab status",
+      "prompt": "I saw you have a homelab, is it currently working?"
+    },
+    "resume": {
+      "label": "Resume",
+      "prompt": "Can you send me your resume?"
+    },
+    "contact": {
+      "label": "Contact",
+      "prompt": "How can I contact you?"
+    },
+    "hobbies": {
+      "label": "Hobbies and passions",
+      "prompt": "What are your hobbies? Your passions? Your interests?"
+    },
+    "credits": {
+      "label": "Credits",
+      "prompt": "How is this chat made?"
+    }
+  },
+  "chat": {
+    "state": {
+      "thinking": "Thinking...",
+      "fetching": "Fetching the data...",
+      "generating": "Generating the component...",
+      "done": "Done!"
+    }
+  },
+  "tool": {
+    "language": {
+      "change": "Change language",
+      "response": {
+        "control": "I added the language switch control above so you can switch directly.",
+        "choose": "Choose English, French, or Spanish",
+        "kbd": "Press {kbd} on your keyboard"
+      }
+    },
+    "activity": {
+      "offline": "I'm currently offline. Come back later to see what I'm working on. {maths}",
+      "working": "I'm actually online! Check what I'm working on just below.",
+      "idling": "I'm idling on my computer with {editor} running in background.",
+      "maths": "I am probably doing some maths or sleeping.",
+      "response": "The statistics are powered and saved by WakaTime.",
+      "tooltip": {
+        "online": "I'm online 👋",
+        "offline": "I'm offline 🫥",
+        "idling": "I'm sleeping 😴"
+      },
+      "started": "Started the {date} at {hour}",
+      "secret": "Secret Project"
+    },
+    "location": "I'm currently based in {location}. See below for more details.",
+    "uses": "Here is a comprehensive list of all the software I use, gadgets I love, and other things I recommend.",
+    "contact": "There are different ways to contact me. Here is a list:",
+    "duplicated": {
+      "title": "⚠️ I detected duplicated messages",
+      "description": "I have therefore removed the older duplicated messages to lighten the application."
+    },
+    "stats": {
+      "main": "I collect some data for {time} years, started the {date}. I've coded for a total of {hours} hours.",
+      "editors": "My top editors are {editors}",
+      "os": "My best OS is {os}",
+      "languages": "My favorite languages are {languages}",
+      "separator": " and ",
+      "tooltip": {
+        "date": "That was so long ago 🫣",
+        "hours": "That's a lot 😮"
+      }
+    },
+    "theme": {
+      "switch": "Switch theme",
+      "light": "Light",
+      "dark": "Dark",
+      "response": {
+        "control": "I added the theme toggle control above so you can switch directly.",
+        "choose": "Choose Light (sun icon) or Dark (moon icon)",
+        "kbd": "Press {kbd} on your keyboard"
+      }
+    },
+    "weather": {
+      "main": "Weather",
+      "powered_by": "Powered by OpenWeatherMap",
+      "low": "Low",
+      "high": "High",
+      "humidity": "Humidity",
+      "wind": "Wind"
+    }
+  }
+}

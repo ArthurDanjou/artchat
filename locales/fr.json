@@ -1,0 +1,160 @@
+{
+  "main": {
+    "init": "Salut, bienvenue sur ArtChat. Je suis un assistant IA connaissant tout sur Arthur Danjou. Pose moi des questions et j'y répondrai comme si j'étais lui.",
+    "question": "Génial ! Parle moi un peu plus de toi.",
+    "about": "Je suis étudiant en Mathématiques et en Statistiques à l'Université Paris-Dauphine en France. Avec une compréhension approfondie des technologies émergentes, je suis au cœur d'un domaine en pleine expansion. Mon parcours en mathématiques me donne un avantage pour comprendre les concepts et les théories derrière ces technologies et pour les concevoir efficacement."
+  },
+  "palette": {
+    "clear": {
+      "cancel": "Annuler",
+      "submit": "Supprimer",
+      "title": "Êtes-vous sûr de vouloir supprimer cette conversation ?",
+      "description": "Cette action ne peut pas être annulée."
+    },
+    "cmd": {
+      "send": "Envoyer le message",
+      "sending": "Envoi..."
+    }
+  },
+  "command": {
+    "actions": "Composants",
+    "arthur": "En savoir plus sur Arthur",
+    "interface": "Changer l'interface",
+    "theme": {
+      "label": "Changer de thème",
+      "prompt": "Comment puis-je changer le thème ?"
+    },
+    "uses": {
+      "label": "Voir la configuration",
+      "prompt": "Comment puis-je voir la configuration d'Arthur ?"
+    },
+    "stats": {
+      "label": "Voir les statistiques",
+      "prompt": "Comment puis-je voir les statistiques concernant Arthur ?"
+    },
+    "weather": {
+      "label": "Voir la météo",
+      "prompt": "Comment puis-je voir les conditions météorologiques près d'Arthur ?"
+    },
+    "location": {
+      "label": "Voir la localisation",
+      "prompt": "Comment puis-je voir la localisation d'Arthur ?"
+    },
+    "language": {
+      "label": "Changer de langue",
+      "prompt": "Comment puis-je changer la langue du chat ?"
+    },
+    "activity": {
+      "label": "Activité",
+      "prompt": "Que fais-tu actuellement ?"
+    },
+    "about": {
+      "label": "A propos d'Arthur",
+      "prompt": "Je veux que tu me parles de toi."
+    },
+    "projects": {
+      "label": "Projets",
+      "prompt": "Je veux que tu me parles de tes projets."
+    },
+    "writings": {
+      "label": "Écrits",
+      "prompt": "Quels sont tes derniers articles ?"
+    },
+    "experiences": {
+      "label": "Expériences",
+      "prompt": "Quelles expériences as-tu lors de ta carrière ?"
+    },
+    "skills": {
+      "label": "Compétences",
+      "prompt": "Quelles sont tes compétences ?"
+    },
+    "status": {
+      "label": "Statut du homelab",
+      "prompt": "J'ai vu que tu avais un homelab, est-il actuellement fonctionnel ?"
+    },
+    "resume": {
+      "label": "CV",
+      "prompt": "Peux-tu m'envoyer ton CV ?"
+    },
+    "contact": {
+      "label": "Contact",
+      "prompt": "Comment puis-je te contacter ?"
+    },
+    "hobbies": {
+      "label": "Loisirs et passions",
+      "prompt": "Quels sont tes loisirs ? Tes passions ? Tes intérêts ?"
+    },
+    "credits": {
+      "label": "Crédits",
+      "prompt": "Comment est réalisé ce chat ?"
+    }
+  },
+  "chat": {
+    "state": {
+      "thinking": "En train de réfléchir...",
+      "fetching": "Récupération des données...",
+      "generating": "Génération du composant...",
+      "done": "Terminé !"
+    }
+  },
+  "tool": {
+    "language": {
+      "change": "Changer de langue",
+      "response": {
+        "control": "J'ai ajouté le contrôle de changement de langue ci-dessus pour que vous puissiez changer directement.",
+        "choose": "Choisissez Anglais, Français ou Espagnol",
+        "kbd": "Appuyez sur {kbd} de votre clavier"
+      }
+    },
+    "activity": {
+      "offline": "Je suis actuellement hors ligne. Revenez plus tard pour voir sur quoi je travaille. {maths}",
+      "working": "Je suis actuellement en ligne ! Découvrez ce sur quoi je travaille juste en dessous.",
+      "idling": "Je suis en veille sur mon ordinateur avec {editor} en arrière-plan.",
+      "maths": "Je suis probablement en train de faire des maths ou en train de dormir.",
+      "response": "Les statistiques sont propulsées et enregistrées par WakaTime.",
+      "tooltip": {
+        "online": "Je suis connecté 👋",
+        "offline": "Je suis déconnecté 🫥",
+        "idling": "Je dors 😴"
+      },
+      "started": "Commencé le {date} à {hour}",
+      "secret": "Projet Secret"
+    },
+    "location": "Je suis actuellement basé à {location}. Voir ci-dessous pour plus de détails.",
+    "uses": "Voici une grande liste de tous mes logiciels que j'utilise, gadgets que j'adore et autres choses que je recommande.",
+    "contact": "Il existe différentes façons de me contacter. Voici une liste :",
+    "duplicated": {
+      "title": "⚠️ J'ai détecté des messages dupliqués",
+      "description": "J'ai donc supprimé les anciens messages dupliqués pour alléger l'application."
+    },
+    "stats": {
+      "main": "Je collecte des données depuis {time} ans, commencé le {date}. J'ai codé un total de {hours} heures.",
+      "editors": "Mes meilleurs éditeurs sont {editors}",
+      "os": "Mon meilleur OS est {os}",
+      "languages": "Mes langages préférés sont {languages}",
+      "separator": " et ",
+      "tooltip": {
+        "date": "C'était il y a si longtemps 🫣",
+        "hours": "C'est beaucoup 😮"
+      }
+    },
+    "theme": {
+      "switch": "Changer de thème",
+      "light": "Clair",
+      "dark": "Sombre",
+      "response": {
+        "control": "J'ai ajouté le contrôle de basculement de thème ci-dessus afin que vous puissiez basculer directement.",
+        "choose": "Choisissez Clair (icône de soleil) ou Sombre (icône de lune)",
+        "kbd": "Appuyez sur {kbd} sur votre clavier"
+      }
+    },
+    "weather": {
+      "main": "Météo",
+      "powered_by": "Alimenté par OpenWeatherMap",
+      "low": "Bas",
+      "high": "Haut",
+      "humidity": "Humidité",
+      "wind": "Vent"
+    }
+  }
+}
