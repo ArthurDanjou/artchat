@@ -10,15 +10,16 @@ const { t, locale } = useI18n()
       <p>{{ t('skills.main') }}</p>
     </div>
     <div v-if="skills" class="space-y-12 m-1 my-4">
-      <div v-for="category in skills.items" :key="category.id" class="space-y-8">
+      <div v-for="item in skills.body" :key="item.id" class="space-y-8">
         <USeparator
-          :label="locale === 'en' ? category.name.en : locale === 'es' ? category.name.es : category.name.fr"
+          :label="locale === 'en' ? item.name.en : locale === 'es' ? item.name.es : item.name.fr"
           size="xs"
+          type="dashed"
         />
         <div class="flex gap-3 flex-wrap">
           <UButton
-            v-for="skill in category.items"
-            :key="skill.id"
+            v-for="skill in item.items"
+            :key="skill.name.trim()"
             :label="skill.name"
             variant="subtle"
             color="neutral"

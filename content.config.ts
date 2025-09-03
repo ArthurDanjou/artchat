@@ -57,7 +57,7 @@ export const collections = {
     type: 'data',
     source: 'skills.json',
     schema: z.object({
-      items: z.object({
+      body: z.array(z.object({
         id: z.string(),
         name: z.object({
           en: z.string(),
@@ -68,7 +68,7 @@ export const collections = {
           name: z.string(),
           icon: z.string(),
         })),
-      }),
+      })),
     }),
   }),
 }

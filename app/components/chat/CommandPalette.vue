@@ -36,6 +36,8 @@ const { dark, toggleDark } = useTheme()
 
 defineShortcuts({
   meta_enter: () => openMessageModal.value = !openMessageModal.value,
+  enter: () => openMessageModal.value = !openMessageModal.value,
+  meta_k: () => openMessageModal.value = !openMessageModal.value,
   meta_d: () => openClearModal.value = !openClearModal.value,
   l: () => changeLocale(currentLocale.value!.code === 'en' ? 'fr' : currentLocale.value!.code === 'fr' ? 'es' : 'en'),
   t: () => toggleDark({ clientX: window.innerWidth, clientY: 0 }),
@@ -55,7 +57,7 @@ const commandPaletteUi = {
 
 <template>
   <nav
-    class="fixed z-50 pb-8 duration-700 mx-auto p-8"
+    class="fixed z-50 pb-8 duration-700 mx-auto px-8 sm:px-0"
     :class="active ? 'bottom-0 left-1/2 -translate-x-1/2' : 'max-w-[40rem] w-full md:bottom-1/5 left-1/2 -translate-x-1/2 bottom-0'"
   >
     <UCard variant="outline" class="rounded-xl shadow-lg w-full" :ui="{ body: 'p-2 sm:p-2 flex gap-2 w-full' }">

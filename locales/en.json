@@ -95,6 +95,7 @@
       "thinking": "Thinking...",
       "fetching": "Fetching the data...",
       "generating": "Generating the component...",
+      "checking": "Checking of the Résumé...",
       "done": "Done!"
     },
     "welcome": "Welcome to ArtChat",

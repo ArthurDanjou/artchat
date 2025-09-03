@@ -95,7 +95,8 @@
       "thinking": "Pensando...",
       "fetching": "Obteniendo los datos...",
       "generating": "Generando el componente...",
-      "done": "¡Hecho!"
+      "done": "¡Hecho!",
+      "checking": "Comprobación del currículum ..."
     },
     "welcome": "Bienvenido en Artchat",
     "ask": "Pregúntame cualquier cosa sobre Arthur Danjou"

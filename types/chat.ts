@@ -34,6 +34,7 @@ export enum ChatFetchState {
   THINKING = 'chat.state.thinking',
   FETCHING = 'chat.state.fetching',
   GENERATING = 'chat.state.generating',
+  CHECKING = 'chat.state.checking',
   DONE = 'chat.state.done',
 }
 
@@ -123,13 +124,14 @@ export const ChatMessages = [
         icon: 'i-ph-person-arms-spread-duotone',
         prompt: 'command.about.prompt',
         type: ChatType.ABOUT,
+        fetchStates: [ChatFetchState.CHECKING],
       },
       {
         label: 'command.projects.label',
         icon: 'i-ph-code-duotone',
         prompt: 'command.projects.prompt',
         type: ChatType.PROJECTS,
-        fetchStates: [ChatFetchState.FETCHING, ChatFetchState.GENERATING],
+        fetchStates: [ChatFetchState.FETCHING, ChatFetchState.CHECKING, ChatFetchState.GENERATING],
       },
       {
         label: 'command.writings.label',
@@ -143,31 +145,35 @@ export const ChatMessages = [
         icon: 'i-ph-briefcase-duotone',
         prompt: 'command.experiences.prompt',
         type: ChatType.EXPERIENCES,
+        fetchStates: [ChatFetchState.CHECKING],
       },
       {
         label: 'command.skills.label',
         icon: 'i-ph-rocket-duotone',
         prompt: 'command.skills.prompt',
         type: ChatType.SKILLS,
-        fetchStates: [ChatFetchState.FETCHING],
+        fetchStates: [ChatFetchState.FETCHING, ChatFetchState.CHECKING],
       },
       {
         label: 'command.resume.label',
         icon: 'i-ph-address-book-duotone',
         prompt: 'command.resume.prompt',
         type: ChatType.RESUME,
+        fetchStates: [ChatFetchState.CHECKING],
       },
       {
         label: 'command.contact.label',
         icon: 'i-ph-envelope-duotone',
         prompt: 'command.contact.prompt',
         type: ChatType.CONTACT,
+        fetchStates: [ChatFetchState.CHECKING],
       },
       {
         label: 'command.hobbies.label',
         icon: 'i-ph-heart-duotone',
         prompt: 'command.hobbies.prompt',
         type: ChatType.HOBBIES,
+        fetchStates: [ChatFetchState.CHECKING],
       },
       {
         label: 'command.uses.label',
