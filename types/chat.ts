@@ -178,6 +178,12 @@ export const ChatMessages = [
         type: ChatType.HOBBIES,
         fetchStates: [ChatFetchState.CHECKING],
       },
+    ].sort((a, b) => a.label.localeCompare(b.label)),
+  },
+  {
+    id: 'uses',
+    label: 'command.uses',
+    items: [
       {
         label: 'command.hardware.label',
         icon: 'i-ph-chalkboard-simple-duotone',
@@ -187,25 +193,25 @@ export const ChatMessages = [
       },
       {
         label: 'command.software.label',
-        icon: 'i-ph-chalkboard-simple-duotone',
+        icon: 'i-ph-app-store-logo-duotone',
         prompt: 'command.software.prompt',
         type: ChatType.SOFTWARE,
         fetchStates: [ChatFetchState.FETCHING],
       },
       {
         label: 'command.homelab.label',
-        icon: 'i-ph-chalkboard-simple-duotone',
+        icon: 'i-ph-computer-tower-duotone',
         prompt: 'command.homelab.prompt',
         type: ChatType.HOMELAB,
         fetchStates: [ChatFetchState.FETCHING],
       },
       {
         label: 'command.ide.label',
-        icon: 'i-ph-chalkboard-simple-duotone',
+        icon: 'i-ph-code-simple-duotone',
         prompt: 'command.ide.prompt',
         type: ChatType.IDE,
         fetchStates: [ChatFetchState.FETCHING],
       },
-    ].sort((a, b) => a.label.localeCompare(b.label)),
+    ],
   },
 ]
