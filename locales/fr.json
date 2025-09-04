@@ -15,6 +15,14 @@
       "placeholder": "Utilisez les flèches pour naviguer parmi les prompts préfaits. Appuyez sur Entrer pour envoyer le message.",
       "send": "Envoyer un nouveau message",
       "sending": "Envoi en cours..."
+    },
+    "tooltip": {
+      "up": "Aller au message précédent",
+      "down": "Aller au message suivant",
+      "send": "Envoyer un nouveau message prédéfini",
+      "clear": "Supprimer tous les messages",
+      "theme": "Changer le thème",
+      "language": "Changer la langue"
     }
   },
   "command": {

@@ -15,6 +15,14 @@
       "placeholder": "Use las flechas para navegar entre los prefacios de inmediato. Presione Entrar para enviar el mensaje.",
       "send": "Enviar un nuevo mensaje",
       "sending": "Enviando..."
+    },
+    "tooltip": {
+      "up": "Ir al mensaje anterior",
+      "down": "Ir al siguiente mensaje",
+      "send": "Enviar un nuevo mensaje predefinido",
+      "clear": "Eliminar todos los mensajes",
+      "theme": "Cambiar el tema",
+      "language": "Cambiar la language"
     }
   },
   "command": {

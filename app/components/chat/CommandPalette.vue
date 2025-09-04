@@ -61,6 +61,12 @@ function up() {
 function down() {
   window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
 }
+
+const toolTipContent = {
+  align: 'center',
+  side: 'top',
+  sideOffset: 0,
+}
 </script>
 
 <template>
@@ -71,41 +77,64 @@ function down() {
     <UCard variant="outline" class="rounded-xl shadow-lg w-full" :ui="{ body: 'p-2 sm:p-2 flex gap-2 w-full' }">
       <ClientOnly>
         <UFieldGroup v-if="active" class="flex items-center justify-center">
-          <UButton
-            icon="i-ph-arrow-fat-up-duotone"
-            color="neutral"
-            variant="outline"
-            class="cursor-pointer"
-            size="xl"
-            @click.prevent="up"
-          />
-          <UButton
-            icon="i-ph-arrow-fat-down-duotone"
-            color="neutral"
-            variant="outline"
-            class="cursor-pointer"
-            size="xl"
-            @click.prevent="down"
-          />
+          <UTooltip
+            :text="t('palette.tooltip.up')"
+            arrow
+            :content="toolTipContent"
+            :delay-duration="0"
+          >
+            <UButton
+              icon="i-ph-arrow-fat-up-duotone"
+              color="neutral"
+              variant="outline"
+              class="cursor-pointer"
+              size="xl"
+              @click.prevent="up"
+            />
+          </UTooltip>
+
+          <UTooltip
+            :text="t('palette.tooltip.down')"
+            arrow
+            :content="toolTipContent"
+            :delay-duration="0"
+          >
+            <UButton
+              icon="i-ph-arrow-fat-down-duotone"
+              color="neutral"
+              variant="outline"
+              class="cursor-pointer"
+              size="xl"
+              @click.prevent="down"
+            />
+          </UTooltip>
         </UFieldGroup>
       </ClientOnly>
       <UFieldGroup class="w-full">
         <UModal v-model:open="openMessageModal" :ui="modalUi" title="Hey" description="Hey">
-          <UButton
-            :label="loading ? t('palette.cmd.sending') : t('palette.cmd.send')"
-            variant="outline"
-            color="neutral"
-            size="xl"
-            icon="i-ph-paper-plane-tilt-duotone"
-            class="rounded-lg cursor-pointer p-2 w-full justify-center"
-            :disabled="loading"
+          <UTooltip
+            :text="t('palette.tooltip.send')"
+            arrow
+            :content="toolTipContent"
+            :kbds="['enter']"
+            :delay-duration="0"
           >
-            <template #trailing>
-              <div class="hidden md:flex px-2 items-center">
-                <UKbd value="enter" color="info" />
-              </div>
-            </template>
-          </UButton>
+            <UButton
+              :label="loading ? t('palette.cmd.sending') : t('palette.cmd.send')"
+              variant="outline"
+              color="neutral"
+              size="xl"
+              icon="i-ph-paper-plane-tilt-duotone"
+              class="rounded-lg cursor-pointer p-2 w-full justify-center"
+              :disabled="loading"
+            >
+              <template #trailing>
+                <div class="hidden md:flex px-2 items-center">
+                  <UKbd value="enter" color="info" />
+                </div>
+              </template>
+            </UButton>
+          </UTooltip>
 
           <template #content>
             <UCommandPalette
@@ -156,15 +185,23 @@ function down() {
           :title="t('palette.clear.title')"
           :description="t('palette.clear.description')"
         >
-          <UButton
-            variant="subtle"
-            color="error"
-            leading-icon="i-ph-trash-duotone"
-            size="xl"
-            class="rounded-lg"
-            :class="storeMessages.length !== 0 ? 'cursor-pointer' : 'cursor-default'"
-            :disabled="storeMessages.length === 0"
-          />
+          <UTooltip
+            :text="t('palette.tooltip.clear')"
+            arrow
+            :content="toolTipContent"
+            :kbds="['meta', 'D']"
+            :delay-duration="0"
+          >
+            <UButton
+              variant="subtle"
+              color="error"
+              leading-icon="i-ph-trash-duotone"
+              size="xl"
+              class="rounded-lg"
+              :class="storeMessages.length !== 0 ? 'cursor-pointer' : 'cursor-default'"
+              :disabled="storeMessages.length === 0"
+            />
+          </UTooltip>
 
           <template #footer="{ close }">
             <UFieldGroup>
@@ -175,23 +212,39 @@ function down() {
         </UModal>
       </UFieldGroup>
       <ClientOnly>
-        <UFieldGroup class="flex items-center justify-center" :orientation="active ? 'horizontal' : 'vertical'">
-          <UButton
-            :icon="dark ? 'i-ph-moon-duotone' : 'i-ph-sun-duotone'"
-            color="neutral"
-            variant="outline"
-            class="cursor-pointer"
-            size="xl"
-            @click.prevent="toggleDark"
-          />
-          <UButton
-            icon="i-ph-translate-duotone"
-            color="neutral"
-            variant="outline"
-            class="cursor-pointer"
-            size="xl"
-            @click.prevent="changeLocale(currentLocale!.code === 'en' ? 'fr' : currentLocale!.code === 'fr' ? 'es' : 'en')"
-          />
+        <UFieldGroup class="flex items-center justify-center">
+          <UTooltip
+            :text="t('palette.tooltip.theme')"
+            arrow
+            :content="toolTipContent"
+            :kbds="['T']"
+            :delay-duration="0"
+          >
+            <UButton
+              :icon="dark ? 'i-ph-moon-duotone' : 'i-ph-sun-duotone'"
+              color="neutral"
+              variant="outline"
+              class="cursor-pointer"
+              size="xl"
+              @click.prevent="toggleDark"
+            />
+          </UTooltip>
+          <UTooltip
+            :text="t('palette.tooltip.language')"
+            arrow
+            :content="toolTipContent"
+            :kbds="['L']"
+            :delay-duration="0"
+          >
+            <UButton
+              icon="i-ph-translate-duotone"
+              color="neutral"
+              variant="outline"
+              class="cursor-pointer"
+              size="xl"
+              @click.prevent="changeLocale(currentLocale!.code === 'en' ? 'fr' : currentLocale!.code === 'fr' ? 'es' : 'en')"
+            />
+          </UTooltip>
         </UFieldGroup>
       </ClientOnly>
     </UCard>

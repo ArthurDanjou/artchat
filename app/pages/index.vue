@@ -47,6 +47,7 @@ watch(
     <ChatMain />
     <div ref="parents" class="space-y-4 my-32">
       <ChatMessageContainer
+        :id="99999999998"
         v-motion
         :initial="{
           opacity: 0,
@@ -71,6 +72,7 @@ watch(
         }"
       />
       <ChatMessageContainer
+        :id="99999999999"
         v-motion
         :initial="{
           opacity: 0,
@@ -96,6 +98,7 @@ watch(
       />
       <ChatMessageContainer
         v-for="message in messages"
+        :id="message.id"
         :key="message.id"
         v-motion
         :message="message"

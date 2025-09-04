@@ -15,6 +15,14 @@
       "placeholder": "Use the arrow keys to navigate through the preset prompts. Press Enter to send the message.",
       "send": "Send new message",
       "sending": "Sending..."
+    },
+    "tooltip": {
+      "up": "Go to the previous message",
+      "down": "Go to the next message",
+      "send": "Send a new predefined message",
+      "clear": "Delete all messages",
+      "theme": "Change the theme",
+      "language": "Change the language"
     }
   },
   "command": {
