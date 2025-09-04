@@ -10,11 +10,16 @@ const { messages } = useChatStore()
 const parents = useTemplateRef('parents')
 const { height } = useElementBounding(parents)
 
+const { locale } = useI18n()
+const lastLang = ref(locale.value)
 watch(
   height,
   async () => {
     await nextTick()
-    window.scrollTo({ top: parents.value?.scrollHeight, behavior: 'smooth' })
+    if (lastLang.value === locale.value) {
+      window.scrollTo({ top: parents.value?.scrollHeight, behavior: 'smooth' })
+    }
+    lastLang.value = locale.value
   },
 )
 </script>

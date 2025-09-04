@@ -1,6 +1,6 @@
 ---
-slug: studies
-title: 🎓 Studies Projects
+slug: artstudies
+title: 🎓 ArtStudies
 description: A curated collection of mathematics and data science projects developed during my academic journey.
 publishedAt: 2023/09/01
 readingTime: 1
@@ -11,7 +11,7 @@ tags:
   - r
 ---
 
-[Studies Projects](https://github.com/ArthurDanjou/studies) is a curated collection of academic projects completed throughout my mathematics studies. The repository showcases work in both _Python_ and _R_, focusing on mathematical modeling, data analysis, and numerical methods.
+[ArtStudies](https://github.com/ArthurDanjou/artstudies) is a curated collection of academic projects completed throughout my mathematics studies. The repository showcases work in both _Python_ and _R_, focusing on mathematical modeling, data analysis, and numerical methods.
 
 The projects are organized into two main sections:
 - **L3** – Third year of the Bachelor's degree in Mathematics

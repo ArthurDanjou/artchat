@@ -170,7 +170,8 @@
       "high": "Alto",
       "humidity": "Humedad",
       "wind": "Viento"
-    }
+    },
+    "projects": "Estos son los proyectos de los que estoy más orgulloso: algunos son de modelado estadístico, otros de desarrollo de software y otros del despliegue de infraestructura. Todos reflejan mi compromiso de movilizar rigurosamente mis habilidades al servicio de temas concretos vinculados a la inteligencia artificial, las matemáticas o el desarrollo."
   },
   "error": {
     "main": "Creo que estás perdido, volvamos a la",
@@ -178,5 +179,9 @@
   },
   "skills": {
     "main": "Como ingeniero de software y estudiante de matemáticas, combino el rigor científico con el pragmatismo técnico para diseñar soluciones adaptadas a los desafíos de proyectos de datos y matemáticos. Mi enfoque se centra en una comprensión profunda de las necesidades, desde la preparación de datos hasta su implementación, pasando por la modelización y la optimización del rendimiento.\nApasionado por la inteligencia artificial y la ciencia de datos, me esfuerzo por equilibrar la innovación con la robustez estadística. Siempre en busca de aprendizaje, exploro tanto los avances tecnológicos como los retos emprendedores o financieros. Curioso y entusiasta, disfruto compartiendo conocimientos y descubriendo nuevos conceptos, ya sean teoremas o tecnologías emergentes."
+  },
+  "alert": {
+    "description": "En falta de tiempo, la traducción al español no está disponible. Gracias por su comprensión.",
+    "title": "Cuidado con las traducciones"
   }
 }

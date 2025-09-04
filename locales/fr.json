@@ -170,7 +170,8 @@
       "high": "Haut",
       "humidity": "Humidité",
       "wind": "Vent"
-    }
+    },
+    "projects": "Voici les projets dont je suis le plus fier : certains relèvent de la modélisation statistique, d'autres du développement logiciel, et d'autres encore du déploiement d’infrastructures. Chacun reflète mon engagement à mobiliser rigoureusement mes compétences au service de problématiques concrètes liées à l’intelligence artificielle, aux mathématiques ou au développement."
   },
   "error": {
     "main": "Je pense que vous êtes perdu, retournons en arrière à la",
@@ -178,5 +179,9 @@
   },
   "skills": {
     "main": "En tant qu’ingénieur logiciel et étudiant en mathématiques, j’allie rigueur scientifique et pragmatisme technique pour concevoir des solutions adaptées aux enjeux des projets data et mathématiques. Mon approche repose sur une compréhension approfondie des besoins, de la préparation des données à la mise en production, en passant par la modélisation et l’optimisation des performances. Passionné par l’intelligence artificielle et la data science, je m’attache à concilier innovation et robustesse statistique. Toujours en quête d’apprentissage, je m’intéresse autant aux avancées technologiques qu’aux défis entrepreneuriaux ou financiers. Curieux et enthousiaste, j’aime partager mes connaissances et explorer de nouveaux concepts, qu’il s’agisse de théorèmes ou de technologies émergentes."
+  },
+  "alert": {
+    "description": "Par manque de temps, la traduction française n'est pas disponible. Merci de votre compréhension.",
+    "title": "Attention aux traductions"
   }
 }

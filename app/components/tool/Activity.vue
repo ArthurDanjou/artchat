@@ -18,8 +18,6 @@ const codingActivity = computed(() => {
     : activities[0]
 })
 
-const currentLocale = computed(() => locales.value.find((l: { code: string }) => l.code === locale.value))
-
 const isActive = computed(() => {
   if (!codingActivity.value)
     return
@@ -51,6 +49,7 @@ const getActivity = computed(() => {
   const ago = useTimeAgo(timestamps.start, {
     messages: activityMessages[locale.value as keyof typeof activityMessages] as UseTimeAgoMessages,
   }).value
+  const currentLocale = computed(() => locales.value.find(l => l.code === locale.value))
   const formatDate = (date: number, format: string) => useDateFormat(date, format, { locales: currentLocale.value?.code ?? 'en' }).value
 
   return {

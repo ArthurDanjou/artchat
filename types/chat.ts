@@ -53,7 +53,7 @@ export interface ChatMessage {
 export const ChatMessages = [
   {
     id: 'interface',
-    label: 'command.interface',
+    label: 'Interface', // TODO: use translation : command.interface
     items: [
       {
         label: 'command.theme.label',
@@ -73,7 +73,7 @@ export const ChatMessages = [
   },
   {
     id: 'actions',
-    label: 'command.actions',
+    label: 'Components',
     items: [
       {
         label: 'command.location.label',
@@ -114,7 +114,7 @@ export const ChatMessages = [
   },
   {
     id: 'arthur',
-    label: 'command.arthur',
+    label: 'Arthur',
     items: [
       {
         label: 'command.credits.label',
@@ -182,7 +182,7 @@ export const ChatMessages = [
   },
   {
     id: 'uses',
-    label: 'command.uses',
+    label: 'Uses',
     items: [
       {
         label: 'command.hardware.label',

@@ -9,7 +9,7 @@ const props = defineProps<{
 const isArthur = computed(() => props.message.sender === ChatSender.ARTHUR)
 
 const { t, locale, locales } = useI18n()
-const currentLocale = computed(() => locales.value.find((l: { code: string }) => l.code === locale.value))
+const currentLocale = computed(() => locales.value.find(l => l.code === locale.value))
 const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', { locales: currentLocale.value?.code ?? 'en' }).value)
 </script>
 
@@ -85,6 +85,9 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
         </div>
         <div v-else-if="message.type === ChatType.SKILLS">
           <ToolSkills />
+        </div>
+        <div v-else-if="message.type === ChatType.PROJECTS">
+          <ToolProjects />
         </div>
         <div v-else>
           {{ message }}

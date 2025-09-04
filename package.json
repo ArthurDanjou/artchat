@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "artsite",
   "type": "module",
   "private": true,
   "scripts": {
@@ -15,7 +15,6 @@
     "@antfu/eslint-config": "^5.2.1",
     "@iconify-json/devicon": "^1.2.43",
     "@iconify-json/logos": "^1.2.9",
-    "@iconify-json/lucide": "^1.2.66",
     "@iconify-json/ph": "^1.2.2",
     "@iconify-json/twemoji": "^1.2.4",
     "@iconify-json/vscode-icons": "^1.2.30",
@@ -32,7 +31,7 @@
     "@vueuse/motion": "^3.0.3",
     "better-sqlite3": "^12.2.0",
     "eslint": "^9.0.0",
-    "nuxt": "4.1.0",
+    "nuxt": "^4.1.0",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "remark-parse": "^11.0.0",
@@ -43,7 +42,6 @@
   },
   "devDependencies": {
     "@types/node": "^24.3.0",
-    "@vueuse/math": "14.0.0-alpha.0",
     "@vueuse/nuxt": "^13.9.0",
     "vue-tsc": "^3.0.6"
   }
