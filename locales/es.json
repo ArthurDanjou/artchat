@@ -181,18 +181,15 @@
       "humidity": "Humedad",
       "wind": "Viento"
     },
-    "projects": "Estos son los proyectos de los que estoy más orgulloso: algunos son de modelado estadístico, otros de desarrollo de software y otros del despliegue de infraestructura. Todos reflejan mi compromiso de movilizar rigurosamente mis habilidades al servicio de temas concretos vinculados a la inteligencia artificial, las matemáticas o el desarrollo."
+    "writings": "Comparto mis reflexiones sobre matemáticas, inteligencia artificial, desarrollo y mis pasiones, organizándolas para seguir la evolución de mis ideas y proyectos. {space}Aquí encontrará los dos artículos más recientes, pero todos mis escritos son accesibles en el {canva}, para explorar mi universo más en profundidad, matemáticas y IA.",
+    "projects": "Una selección de mis proyectos realizados en R, Python y desarrollo web, que abarcan áreas diversas como el análisis de datos, el aprendizaje automático y las aplicaciones web. Estos proyectos destacan mis habilidades en programación, resolución de problemas y diseño de soluciones. {space}Aquí presento los tres proyectos de los que estoy más orgulloso, pero puedes consultar todos mis proyectos directamente en el {canva}."
   },
   "error": {
     "main": "Creo que estás perdido, volvamos a la",
     "redirect": "página de inicio"
   },
   "skills": {
-    "main": "Como ingeniero de software y estudiante de matemáticas, combino el rigor científico con el pragmatismo técnico para diseñar soluciones adaptadas a los desafíos de proyectos de datos y matemáticos. Mi enfoque se centra en una comprensión profunda de las necesidades, desde la preparación de datos hasta su implementación, pasando por la modelización y la optimización del rendimiento.\nApasionado por la inteligencia artificial y la ciencia de datos, me esfuerzo por equilibrar la innovación con la robustez estadística. Siempre en busca de aprendizaje, exploro tanto los avances tecnológicos como los retos emprendedores o financieros. Curioso y entusiasta, disfruto compartiendo conocimientos y descubriendo nuevos conceptos, ya sean teoremas o tecnologías emergentes."
-  },
-  "alert": {
-    "description": "En falta de tiempo, la traducción al español no está disponible. Gracias por su comprensión.",
-    "title": "Cuidado con las traducciones"
+    "main": "Como ingeniero de software y estudiante de matemáticas, combino el rigor científico con el pragmatismo técnico para diseñar soluciones adaptadas a los desafíos de proyectos de datos y matemáticos. Mi enfoque se centra en una comprensión profunda de las necesidades, desde la preparación de datos hasta su implementación, pasando por la modelización y la optimización del rendimiento.Apasionado por la inteligencia artificial y la ciencia de datos, me esfuerzo por equilibrar la innovación con la robustez estadística. Siempre en busca de aprendizaje, exploro tanto los avances tecnológicos como los retos emprendedores o financieros. Curioso y entusiasta, disfruto compartiendo conocimientos y descubriendo nuevos conceptos, ya sean teoremas o tecnologías emergentes."
   },
   "post": {
     "footer": {
@@ -205,5 +202,6 @@
       "copy": "Copiar link"
     },
     "top": "Ir arriba"
-  }
+  },
+  "alert": "Por falta de tiempo, no tuve tiempo para traducir este contenido al francés. Gracias por su comprensión."
 }

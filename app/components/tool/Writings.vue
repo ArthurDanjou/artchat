@@ -2,7 +2,7 @@
 const { locale, locales } = useI18n()
 const currentLocale = computed(() => locales.value.find(l => l.code === locale.value))
 
-const { data: projects } = await useAsyncData('projects-index', async () => await queryCollection('projects').where('favorite', '=', true).select('title', 'description', 'id', 'publishedAt', 'tags', 'slug').all())
+const { data: writings } = await useAsyncData('writings-index', async () => await queryCollection('writings').order('publishedAt', 'DESC').select('title', 'description', 'id', 'publishedAt', 'tags', 'slug').limit(2).all())
 const date = (date: string) => useDateFormat(new Date(date), 'DD MMMM YYYY', { locales: currentLocale.value?.code ?? 'en' })
 </script>
 
@@ -10,7 +10,7 @@ const date = (date: string) => useDateFormat(new Date(date), 'DD MMMM YYYY', { l
   <section>
     <div class="prose dark:prose-invert">
       <PostAlert class="mb-2" />
-      <i18n-t keypath="tool.projects" tag="p">
+      <i18n-t keypath="tool.writings" tag="p">
         <template #canva>
           CANVA
         </template>
@@ -19,23 +19,23 @@ const date = (date: string) => useDateFormat(new Date(date), 'DD MMMM YYYY', { l
         </template>
       </i18n-t>
     </div>
-    <div v-if="projects" class="m-1 my-4 flex flex-col gap-4">
-      <div v-for="project in projects" :key="project.id">
-        <NuxtLink :to="`/projects/${project.slug}`">
+    <div v-if="writings" class="m-1 my-4 flex flex-col gap-4">
+      <div v-for="writing in writings" :key="writing.id">
+        <NuxtLink :to="`/writings/${writing.slug}`">
           <UCard variant="subtle" class="shadow-sm bg-white dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-black duration-300">
             <h1 class="text-xl font-medium">
-              {{ project.title }}
+              {{ writing.title }}
             </h1>
             <h3 class="text-muted my-2">
-              {{ project.description }}
+              {{ writing.description }}
             </h3>
             <div class="flex items-center justify-between">
               <p class="text-sm text-muted-foreground">
-                {{ date(project.publishedAt).value }}
+                {{ date(writing.publishedAt).value }}
               </p>
               <div class="flex flex-wrap gap-2">
                 <UBadge
-                  v-for="tag in project.tags.sort((a: any, b: any) => a.localeCompare(b))"
+                  v-for="tag in writing.tags.sort((a: any, b: any) => a.localeCompare(b))"
                   :key="tag"
                   variant="soft"
                 >

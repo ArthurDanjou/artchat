@@ -1,5 +1,5 @@
 ---
-slug: log-ling-reg
+slug: log-lin-reg
 title: "Linear vs. Logistic Regression: A Comprehensive Guide to Understanding
   Their Differences and Applications"
 description: This article compares linear and logistic regression, highlighting

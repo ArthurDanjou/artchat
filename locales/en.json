@@ -181,19 +181,17 @@
       "humidity": "Humidity",
       "wind": "Wind"
     },
-    "projects": "Here are the projects that I am most proud of: some are of statistical modeling, others of software development, and others of the deployment of infrastructure. \nEveryone reflects my commitment to rigorously mobilize my skills in the service of concrete issues linked to artificial intelligence, mathematics or development."
+    "projects": "A selection of my projects developed in R, Python, and web development, covering diverse areas such as data analysis, machine learning, and web applications. These projects highlight my skills in coding, problem-solving, and solution design. {space}Here, I present the three projects I am most proud of, but you can explore all my projects directly on the {canva}.",
+    "writings": "I share my reflections on mathematics, artificial intelligence, development and my passions, by organizing them to follow the evolution of my ideas and projects. {space}Here you will find the two most recent articles, but all my writings are accessible on the {canva}, to explore my universe more in depth, Maths and AI."
   },
   "error": {
     "main": "I think you're lost, let's go back to the",
     "redirect": "homepage"
   },
   "skills": {
-    "main": "As a software engineer and mathematics student, I combine scientific rigor with technical pragmatism to design solutions tailored to the challenges of data and mathematical projects. My approach focuses on a deep understanding of needs, from data preparation to deployment, while emphasizing modeling and performance optimization.\nPassionate about artificial intelligence and data science, I strive to balance innovation with statistical robustness. Always eager to learn, I explore both technological advancements and entrepreneurial or financial challenges. Curious and enthusiastic, I enjoy sharing knowledge and discovering new concepts, whether in theorems or emerging technologies."
+    "main": "As a software engineer and mathematics student, I combine scientific rigor with technical pragmatism to design solutions tailored to the challenges of data and mathematical projects. My approach focuses on a deep understanding of needs, from data preparation to deployment, while emphasizing modeling and performance optimization.Passionate about artificial intelligence and data science, I strive to balance innovation with statistical robustness. Always eager to learn, I explore both technological advancements and entrepreneurial or financial challenges. Curious and enthusiastic, I enjoy sharing knowledge and discovering new concepts, whether in theorems or emerging technologies."
   },
-  "alert": {
-    "description": "For lack of time, the French translation is not available. \nThank you for your understanding.",
-    "title": "Watch out for translations"
-  },
+  "alert": "For lack of time, I did not have time to translate this content into English. Thank you for your understanding.",
   "post": {
     "footer": {
       "thanks": "Thanks for reading! My name is {name}, and I love writing about AI, data science, and the intersection between mathematics and programming. {jump} I've been coding and exploring math for years, and I'm always learning something new—whether it's self-hosting tools in my homelab, experimenting with machine learning models, or diving into statistical methods. {jump} I share my knowledge here because I know how valuable clear, hands-on resources can be, especially when you're just getting started or exploring something deeply technical. {jump} If you have any questions or just want to chat, feel free to reach out to me on {linkedin} or {github  }. {jump} I hope you enjoyed this post and learned something useful. If you did, {comment}—it really helps and means a lot!",
