@@ -8,6 +8,7 @@
         "@iconify-json/devicon": "^1.2.43",
         "@iconify-json/logos": "^1.2.9",
         "@iconify-json/ph": "^1.2.2",
+        "@iconify-json/simple-icons": "^1.2.50",
         "@iconify-json/twemoji": "^1.2.4",
         "@iconify-json/vscode-icons": "^1.2.30",
         "@nuxt/content": "3.6.3",
@@ -231,6 +232,8 @@
     "@iconify-json/logos": ["@iconify-json/logos@1.2.9", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-G6VCdFnwZcrT6Eveq3m43oJfLw/CX8plwFcE+2jgv3fiGB64pTmnU7Yd1MNZ/eA+/Re2iEDhuCfSNOWTHwwK8w=="],
 
     "@iconify-json/ph": ["@iconify-json/ph@1.2.2", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-PgkEZNtqa8hBGjHXQa4pMwZa93hmfu8FUSjs/nv4oUU6yLsgv+gh9nu28Kqi8Fz9CCVu4hj1MZs9/60J57IzFw=="],
+
+    "@iconify-json/simple-icons": ["@iconify-json/simple-icons@1.2.50", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-Z2ggRwKYEBB9eYAEi4NqEgIzyLhu0Buh4+KGzMPD6+xG7mk52wZJwLT/glDPtfslV503VtJbqzWqBUGkCMKOFA=="],
 
     "@iconify-json/twemoji": ["@iconify-json/twemoji@1.2.4", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-REYJeXhzaLktNe32DxJJf3t65sYC5KO9K0Jh+RApXRBAo1/IB+jBqd8rny2sXci+wtQLBEfD4z4AGCLBrTMGWA=="],
 

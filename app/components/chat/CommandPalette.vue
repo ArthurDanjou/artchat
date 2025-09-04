@@ -45,6 +45,13 @@ defineShortcuts({
   t: () => toggleDark({ clientX: window.innerWidth / 2, clientY: window.innerHeight }),
 })
 
+const activeElement = useActiveElement()
+watch(activeElement, () => {
+  if (activeElement.value instanceof HTMLElement && ['INPUT', 'TEXTAREA'].includes(activeElement.value.tagName)) {
+    activeElement.value.blur()
+  }
+})
+
 const modalUi = {
   content: 'bg-default-30 dark:bg-default/70 backdrop-blur-xl border border-accented/70 max-w-2xl h-100 flex flex-col shadow-raycast',
 }
@@ -107,6 +114,7 @@ function goHome() {
               :ui="commandPaletteUi"
               :groups="messages"
               icon="i-ph-paper-plane-tilt-duotone"
+              :autofocus="false"
               :placeholder="t('palette.cmd.placeholder')"
               @update:model-value="onSelect"
               @update:open="openMessageModal = $event"
