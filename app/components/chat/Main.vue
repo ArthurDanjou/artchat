@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="flex flex-col my-16 md:my-32">
+  <div class="flex flex-col my-8 md:my-32">
     <h1
       v-motion
       :initial="{

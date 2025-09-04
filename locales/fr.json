@@ -14,15 +14,17 @@
     "cmd": {
       "placeholder": "Utilisez les flèches pour naviguer parmi les prompts préfaits. Appuyez sur Entrer pour envoyer le message.",
       "send": "Envoyer un nouveau message",
-      "sending": "Envoi en cours..."
+      "sending": "Envoi en cours...",
+      "chat": "ArtChat",
+      "canva": "Canva"
     },
     "tooltip": {
-      "up": "Aller au message précédent",
-      "down": "Aller au message suivant",
       "send": "Envoyer un nouveau message prédéfini",
       "clear": "Supprimer tous les messages",
       "theme": "Changer le thème",
-      "language": "Changer la langue"
+      "language": "Changer la langue",
+      "chat": "Retourner sur ArtChat pour reprendre la conversation",
+      "canva": "Retourner sur Canva pour explorer"
     }
   },
   "command": {
@@ -191,5 +193,17 @@
   "alert": {
     "description": "Par manque de temps, la traduction française n'est pas disponible. Merci de votre compréhension.",
     "title": "Attention aux traductions"
+  },
+  "post": {
+    "footer": {
+      "thanks": "Merci de votre lecture ! Je m'appelle {name}, et j'adore écrire sur l'intelligence artificielle, la data science, et tout ce qui se situe à l'intersection entre les mathématiques et la programmation. {jump} Je code et j'explore les maths depuis des années, et j'apprends encore de nouvelles choses chaque jour — que ce soit en auto-hébergeant des outils dans mon homelab, en expérimentant des modèles de machine learning ou en approfondissant des méthodes statistiques. {jump} Je partage mes connaissances ici parce que je sais à quel point des ressources claires, pratiques et accessibles peuvent être précieuses, surtout quand on débute ou qu'on explore un sujet technique en profondeur. {jump} Si vous avez des questions ou simplement envie d'échanger, n'hésitez pas à laisser un commentaire ci-dessous ou à me contacter sur {linkedin} ou {github}. {jump} J'espère que cet article vous a plu et qu'il vous a appris quelque chose d'utile. Si c'est le cas, {comment} — ça m'aide beaucoup et ça me fait vraiment plaisir !",
+      "comment": "pensez à le partager"
+    },
+    "back": "Retourner sur le canva",
+    "link": {
+      "copied": "Lien copié",
+      "copy": "Copier le lien"
+    },
+    "top": "Remonter en haut"
   }
 }

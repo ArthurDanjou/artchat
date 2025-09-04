@@ -14,15 +14,17 @@
     "cmd": {
       "placeholder": "Use the arrow keys to navigate through the preset prompts. Press Enter to send the message.",
       "send": "Send new message",
-      "sending": "Sending..."
+      "sending": "Sending...",
+      "chat": "ArtChat",
+      "canva": "Canva"
     },
     "tooltip": {
-      "up": "Go to the previous message",
-      "down": "Go to the next message",
       "send": "Send a new predefined message",
       "clear": "Delete all messages",
       "theme": "Change the theme",
-      "language": "Change the language"
+      "language": "Change the language",
+      "chat": "Go back to ArtChat to resume the conversation",
+      "canva": "Return to Canva to explore"
     }
   },
   "command": {
@@ -191,5 +193,17 @@
   "alert": {
     "description": "For lack of time, the French translation is not available. \nThank you for your understanding.",
     "title": "Watch out for translations"
+  },
+  "post": {
+    "footer": {
+      "thanks": "Thanks for reading! My name is {name}, and I love writing about AI, data science, and the intersection between mathematics and programming. {jump} I've been coding and exploring math for years, and I'm always learning something new—whether it's self-hosting tools in my homelab, experimenting with machine learning models, or diving into statistical methods. {jump} I share my knowledge here because I know how valuable clear, hands-on resources can be, especially when you're just getting started or exploring something deeply technical. {jump} If you have any questions or just want to chat, feel free to reach out to me on {linkedin} or {github  }. {jump} I hope you enjoyed this post and learned something useful. If you did, {comment}—it really helps and means a lot!",
+      "comment": "consider sharing it"
+    },
+    "back": "Return to the canva",
+    "link": {
+      "copied": "Link copied",
+      "copy": "Copy link"
+    },
+    "top": "Go to top"
   }
 }

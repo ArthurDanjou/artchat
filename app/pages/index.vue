@@ -26,26 +26,8 @@ watch(
 
 <template>
   <main>
-    <ChatCommandPalette
-      v-motion
-      :initial="{
-        opacity: 0,
-        y: 200,
-        scale: 0.6,
-      }"
-      :enter="{
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: {
-          delay: 1800,
-          ease: 'easeIn',
-        },
-      }"
-      :active="messages.length > 0"
-    />
     <ChatMain />
-    <div ref="parents" class="space-y-4 my-32">
+    <div ref="parents" class="space-y-4 md:my-32 mb-16">
       <ChatMessageContainer
         :id="99999999998"
         v-motion

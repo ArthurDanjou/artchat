@@ -5,6 +5,9 @@ import { SpeedInsights } from '@vercel/speed-insights/nuxt'
 useHead({
   link: [{ rel: 'icon', type: 'image/webp', href: '/favicon.webp' }],
 })
+
+const route = useRoute()
+const { messages } = useChatStore()
 </script>
 
 <template>
@@ -12,6 +15,25 @@ useHead({
     <NuxtLoadingIndicator color="#808080" />
     <AppBackground />
     <UContainer>
+      <ChatCommandPalette
+        v-motion
+        :active="messages.length > 0"
+        :mode="route.path.includes('/projects') || route.path.includes('/writings') || route.path.includes('/canva') ? 'work' : 'chat'"
+        :initial="{
+          opacity: 0,
+          y: 200,
+          scale: 0.6,
+        }"
+        :enter="{
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          transition: {
+            delay: route.path === '/' ? 1800 : 0,
+            ease: 'easeIn',
+          },
+        }"
+      />
       <NuxtPage />
     </UContainer>
     <SpeedInsights />

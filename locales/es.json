@@ -14,15 +14,17 @@
     "cmd": {
       "placeholder": "Use las flechas para navegar entre los prefacios de inmediato. Presione Entrar para enviar el mensaje.",
       "send": "Enviar un nuevo mensaje",
-      "sending": "Enviando..."
+      "sending": "Enviando...",
+      "chat": "Regresar a Artchat",
+      "canva": "Lienzo"
     },
     "tooltip": {
-      "up": "Ir al mensaje anterior",
-      "down": "Ir al siguiente mensaje",
       "send": "Enviar un nuevo mensaje predefinido",
       "clear": "Eliminar todos los mensajes",
       "theme": "Cambiar el tema",
-      "language": "Cambiar la language"
+      "language": "Cambiar la language",
+      "chat": "Vuelve a ArtChat para reanudar la conversación",
+      "canva": "Regresar a Canva para explorar"
     }
   },
   "command": {
@@ -191,5 +193,17 @@
   "alert": {
     "description": "En falta de tiempo, la traducción al español no está disponible. Gracias por su comprensión.",
     "title": "Cuidado con las traducciones"
+  },
+  "post": {
+    "footer": {
+      "thanks": "¡Gracias por leer! Me llamo {name} y me encanta escribir sobre inteligencia artificial, ciencia de datos y todo lo que se encuentra en la intersección entre las matemáticas y la programación. {jump} Llevo años programando y explorando las matemáticas, y cada día aprendo algo nuevo — ya sea autoalojando herramientas en mi homelab, experimentando con modelos de aprendizaje automático o profundizando en métodos estadísticos. {jump} Comparto mis conocimientos aquí porque sé lo valiosos que pueden ser los recursos claros, prácticos y accesibles, especialmente cuando uno está empezando o explorando temas técnicos en profundidad. {jump} Si tienes alguna pregunta o simplemente quieres charlar, no dudes en dejar un comentario abajo o contactarme por {linkedin} o {github}. {jump} Espero que este artículo te haya gustado y que hayas aprendido algo útil. Si es así, {comment} — ¡me ayuda mucho y significa mucho para mí!",
+      "comment": "considera compartirlo"
+    },
+    "back": "Volver al lienzo",
+    "link": {
+      "copied": "Link copiado",
+      "copy": "Copiar link"
+    },
+    "top": "Ir arriba"
   }
 }

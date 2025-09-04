@@ -2,11 +2,13 @@
 import type { CommandPaletteItem } from '@nuxt/ui'
 import { ChatState } from '~~/types'
 
-defineProps({
-  active: {
-    type: Boolean,
-    default: false,
-  },
+interface Props {
+  mode?: 'chat' | 'work'
+  active: boolean
+}
+
+withDefaults(defineProps<Props>(), {
+  mode: 'chat',
 })
 
 const searchTerm = ref('')
@@ -54,63 +56,26 @@ const commandPaletteUi = {
   content: 'flex-1 overflow-y-auto',
 }
 
-function up() {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
-
-function down() {
-  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
-}
-
 const toolTipContent = {
   align: 'center',
   side: 'top',
   sideOffset: 0,
 }
+
+const router = useRouter()
+function goHome() {
+  clearMessages()
+  router.push('/')
+}
 </script>
 
 <template>
   <nav
-    class="fixed z-50 pb-8 duration-700 mx-auto px-8 sm:px-0"
-    :class="active ? 'bottom-0 left-1/2 -translate-x-1/2' : 'max-w-[40rem] w-full md:bottom-1/5 left-1/2 -translate-x-1/2 bottom-0'"
+    class="fixed z-50 mb-4 md:pb-8 duration-700 mx-auto px-8 sm:px-0 flex gap-2"
+    :class="active || mode === 'work' ? 'bottom-0 left-1/2 -translate-x-1/2' : 'max-w-[40rem] w-full md:bottom-1/5 left-1/2 -translate-x-1/2 bottom-0'"
   >
     <UCard variant="outline" class="rounded-xl shadow-lg w-full" :ui="{ body: 'p-2 sm:p-2 flex gap-2 w-full' }">
-      <ClientOnly>
-        <UFieldGroup v-if="active" class="flex items-center justify-center">
-          <UTooltip
-            :text="t('palette.tooltip.up')"
-            arrow
-            :content="toolTipContent"
-            :delay-duration="0"
-          >
-            <UButton
-              icon="i-ph-arrow-fat-up-duotone"
-              color="neutral"
-              variant="outline"
-              class="cursor-pointer"
-              size="xl"
-              @click.prevent="up"
-            />
-          </UTooltip>
-
-          <UTooltip
-            :text="t('palette.tooltip.down')"
-            arrow
-            :content="toolTipContent"
-            :delay-duration="0"
-          >
-            <UButton
-              icon="i-ph-arrow-fat-down-duotone"
-              color="neutral"
-              variant="outline"
-              class="cursor-pointer"
-              size="xl"
-              @click.prevent="down"
-            />
-          </UTooltip>
-        </UFieldGroup>
-      </ClientOnly>
-      <UFieldGroup class="w-full">
+      <UFieldGroup v-if="mode === 'chat'" class="w-full">
         <UModal v-model:open="openMessageModal" :ui="modalUi" title="Hey" description="Hey">
           <UTooltip
             :text="t('palette.tooltip.send')"
@@ -210,6 +175,40 @@ const toolTipContent = {
             </UFieldGroup>
           </template>
         </UModal>
+      </UFieldGroup>
+      <UFieldGroup v-else>
+        <UTooltip
+          :text="t('palette.tooltip.chat')"
+          arrow
+          :content="toolTipContent"
+          :delay-duration="0"
+        >
+          <UButton
+            :label="t('palette.cmd.chat')"
+            variant="outline"
+            color="neutral"
+            size="xl"
+            icon="i-ph-house-duotone"
+            class="rounded-lg cursor-pointer p-2 w-full justify-center"
+            @click.prevent="goHome"
+          />
+        </UTooltip>
+        <UTooltip
+          :text="t('palette.tooltip.canva')"
+          arrow
+          :content="toolTipContent"
+          :delay-duration="0"
+        >
+          <UButton
+            :label="t('palette.cmd.canva')"
+            variant="outline"
+            color="neutral"
+            size="xl"
+            icon="i-ph-presentation-duotone"
+            href="/canva"
+            class="rounded-lg cursor-pointer p-2 w-full justify-center"
+          />
+        </UTooltip>
       </UFieldGroup>
       <ClientOnly>
         <UFieldGroup class="flex items-center justify-center">
