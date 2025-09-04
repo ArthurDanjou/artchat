@@ -106,7 +106,6 @@ function goHome() {
               close
               :ui="commandPaletteUi"
               :groups="messages"
-              :autofocus="false"
               icon="i-ph-paper-plane-tilt-duotone"
               :placeholder="t('palette.cmd.placeholder')"
               @update:model-value="onSelect"
