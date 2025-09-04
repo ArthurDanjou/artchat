@@ -93,7 +93,7 @@ const getActivity = computed(() => {
         </div>
       </div>
       <ClientOnly>
-        <UCard v-if="getActivity" variant="outline" class="md:max-w-1/2 m-1 shadow-sm" :ui="{ body: 'flex gap-8 items-center' }">
+        <UCard v-if="getActivity" variant="outline" class="md:max-w-1/2 m-1 shadow-sm bg-white dark:bg-neutral-900" :ui="{ body: 'flex gap-8 items-center' }">
           <UIcon
             :name="IDEs.find(ide => ide.name === getActivity!.name)!.icon"
             size="64"

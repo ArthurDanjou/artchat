@@ -17,7 +17,7 @@ const { dark, toggleDark } = useTheme()
       </ul>
     </div>
     <ClientOnly>
-      <UCard variant="outline" class="md:max-w-1/2 m-1 shadow-sm" :ui="{ body: 'flex justify-between items-center' }">
+      <UCard variant="outline" class="md:max-w-1/2 m-1 shadow-sm bg-white dark:bg-neutral-900" :ui="{ body: 'flex justify-between items-center' }">
         <div class="flex items-center gap-2">
           <UIcon v-if="dark" name="i-ph-moon-duotone" size="24" />
           <UIcon v-else name="i-ph-sun-duotone" size="24" />

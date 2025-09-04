@@ -19,7 +19,7 @@ const { changeLocale } = useLanguage()
       </ul>
     </div>
     <ClientOnly>
-      <UCard variant="outline" class="md:max-w-1/2 m-1 shadow-sm" :ui="{ body: 'flex justify-between items-center gap-2' }">
+      <UCard variant="outline" class="md:max-w-1/2 m-1 shadow-sm bg-white dark:bg-neutral-900" :ui="{ body: 'flex justify-between items-center gap-2' }">
         <p class="block">
           {{ t('tool.language.change') }}
         </p>

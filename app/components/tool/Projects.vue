@@ -15,7 +15,7 @@ const date = (date: string) => useDateFormat(new Date(date), 'DD MMMM YYYY', { l
     <div v-if="projects" class="m-1 my-4 flex flex-col gap-4">
       <div v-for="project in projects" :key="project.id">
         <NuxtLink :to="`/projects/${project.slug}`">
-          <UCard variant="subtle" class="shadow-md">
+          <UCard variant="subtle" class="shadow-sm bg-white dark:bg-neutral-900">
             <h1 class="text-xl font-medium">
               {{ project.title }}
             </h1>

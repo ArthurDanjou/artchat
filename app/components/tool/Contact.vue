@@ -19,7 +19,7 @@ const { t } = useI18n()
           variant="subtle"
           color="neutral"
           target="_blank"
-          class="m-1 shadow-sm"
+          class="m-1 shadow-sm bg-white dark:bg-neutral-900"
           :href="social.to"
           :aria-label="social.label"
         />

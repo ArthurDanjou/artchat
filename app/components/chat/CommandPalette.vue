@@ -40,7 +40,7 @@ defineShortcuts({
   meta_k: () => openMessageModal.value = !openMessageModal.value,
   meta_d: () => openClearModal.value = !openClearModal.value,
   l: () => changeLocale(currentLocale.value!.code === 'en' ? 'fr' : currentLocale.value!.code === 'fr' ? 'es' : 'en'),
-  t: () => toggleDark({ clientX: window.innerWidth, clientY: 0 }),
+  t: () => toggleDark({ clientX: window.innerWidth / 2, clientY: window.innerHeight }),
 })
 
 const modalUi = {
@@ -53,6 +53,14 @@ const commandPaletteUi = {
   item: 'data-highlighted:not-data-disabled:before:bg-muted',
   content: 'flex-1 overflow-y-auto',
 }
+
+function up() {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+function down() {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+}
 </script>
 
 <template>
@@ -61,6 +69,26 @@ const commandPaletteUi = {
     :class="active ? 'bottom-0 left-1/2 -translate-x-1/2' : 'max-w-[40rem] w-full md:bottom-1/5 left-1/2 -translate-x-1/2 bottom-0'"
   >
     <UCard variant="outline" class="rounded-xl shadow-lg w-full" :ui="{ body: 'p-2 sm:p-2 flex gap-2 w-full' }">
+      <ClientOnly>
+        <UFieldGroup v-if="active" class="flex items-center justify-center">
+          <UButton
+            icon="i-ph-arrow-fat-up-duotone"
+            color="neutral"
+            variant="outline"
+            class="cursor-pointer"
+            size="xl"
+            @click.prevent="up"
+          />
+          <UButton
+            icon="i-ph-arrow-fat-down-duotone"
+            color="neutral"
+            variant="outline"
+            class="cursor-pointer"
+            size="xl"
+            @click.prevent="down"
+          />
+        </UFieldGroup>
+      </ClientOnly>
       <UFieldGroup class="w-full">
         <UModal v-model:open="openMessageModal" :ui="modalUi" title="Hey" description="Hey">
           <UButton

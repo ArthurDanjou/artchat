@@ -23,7 +23,7 @@ const { t, locale } = useI18n()
             :label="skill.name"
             variant="subtle"
             color="neutral"
-            class="shadow-md"
+            class="shadow-sm bg-white dark:bg-neutral-900"
             :icon="skill.icon"
           />
         </div>
