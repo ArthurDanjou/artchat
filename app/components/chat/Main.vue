@@ -17,11 +17,11 @@ const { t } = useI18n()
         scale: 1,
         transition: { ease: 'linear' },
       }"
-      class="font-bold text-3xl sm:text-4xl duration-200"
+      class="font-bold text-5xl duration-200"
     >
       {{ t('chat.welcome') }}
     </h1>
-    <h3
+    <h2
       v-motion
       :initial="{
         opacity: 0,
@@ -37,9 +37,9 @@ const { t } = useI18n()
           ease: 'linear',
         },
       }"
-      class="text-3xl sm:text-4xl bg-gradient-to-r from-inverted/40 to-inverted/75 to-50% bg-clip-text text-transparent font-medium duration-200"
+      class="text-3xl bg-gradient-to-r from-inverted/40 to-inverted/75 to-50% bg-clip-text text-transparent font-medium duration-200"
     >
       {{ t('chat.ask') }}
-    </h3>
+    </h2>
   </div>
 </template>
