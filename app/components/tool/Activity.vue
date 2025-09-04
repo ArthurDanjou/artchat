@@ -107,14 +107,14 @@ const getActivity = computed(() => {
               {{ getActivity.state!.split(' ').map((word: string) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ') }}
             </div>
             <div>{{ getActivity.project }}</div>
-            <div class="italic text-xs">
-              {{ getActivity.start.ago }}
-            </div>
           </div>
 
           <template #footer>
             <div class="flex justify-end text-sm">
               <i18n-t keypath="tool.activity.started" tag="p">
+                <template #ago>
+                  {{ getActivity.start.ago }}
+                </template>
                 <template #date>
                   {{ getActivity.start.formated.date }}
                 </template>

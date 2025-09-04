@@ -26,15 +26,15 @@
       "prompt": "Comment puis-je changer le thème ?"
     },
     "stats": {
-      "label": "Voir les statistiques",
+      "label": "Statistiques de développement",
       "prompt": "Comment puis-je voir les statistiques concernant Arthur ?"
     },
     "weather": {
-      "label": "Voir la météo",
+      "label": "Météo",
       "prompt": "Comment puis-je voir les conditions météorologiques près d'Arthur ?"
     },
     "location": {
-      "label": "Voir la localisation",
+      "label": "Localisation",
       "prompt": "Comment puis-je voir la localisation d'Arthur ?"
     },
     "language": {
@@ -133,7 +133,7 @@
         "offline": "Je suis déconnecté 🫥",
         "idling": "Je dors 😴"
       },
-      "started": "Commencé le {date} à {hour}",
+      "started": "Commencé {ago}, le {date} à {hour}",
       "secret": "Projet Secret"
     },
     "location": "Je suis actuellement basé à {location}. Voir ci-dessous pour plus de détails.",

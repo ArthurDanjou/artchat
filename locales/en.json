@@ -133,7 +133,7 @@
         "offline": "I'm offline 🫥",
         "idling": "I'm sleeping 😴"
       },
-      "started": "Started the {date} at {hour}",
+      "started": "Started {ago}, the {date} at {hour}",
       "secret": "Secret Project"
     },
     "location": "I'm currently based in {location}. See below for more details.",

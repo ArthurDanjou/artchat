@@ -34,7 +34,7 @@ watch(
         scale: 1,
         transition: {
           delay: 1800,
-          ease: 'easeInOut',
+          ease: 'easeIn',
         },
       }"
       :active="messages.length > 0"

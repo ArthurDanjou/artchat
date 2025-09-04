@@ -152,6 +152,7 @@ const commandPaletteUi = {
             :icon="dark ? 'i-ph-moon-duotone' : 'i-ph-sun-duotone'"
             color="neutral"
             variant="outline"
+            class="cursor-pointer"
             size="xl"
             @click.prevent="toggleDark"
           />
@@ -159,6 +160,7 @@ const commandPaletteUi = {
             icon="i-ph-translate-duotone"
             color="neutral"
             variant="outline"
+            class="cursor-pointer"
             size="xl"
             @click.prevent="changeLocale(currentLocale!.code === 'en' ? 'fr' : currentLocale!.code === 'fr' ? 'es' : 'en')"
           />
