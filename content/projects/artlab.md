@@ -13,7 +13,7 @@ tags:
 
 [**ArtLab**](https://status.arthurdanjou.fr) is my personal homelab, where I experiment with self-hosting and automation.
 
-My homelab is a self-hosted environment where I deploy, test, and maintain personal services. Everything is securely exposed **only through a private VPN** using [Tailscale](https://tailscale.com/), ensuring encrypted, access-controlled connections across all devices.  
+My homelab is a self-hosted environment where I deploy, test, and maintain personal services. Everything is securely exposed **only through a private VPN** using [Tailscale](https://tailscale.com/), ensuring encrypted, access-controlled connections across all devices.
 For selected services, I also use **Cloudflare Tunnels** to enable secure external access without opening ports or exposing my public IP.
 
 ### 🛠️ Running Services
