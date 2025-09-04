@@ -81,7 +81,7 @@ const dynamicComponent = computed(() => componentMap[props.message.type])
         </div>
       </UCard>
       <div class="flex items-center gap-2 lg:absolute lg:-left-12">
-        <UAvatar src="/arthur.webp" size="lg" class="shadow-lg" />
+        <UAvatar src="/arthur.webp" size="lg" class="shadow-lg" alt="Avatar or Arthur" />
         <span class="md:hidden">Arthur DANJOU</span>
       </div>
     </div>
