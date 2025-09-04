@@ -32,6 +32,7 @@ export const useChatStore = defineStore('chat', () => {
         sender,
         state: ChatState.LOADING,
         fetchStates: [...fetchStates, ChatFetchState.DONE],
+        createdAt: new Date(),
       }
 
       messages.value.push(message)
@@ -44,6 +45,7 @@ export const useChatStore = defineStore('chat', () => {
         sender,
         state: ChatState.SENT,
         fetchStates: [ChatFetchState.DONE],
+        createdAt: new Date(),
       })
     }
   }

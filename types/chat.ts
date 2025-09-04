@@ -48,6 +48,7 @@ export interface ChatMessage {
   type: ChatType
   state: ChatState
   fetchStates?: ChatFetchState[]
+  createdAt: Date
 }
 
 export const ChatMessages = [

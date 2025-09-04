@@ -51,6 +51,7 @@ watch(
           sender: ChatSender.USER,
           state: ChatState.SENT,
           type: ChatType.INIT,
+          createdAt: new Date(),
         }"
       />
       <ChatMessageContainer
@@ -76,6 +77,7 @@ watch(
           sender: ChatSender.ARTHUR,
           state: ChatState.SENT,
           type: ChatType.INIT,
+          createdAt: new Date(),
         }"
       />
       <ChatMessageContainer
