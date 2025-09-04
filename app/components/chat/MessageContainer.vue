@@ -92,6 +92,9 @@ const formatted = computed(() => useDateFormat(useNow(), 'D MMMM YYYY, HH:mm', {
         <div v-else-if="message.type === ChatType.WRITINGS">
           <ToolWritings />
         </div>
+        <div v-else-if="message.type === ChatType.HOBBIES">
+          <ToolHobbies />
+        </div>
         <div v-else>
           {{ message }}
         </div>

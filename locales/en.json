@@ -182,7 +182,8 @@
       "wind": "Wind"
     },
     "projects": "A selection of my projects developed in R, Python, and web development, covering diverse areas such as data analysis, machine learning, and web applications. These projects highlight my skills in coding, problem-solving, and solution design. {space}Here, I present the three projects I am most proud of, but you can explore all my projects directly on the {canva}.",
-    "writings": "I share my reflections on mathematics, artificial intelligence, development and my passions, by organizing them to follow the evolution of my ideas and projects. {space}Here you will find the two most recent articles, but all my writings are accessible on the {canva}, to explore my universe more in depth, Maths and AI."
+    "writings": "I share my reflections on mathematics, artificial intelligence, development and my passions, by organizing them to follow the evolution of my ideas and projects. {space}Here you will find the two most recent articles, but all my writings are accessible on the {canva}, to explore my universe more in depth, Maths and AI.",
+    "hobbies": "Outside of programming and my technical projects, I dedicate much of my free time to my passions: sports, music, traveling, and spending time with friends. Sports teach me discipline and perseverance, music fuels my creativity, and traveling opens me up to new cultures and ways of thinking, which also nurtures my intellectual curiosity.\nThese passions help me maintain balance and strengthen the qualities I bring to both my studies and my career: curiosity, commitment, autonomy, and a constant desire to improve. They make me someone who is motivated, adaptable, and always ready to take on new challenges."
   },
   "error": {
     "main": "I think you're lost, let's go back to the",
