@@ -25,7 +25,7 @@ const formatDate = computed(() => useDateFormat(props.message.createdAt, 'D MMMM
         {{ t(message.content || '') }}
       </UCard>
     </div>
-    <div class="text-muted opacity-0 group-hover:opacity-80 duration-500 flex text-xs italic justify-end">
+    <div class="text-muted-foreground opacity-0 group-hover:opacity-80 duration-500 flex text-xs italic justify-end">
       {{ formatDate }}
     </div>
   </div>

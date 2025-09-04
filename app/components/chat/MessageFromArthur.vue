@@ -85,7 +85,7 @@ const dynamicComponent = computed(() => componentMap[props.message.type])
         <span class="md:hidden">Arthur DANJOU</span>
       </div>
     </div>
-    <div class="text-muted opacity-0 group-hover:opacity-80 duration-500 flex text-xs italic justify-start">
+    <div class="text-muted-foreground opacity-0 group-hover:opacity-80 duration-500 flex text-xs italic justify-start">
       {{ formatDate }}
     </div>
   </div>
