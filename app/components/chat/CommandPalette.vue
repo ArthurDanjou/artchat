@@ -46,8 +46,9 @@ defineShortcuts({
 })
 
 const activeElement = useActiveElement()
-watch(activeElement, () => {
-  if (activeElement.value instanceof HTMLElement && ['INPUT', 'TEXTAREA'].includes(activeElement.value.tagName)) {
+watch(openMessageModal, async () => {
+  await nextTick()
+  if (activeElement.value instanceof HTMLElement) {
     activeElement.value.blur()
   }
 })
@@ -201,6 +202,7 @@ function goHome() {
           />
         </UTooltip>
         <UTooltip
+          v-if="router.currentRoute.value.name !== 'canva'"
           :text="t('palette.tooltip.canva')"
           arrow
           :content="toolTipContent"

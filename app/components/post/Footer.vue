@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="mt-8 p-8 border bg-white/70 dark:bg-black/70 border-gray-200 dark:border-neutral-700 rounded-md">
+  <UCard class="mt-8 shadow-sm bg-white dark:bg-neutral-900">
     <NuxtImg
       src="/arthur pro.webp"
       alt="Arthur Danjou"
@@ -42,5 +42,5 @@ const { t } = useI18n()
         <br> <br>
       </template>
     </i18n-t>
-  </div>
+  </UCard>
 </template>

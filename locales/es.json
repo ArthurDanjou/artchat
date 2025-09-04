@@ -197,7 +197,6 @@
       "thanks": "¡Gracias por leer! Me llamo {name} y me encanta escribir sobre inteligencia artificial, ciencia de datos y todo lo que se encuentra en la intersección entre las matemáticas y la programación. {jump} Llevo años programando y explorando las matemáticas, y cada día aprendo algo nuevo — ya sea autoalojando herramientas en mi homelab, experimentando con modelos de aprendizaje automático o profundizando en métodos estadísticos. {jump} Comparto mis conocimientos aquí porque sé lo valiosos que pueden ser los recursos claros, prácticos y accesibles, especialmente cuando uno está empezando o explorando temas técnicos en profundidad. {jump} Si tienes alguna pregunta o simplemente quieres charlar, no dudes en dejar un comentario abajo o contactarme por {linkedin} o {github}. {jump} Espero que este artículo te haya gustado y que hayas aprendido algo útil. Si es así, {comment} — ¡me ayuda mucho y significa mucho para mí!",
       "comment": "considera compartirlo"
     },
-    "back": "Volver al lienzo",
     "link": {
       "copied": "Link copiado",
       "copy": "Copiar link"

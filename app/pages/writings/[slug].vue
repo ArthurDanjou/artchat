@@ -3,8 +3,6 @@ const route = useRoute()
 const { data: writing } = await useAsyncData(`writings/${route.params.slug}`, () =>
   queryCollection('writings').path(`/writings/${route.params.slug}`).first())
 
-const { t } = useI18n()
-
 useSeoMeta({
   title: writing.value?.title,
   description: writing.value?.description,
@@ -13,20 +11,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <main v-if="writing" class="mt-8 md:mt-16 md:mb-32 mb-20">
-    <div class="flex">
-      <NuxtLinkLocale
-        class="flex items-center gap-2 mb-8 group text-sm hover:text-black dark:hover:text-white duration-300"
-        to="/canva"
-      >
-        <UIcon
-          class="group-hover:-translate-x-1 transform duration-300"
-          name="i-ph-arrow-left-duotone"
-          size="20"
-        />
-        {{ t('post.back') }}
-      </NuxtLinkLocale>
-    </div>
+  <UContainer v-if="writing" class="mt-16 md:mt-16 md:mb-36 mb-22">
     <PostAlert class="mb-8" />
     <div>
       <div class="flex items-end justify-between gap-2 flex-wrap">
@@ -51,7 +36,7 @@ useSeoMeta({
       class="w-full rounded-md my-8"
     >
       <ProseImg
-        :src="`/projects/${writing.cover}`"
+        :src="`/writings/${writing.cover}`"
         label="Project cover"
       />
     </div>
@@ -66,7 +51,7 @@ useSeoMeta({
       />
     </ClientOnly>
     <PostFooter />
-  </main>
+  </UContainer>
 </template>
 
 <style scoped>

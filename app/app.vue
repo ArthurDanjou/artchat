@@ -28,28 +28,26 @@ const head = useLocaleHead()
     </Html>
     <NuxtLoadingIndicator color="#808080" />
     <AppBackground />
-    <UContainer>
-      <ChatCommandPalette
-        v-motion
-        :active="messages.length > 0"
-        :mode="route.path.includes('/projects') || route.path.includes('/writings') || route.path.includes('/canva') ? 'work' : 'chat'"
-        :initial="{
-          opacity: 0,
-          y: 200,
-          scale: 0.6,
-        }"
-        :enter="{
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          transition: {
-            delay: route.path === '/' ? 1800 : 0,
-            ease: 'easeIn',
-          },
-        }"
-      />
-      <NuxtPage />
-    </UContainer>
+    <ChatCommandPalette
+      v-motion
+      :active="messages.length > 0"
+      :mode="route.path.includes('/projects') || route.path.includes('/writings') || route.path.includes('/canva') ? 'work' : 'chat'"
+      :initial="{
+        opacity: 0,
+        y: 200,
+        scale: 0.6,
+      }"
+      :enter="{
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+          delay: route.path === '/' ? 1800 : 0,
+          ease: 'easeIn',
+        },
+      }"
+    />
+    <NuxtPage />
     <SpeedInsights />
     <Analytics />
   </UApp>

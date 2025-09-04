@@ -25,7 +25,7 @@ watch(
 </script>
 
 <template>
-  <main>
+  <UContainer>
     <ChatMain />
     <div ref="parents" class="space-y-4 md:my-32 mb-16">
       <ChatMessageContainer
@@ -95,5 +95,5 @@ watch(
         }"
       />
     </div>
-  </main>
+  </UContainer>
 </template>

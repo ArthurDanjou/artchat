@@ -14,7 +14,7 @@ tags:
 
 It's designed to be fast, accessible, and fully responsive. The site also serves as a playground to explore and test modern frontend tools.
 
-### ⚒️ Tech Stack
+## ⚒️ Tech Stack
 
 - **UI** → [Vue.js](https://vuejs.org/): A progressive JavaScript framework for building interactive interfaces.
 - **Framework** → [Nuxt](https://nuxt.com/): A powerful full-stack framework built on Vue, perfect for modern web apps.

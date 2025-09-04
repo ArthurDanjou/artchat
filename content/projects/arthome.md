@@ -13,7 +13,7 @@ tags:
 
 Create categories and tabs to group your shortcuts, personalize them with icons and colors, and make the page private if you want to keep your links just for yourself. The interface is clean, responsive, and works across all modern browsers.
 
-### 🛠️ Built with
+## 🛠️ Built with
 
 - [Nuxt](https://nuxt.com): An open-source framework for building performant, full-stack web applications with Vue.
 - [NuxtHub](https://hub.nuxt.com): A Cloudflare-powered platform to deploy and scale Nuxt apps globally with minimal latency and full-stack capabilities.

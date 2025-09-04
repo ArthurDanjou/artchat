@@ -16,7 +16,7 @@ tags:
 My homelab is a self-hosted environment where I deploy, test, and maintain personal services. Everything is securely exposed **only through a private VPN** using [Tailscale](https://tailscale.com/), ensuring encrypted, access-controlled connections across all devices.
 For selected services, I also use **Cloudflare Tunnels** to enable secure external access without opening ports or exposing my public IP.
 
-### 🛠️ Running Services
+## 🛠️ Running Services
 
 - **MinIO**: S3-compatible object storage for static files and backups.
 - **Immich**: Self-hosted photo management platform — a private alternative to Google Photos.
@@ -31,7 +31,7 @@ For selected services, I also use **Cloudflare Tunnels** to enable secure extern
 - **Beszel**: Self-hosted, lightweight alternative to Notion for notes and knowledge management.
 - **Palmr**: Personal logging and journaling tool.
 
-### 🖥️ Hardware
+## 🖥️ Hardware
 
 - **Beelink EQR6**: AMD Ryzen mini PC, main server host.
 - **TP-Link 5-port Switch**: Network connectivity for all devices.
