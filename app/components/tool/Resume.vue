@@ -13,7 +13,7 @@ const resumes = ref<ResumeFile[]>([
   },
   {
     name: t('tool.resume.files.fr'),
-    file: '/resumes/CV M1 2025 Français.pdf',
+    file: '/resumes/CV M1 2025 FR.pdf',
   },
 ])
 </script>
