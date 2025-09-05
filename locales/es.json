@@ -1,7 +1,7 @@
 {
   "main": {
     "question": "¡Genial! Háblame un poco más sobre ti.",
-    "about": "Soy estudiante de Matemáticas y Estadísticas en la Universidad Paris-Dauphine en Francia. Con una comprensión profunda de las tecnologías emergentes, estoy en el corazón de un campo en rápida expansión. Mi formación en matemáticas me da una ventaja para comprender los conceptos y teorías detrás de estas tecnologías y para diseñarlas de manera efectiva.",
+    "about": "Soy estudiante de segundo año de Máster en Matemáticas y Aplicaciones, especializándome en Ingeniería Estadística y Finanzas – Ciencia de Datos, en la Université Paris-Dauphine PSL en Francia. Me especializo en estadística aplicada, modelado y ciencia de datos, con un gran interés en el análisis de datos, algoritmos e implementación de software, con el objetivo de contribuir a las aplicaciones prácticas de la inteligencia artificial en el mundo actual. {space} Gracias a mi formación en matemáticas y a mi comprensión de las tecnologías emergentes, puedo comprender conceptos teóricos y diseñar soluciones efectivas en un campo en rápido crecimiento. {space} Accede directamente a otras páginas: {links}",
     "powered": "Impulsado por Nuxt"
   },
   "palette": {
@@ -15,14 +15,18 @@
       "placeholder": "Use las flechas para navegar entre los prefacios de inmediato. Presione Entrar para enviar el mensaje.",
       "send": "Enviar un mensaje",
       "sending": "Enviando...",
-      "chat": "Regresar a Artchat"
+      "chat": "Regresar a Artchat",
+      "projects": "Ver proyectos",
+      "writings": "Ver artículos"
     },
     "tooltip": {
       "send": "Enviar un nuevo mensaje predefinido",
       "clear": "Eliminar todos los mensajes",
       "theme": "Cambiar el tema",
       "language": "Cambiar la language",
-      "chat": "Vuelve a ArtChat para reanudar la conversación"
+      "chat": "Vuelve a ArtChat para reanudar la conversación",
+      "projects": "Descubre otros proyectos",
+      "writings": "Leer más artículos"
     }
   },
   "command": {
@@ -53,10 +57,7 @@
       "label": "Actividad",
       "prompt": "¿Qué estás haciendo actualmente?"
     },
-    "about": {
-      "label": "Sobre Arthur",
-      "prompt": "Quiero que me hables de ti."
-    },
+    "about": {},
     "projects": {
       "label": "Proyectos",
       "prompt": "Háblame de tus proyectos."

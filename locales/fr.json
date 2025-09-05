@@ -1,7 +1,7 @@
 {
   "main": {
     "question": "Génial ! Parle moi un peu plus de toi.",
-    "about": "Je suis étudiant en Mathématiques et en Statistiques à l'Université Paris-Dauphine en France. Avec une compréhension approfondie des technologies émergentes, je suis au cœur d'un domaine en pleine expansion. Mon parcours en mathématiques me donne un avantage pour comprendre les concepts et les théories derrière ces technologies et pour les concevoir efficacement. {space} Accédez directement aux autres pages: {links}",
+    "about": "Je suis étudiant en deuxième année de Master Mathématiques et Applications, parcours Ingénierie Statistique et Finance – Data Science, à l’Université Paris-Dauphine PSL en France. Je me spécialise en statistique appliquée, modélisation et data science, avec un intérêt marqué pour l’analyse de données, l’algorithmique et l’implémentation logicielle, afin de contribuer aux applications concrètes de l’intelligence artificielle dans notre monde actuel. {space} Grâce à ma formation en mathématiques et à ma compréhension des technologies émergentes, je suis capable de saisir les concepts théoriques et de concevoir des solutions efficaces dans un domaine en pleine expansion. {space} Accédez directement aux autres pages : {links}",
     "powered": "Propulsé par Nuxt"
   },
   "palette": {
@@ -57,10 +57,7 @@
       "label": "Activité",
       "prompt": "Que fais-tu actuellement ?"
     },
-    "about": {
-      "label": "A propos d'Arthur",
-      "prompt": "Je veux que tu me parles de toi."
-    },
+    "about": {},
     "projects": {
       "label": "Projets",
       "prompt": "Je veux que tu me parles de tes projets."

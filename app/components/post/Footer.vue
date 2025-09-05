@@ -12,7 +12,7 @@ const { t } = useI18n()
     <i18n-t
       keypath="post.footer.thanks"
       tag="p"
-      class="text-neutral-600 dark:text-neutral-400 text-justify"
+      class="text-neutral-600 dark:text-neutral-400"
     >
       <template #linkedin>
         <PostLink

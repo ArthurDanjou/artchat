@@ -42,7 +42,6 @@ const componentMap: Record<ChatType, Component | undefined> = {
   [ChatType.PROJECTS]: ToolProjects,
   [ChatType.WRITINGS]: ToolWritings,
   [ChatType.HOBBIES]: ToolHobbies,
-  [ChatType.ABOUT]: undefined,
   [ChatType.EXPERIENCES]: undefined,
   [ChatType.STATUS]: undefined,
   [ChatType.CREDITS]: ToolCredits,

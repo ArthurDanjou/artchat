@@ -4,7 +4,6 @@ export enum ChatType {
   LOCATION = 'location',
   THEME = 'theme',
   LANGUAGE = 'language',
-  ABOUT = 'about',
   PROJECTS = 'projects',
   WRITINGS = 'writings',
   EXPERIENCES = 'experiences',
@@ -122,13 +121,6 @@ export const ChatMessages = [
         icon: 'i-ph-star-duotone',
         prompt: 'command.credits.prompt',
         type: ChatType.CREDITS,
-      },
-      {
-        label: 'command.about.label',
-        icon: 'i-ph-person-arms-spread-duotone',
-        prompt: 'command.about.prompt',
-        type: ChatType.ABOUT,
-        fetchStates: [ChatFetchState.CHECKING],
       },
       {
         label: 'command.projects.label',

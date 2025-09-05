@@ -89,7 +89,7 @@ function isRoute(name: string): boolean {
 <template>
   <nav
     class="fixed z-50 mb-4 md:pb-8 duration-700 mx-auto px-8 sm:px-0 flex gap-2"
-    :class="active || mode === 'work' ? 'bottom-0 left-1/2 -translate-x-1/2' : 'max-w-[40rem] w-full md:bottom-1/5 left-1/2 -translate-x-1/2 bottom-0'"
+    :class="active || mode === 'work' ? 'bottom-0 left-1/2 -translate-x-1/2' : 'max-w-[40rem] w-full md:bottom-1/6 left-1/2 -translate-x-1/2 bottom-0'"
   >
     <UCard variant="outline" class="rounded-xl shadow-lg w-full" :ui="{ body: 'p-2 sm:p-2 flex gap-2 w-full' }">
       <UFieldGroup v-if="mode === 'chat'" class="w-full">
