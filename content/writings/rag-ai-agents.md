@@ -6,6 +6,8 @@ readingTime: 5
 publishedAt: 2025/04/06
 tags:
   - ai
+  - automation
+  - agents
 ---
 
 In the rapidly evolving world of artificial intelligence, the combination of Large Language Models (LLMs), AI agents, and Retrieval-Augmented Generation (RAG) is driving new possibilities for autonomous systems. These components, when integrated, create intelligent systems capable of performing complex tasks, reasoning, and interacting with the world around them. In this post, we'll dive into each of these elements and explore their synergy.

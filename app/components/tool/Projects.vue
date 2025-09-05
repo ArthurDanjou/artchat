@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const { locale, locales } = useI18n()
+const { locale, locales, t } = useI18n()
 const currentLocale = computed(() => locales.value.find(l => l.code === locale.value))
 
 const { data: projects } = await useAsyncData('projects-index', async () => await queryCollection('projects').where('favorite', '=', true).select('title', 'description', 'id', 'publishedAt', 'tags', 'slug').all())
@@ -10,9 +10,17 @@ const date = (date: string) => useDateFormat(new Date(date), 'DD MMMM YYYY', { l
   <section>
     <div class="prose dark:prose-invert">
       <PostAlert class="mb-2" />
-      <i18n-t keypath="tool.projects" tag="p">
-        <template #canva>
-          CANVA
+      <i18n-t keypath="tool.projects.main" tag="p">
+        <template #projects>
+          <UButton
+            :label="t('tool.projects.link')"
+            color="neutral"
+            variant="link"
+            size="lg"
+            trailing-icon="i-ph-code-duotone"
+            to="/projects"
+            class="cursor-pointer px-0 py-0.5"
+          />
         </template>
         <template #space>
           <br>

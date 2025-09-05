@@ -19,7 +19,7 @@ const props = defineProps<{
   message: ChatMessage
 }>()
 
-const { t, locale, locales } = useI18n()
+const { locale, locales, t } = useI18n()
 const currentLocale = computed(() => locales.value.find(l => l.code === locale.value))
 const formatDate = computed(() => useDateFormat(props.message.createdAt, 'D MMMM YYYY, HH:mm', { locales: currentLocale.value?.code ?? 'en' }).value)
 
@@ -73,9 +73,31 @@ const dynamicComponent = computed(() => componentMap[props.message.type])
           v-if="dynamicComponent"
           :type="message.type"
         />
-        <div v-else-if="message.type === ChatType.INIT">
-          {{ t(message.content || '') }}
-        </div>
+        <i18n-t v-else-if="message.type === ChatType.INIT" :keypath="message.content || ''" tag="div">
+          <template #space>
+            <br>
+          </template>
+          <template #links>
+            <div class="inline-flex items-center gap-2 mb-2">
+              <UButton
+                :label="t('tool.projects.link')"
+                to="/projects"
+                icon="i-ph-code-duotone"
+                variant="outline"
+                size="sm"
+                class="cursor-pointer translate-y-1"
+              />
+              <UButton
+                :label="t('tool.writings.link')"
+                to="/writings"
+                icon="i-ph-books-duotone"
+                variant="outline"
+                size="sm"
+                class="cursor-pointer translate-y-1"
+              />
+            </div>
+          </template>
+        </i18n-t>
         <div v-else>
           {{ message }}
         </div>

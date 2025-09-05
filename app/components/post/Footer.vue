@@ -20,7 +20,7 @@ const { t } = useI18n()
           icon="i-ph-linkedin-logo-duotone"
           label="LinkedIn"
           target="_blank"
-          class="inline-flex items-start gap-1 transform translate-y-1"
+          class="translate-y-1"
         />
       </template>
       <template #github>
@@ -29,7 +29,7 @@ const { t } = useI18n()
           icon="i-ph-github-logo-duotone"
           label="GitHub"
           target="_blank"
-          class="inline-flex items-start gap-1 transform translate-y-1"
+          class="translate-y-1"
         />
       </template>
       <template #comment>

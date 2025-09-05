@@ -22,7 +22,7 @@ defineProps({
   <NuxtLink
     :href="href"
     :target="blanked ? '_blank' : '_self'"
-    class="sofia flex gap-1 items-center group"
+    class="sofia group inline-flex items-center gap-1"
   >
     <Icon
       v-if="icon"

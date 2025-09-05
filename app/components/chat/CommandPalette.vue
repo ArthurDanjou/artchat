@@ -80,6 +80,11 @@ function goHome() {
   clearMessages()
   router.push('/')
 }
+
+const route = useRoute()
+function isRoute(name: string): boolean {
+  return route.path.includes(name) && route.name !== '/'
+}
 </script>
 
 <template>
@@ -204,6 +209,40 @@ function goHome() {
             icon="i-ph-house-duotone"
             class="rounded-lg cursor-pointer p-2 w-full justify-center"
             @click.prevent="goHome"
+          />
+        </UTooltip>
+        <UTooltip
+          v-if="isRoute('/projects')"
+          :text="t('palette.tooltip.writings')"
+          arrow
+          :content="toolTipContent"
+          :delay-duration="0"
+        >
+          <UButton
+            :label="t('palette.cmd.writings')"
+            variant="outline"
+            color="neutral"
+            size="xl"
+            icon="i-ph-books-duotone"
+            class="rounded-lg cursor-pointer p-2 w-full justify-center"
+            href="/writings"
+          />
+        </UTooltip>
+        <UTooltip
+          v-if="isRoute('/writings')"
+          :text="t('palette.tooltip.projects')"
+          arrow
+          :content="toolTipContent"
+          :delay-duration="0"
+        >
+          <UButton
+            :label="t('palette.cmd.projects')"
+            variant="outline"
+            color="neutral"
+            size="xl"
+            icon="i-ph-code-duotone"
+            class="rounded-lg cursor-pointer p-2 w-full justify-center"
+            href="/projects"
           />
         </UTooltip>
       </UFieldGroup>

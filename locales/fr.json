@@ -1,7 +1,7 @@
 {
   "main": {
     "question": "Génial ! Parle moi un peu plus de toi.",
-    "about": "Je suis étudiant en Mathématiques et en Statistiques à l'Université Paris-Dauphine en France. Avec une compréhension approfondie des technologies émergentes, je suis au cœur d'un domaine en pleine expansion. Mon parcours en mathématiques me donne un avantage pour comprendre les concepts et les théories derrière ces technologies et pour les concevoir efficacement.",
+    "about": "Je suis étudiant en Mathématiques et en Statistiques à l'Université Paris-Dauphine en France. Avec une compréhension approfondie des technologies émergentes, je suis au cœur d'un domaine en pleine expansion. Mon parcours en mathématiques me donne un avantage pour comprendre les concepts et les théories derrière ces technologies et pour les concevoir efficacement. {space} Accédez directement aux autres pages: {links}",
     "powered": "Propulsé par Nuxt"
   },
   "palette": {
@@ -15,14 +15,18 @@
       "placeholder": "Utilisez les flèches pour naviguer parmi les prompts préfaits. Appuyez sur Entrer pour envoyer le message.",
       "send": "Envoyer un nouveau message",
       "sending": "Envoi en cours...",
-      "chat": "Retourner sur ArtChat"
+      "chat": "ArtChat",
+      "writings": "Voir les articles",
+      "projects": "Voir les projets"
     },
     "tooltip": {
       "send": "Envoyer un nouveau message prédéfini",
       "clear": "Supprimer tous les messages",
       "theme": "Changer le thème",
       "language": "Changer la langue",
-      "chat": "Retourner sur ArtChat pour reprendre la conversation"
+      "chat": "Retourner sur ArtChat pour reprendre la conversation",
+      "writings": "Lire plus d'articles",
+      "projects": "Découvrir les autres projets"
     }
   },
   "command": {
@@ -179,8 +183,14 @@
       "humidity": "Humidité",
       "wind": "Vent"
     },
-    "projects": "Une sélection de mes projets réalisés en R, Python et développement web, couvrant des domaines variés comme l'analyse de données, l'apprentissage automatique et les applications web. Ces projets mettent en lumière mes compétences en codage, résolution de problèmes et conception de solutions. {space} Ici, je présente les trois projets dont je suis le plus fier, mais vous pouvez découvrir tous mes projets directement sur le {canva}.",
-    "writings": "Je partage mes réflexions sur les mathématiques, l’intelligence artificielle, le développement et mes passions, en les organisant pour suivre l’évolution de mes idées et projets. {space}Ici, vous trouverez les deux articles les plus récents, mais tous mes écrits sont accessibles sur le {canva}, pour explorer plus en profondeur mon univers entre code, maths et IA.",
+    "projects": {
+      "main": "Une sélection de mes projets réalisés en R, Python et développement web, couvrant des domaines variés comme l'analyse de données, l'apprentissage automatique et les applications web. Ces projets mettent en lumière mes compétences en codage, résolution de problèmes et conception de solutions. {space} Ici, je présente les trois projets dont je suis le plus fier, mais vous pouvez découvrir tous mes projets directement sur la page des {projects}.",
+      "link": "Projets"
+    },
+    "writings": {
+      "main": "Je partage mes réflexions sur les mathématiques, l'intelligence artificielle, le développement et mes passions, en les organisant pour suivre l’évolution de mes idées et projets. {space}Ici, vous trouverez les deux articles les plus récents, mais tous mes écrits sont accessibles sur la page des {writings}, pour explorer plus en profondeur mon univers entre code, maths et IA.",
+      "link": "Articles"
+    },
     "hobbies": "En dehors de la programmation et de mes projets techniques, je consacre une grande partie de mon temps libre à mes passions : le sport, la musique, les voyages et les moments partagés entre amis. Le sport m'apporte rigueur et persévérance, la musique stimule ma créativité, et voyager m'ouvre à d'autres cultures, à d'autres façons de penser, ce qui nourrit aussi ma curiosité intellectuelle. Ces passions m'aident à garder un bon équilibre et renforcent les qualités que je mobilise dans mes études et ma carrière: curiosité, engagement, autonomie et volonté constante de progresser. Elles font de moi quelqu'un de motivé, adaptable, et toujours prêt à relever de nouveaux défis."
   },
   "error": {
@@ -188,7 +198,7 @@
     "redirect": "page d'accueil"
   },
   "skills": {
-    "main": "En tant qu’ingénieur logiciel et étudiant en mathématiques, j’allie rigueur scientifique et pragmatisme technique pour concevoir des solutions adaptées aux enjeux des projets data et mathématiques. Mon approche repose sur une compréhension approfondie des besoins, de la préparation des données à la mise en production, en passant par la modélisation et l’optimisation des performances. Passionné par l’intelligence artificielle et la data science, je m’attache à concilier innovation et robustesse statistique. Toujours en quête d’apprentissage, je m’intéresse autant aux avancées technologiques qu’aux défis entrepreneuriaux ou financiers. Curieux et enthousiaste, j’aime partager mes connaissances et explorer de nouveaux concepts, qu’il s’agisse de théorèmes ou de technologies émergentes."
+    "main": "En tant qu'ingénieur logiciel et étudiant en mathématiques, j'allie rigueur scientifique et pragmatisme technique pour concevoir des solutions adaptées aux enjeux des projets data et mathématiques. Mon approche repose sur une compréhension approfondie des besoins, de la préparation des données à la mise en production, en passant par la modélisation et l’optimisation des performances. Passionné par l’intelligence artificielle et la data science, je m’attache à concilier innovation et robustesse statistique. Toujours en quête d’apprentissage, je m’intéresse autant aux avancées technologiques qu’aux défis entrepreneuriaux ou financiers. Curieux et enthousiaste, j’aime partager mes connaissances et explorer de nouveaux concepts, qu’il s’agisse de théorèmes ou de technologies émergentes."
   },
   "alert": "Par manque de temps, je n'ai pas eu le temps de traduire ce contenu en français. Merci de votre compréhension.",
   "post": {
@@ -204,5 +214,13 @@
   },
   "canva": {
     "title": "Chargement du canva..."
+  },
+  "writings": {
+    "description": "Toutes mes réflexions sur la programmation, les mathématiques, la conception de l'intelligence artificielle, etc., sont mises en ordre chronologique.",
+    "title": "Écrits sur les maths, l'intelligence artificielle, le développement et mes passions."
+  },
+  "projects": {
+    "description": "Une collection de mes projets réalisés en R, Python, ou en développement web. Ces projets couvrent divers domaines, y compris l'analyse de données, l'apprentissage automatique et les applications web, mettant en avant mes compétences en codage, résolution de problèmes et développement de projets.",
+    "title": "Tous mes projets auxquels j'ai travaillé, académiques et personnels"
   }
 }

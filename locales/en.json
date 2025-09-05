@@ -1,7 +1,7 @@
 {
   "main": {
     "question": "Awesome! Tell me a bit more about you.",
-    "about": "I'm a student in Mathematics and Statistics at Université Paris-Dauphine in France. With a deep understanding of emerging technologies, I'm at the heart of a rapidly expanding field. My background in mathematics gives me an edge in understanding the concepts and theories behind these technologies and designing them effectively.",
+    "about": "I'm a student in Mathematics and Statistics at Université Paris-Dauphine in France. With a deep understanding of emerging technologies, I'm at the heart of a rapidly expanding field. My background in mathematics gives me an edge in understanding the concepts and theories behind these technologies and designing them effectively. {space} Access the other pages directly: {links}",
     "powered": "Powered by Nuxt"
   },
   "palette": {
@@ -15,14 +15,18 @@
       "placeholder": "Use the arrow keys to navigate through the preset prompts. Press Enter to send the message.",
       "send": "Send new message",
       "sending": "Sending...",
-      "chat": "Return to Artchat"
+      "chat": "ArtChat",
+      "writings": "See articles",
+      "projects": "See projects"
     },
     "tooltip": {
       "send": "Send a new predefined message",
       "clear": "Delete all messages",
       "theme": "Change the theme",
       "language": "Change the language",
-      "chat": "Go back to ArtChat to resume the conversation"
+      "chat": "Go back to ArtChat to resume the conversation",
+      "writings": "Read more articles",
+      "projects": "Discover other projects"
     }
   },
   "command": {
@@ -179,8 +183,14 @@
       "humidity": "Humidity",
       "wind": "Wind"
     },
-    "projects": "A selection of my projects developed in R, Python, and web development, covering diverse areas such as data analysis, machine learning, and web applications. These projects highlight my skills in coding, problem-solving, and solution design. {space}Here, I present the three projects I am most proud of, but you can explore all my projects directly on the {canva}.",
-    "writings": "I share my reflections on mathematics, artificial intelligence, development and my passions, by organizing them to follow the evolution of my ideas and projects. {space}Here you will find the two most recent articles, but all my writings are accessible on the {canva}, to explore my universe more in depth, Maths and AI.",
+    "projects": {
+      "main": "A selection of my projects developed in R, Python, and web development, covering diverse areas such as data analysis, machine learning, and web applications. These projects highlight my skills in coding, problem-solving, and solution design. {space}Here, I present the three projects I am most proud of, but you can explore all my projects directly in the {projects} page.",
+      "link": "Projects"
+    },
+    "writings": {
+      "main": "I share my reflections on mathematics, artificial intelligence, development and my passions, by organizing them to follow the evolution of my ideas and projects. {space}Here you will find the two most recent articles, but all my writings are accessible in the {writings} page, to explore my universe more in depth, Maths and AI.",
+      "link": "Articles"
+    },
     "hobbies": "Outside of programming and my technical projects, I dedicate much of my free time to my passions: sports, music, traveling, and spending time with friends. Sports teach me discipline and perseverance, music fuels my creativity, and traveling opens me up to new cultures and ways of thinking, which also nurtures my intellectual curiosity.\nThese passions help me maintain balance and strengthen the qualities I bring to both my studies and my career: curiosity, commitment, autonomy, and a constant desire to improve. They make me someone who is motivated, adaptable, and always ready to take on new challenges."
   },
   "error": {
@@ -204,5 +214,13 @@
   },
   "canva": {
     "title": "Loading the canva ..."
+  },
+  "writings": {
+    "description": "All my reflections on programming, mathematics, the conception of artificial intelligence, etc., are put in chronological order.",
+    "title": "Writings on math, artificial intelligence, development, and my passions."
+  },
+  "projects": {
+    "description": "A collection of my projects using R, Python, or web development technologies. These projects span various domains, including data analysis, machine learning, and web applications, showcasing my skills in coding, problem-solving, and project development.",
+    "title": "All my projects I have worked on, both academic and personal"
   }
 }
