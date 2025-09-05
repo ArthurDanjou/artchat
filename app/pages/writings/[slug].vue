@@ -3,6 +3,13 @@ const route = useRoute()
 const { data: writing } = await useAsyncData(`writings/${route.params.slug}`, () =>
   queryCollection('writings').path(`/writings/${route.params.slug}`).first())
 
+if (!writing.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: `Writing "${route.params.slug}" not found`,
+  })
+}
+
 useSeoMeta({
   title: writing.value?.title,
   description: writing.value?.description,

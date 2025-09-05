@@ -203,5 +203,8 @@
       "copy": "Copier le lien"
     },
     "top": "Remonter en haut"
+  },
+  "canva": {
+    "title": "Chargement du canva..."
   }
 }

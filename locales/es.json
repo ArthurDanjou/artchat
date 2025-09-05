@@ -203,5 +203,8 @@
     },
     "top": "Ir arriba"
   },
-  "alert": "Por falta de tiempo, no tuve tiempo para traducir este contenido al francés. Gracias por su comprensión."
+  "alert": "Por falta de tiempo, no tuve tiempo para traducir este contenido al francés. Gracias por su comprensión.",
+  "canva": {
+    "title": "Cargando el lienzo ..."
+  }
 }

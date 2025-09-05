@@ -13,6 +13,10 @@ export const collections = {
       tags: z.array(z.string()),
       cover: z.string(),
       favorite: z.boolean().optional(),
+      canva: z.object({
+        height: z.number().default(270),
+        width: z.number().default(480),
+      }),
     }),
   }),
   writings: defineCollection({
@@ -26,6 +30,10 @@ export const collections = {
       readingTime: z.number(),
       cover: z.string().optional(),
       tags: z.array(z.string()),
+      canva: z.object({
+        height: z.number().default(270),
+        width: z.number().default(480),
+      }),
     }),
   }),
   usesCategories: defineCollection({

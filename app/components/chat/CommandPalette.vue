@@ -45,10 +45,15 @@ defineShortcuts({
   t: () => toggleDark({ clientX: window.innerWidth / 2, clientY: window.innerHeight }),
 })
 
+const isMobile = computed(() => {
+  if (!import.meta.client)
+    return false
+  return isMobileDevice(navigator.userAgent, window.innerWidth)
+})
 const activeElement = useActiveElement()
 watch(openMessageModal, async () => {
   await nextTick()
-  if (activeElement.value instanceof HTMLElement) {
+  if (activeElement.value instanceof HTMLElement && isMobile.value) {
     activeElement.value.blur()
   }
 })

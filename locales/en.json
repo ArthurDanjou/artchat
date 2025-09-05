@@ -203,5 +203,8 @@
       "copy": "Copy link"
     },
     "top": "Go to top"
+  },
+  "canva": {
+    "title": "Loading the canva ..."
   }
 }

@@ -3,6 +3,13 @@ const route = useRoute()
 const { data: project } = await useAsyncData(`projects/${route.params.slug}`, () =>
   queryCollection('projects').path(`/projects/${route.params.slug}`).first())
 
+if (!project.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: `Project "${route.params.slug}" not found`,
+  })
+}
+
 useSeoMeta({
   title: project.value?.title,
   description: project.value?.description,
@@ -11,7 +18,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <main v-if="project" class="mt-8 md:mt-16 md:mb-36 mb-20">
+  <UContainer v-if="project" class="mt-8 md:mt-16 md:mb-36 mb-20">
     <PostAlert class="mb-8" />
     <div>
       <div class="flex items-end justify-between gap-2 flex-wrap">
@@ -51,7 +58,7 @@ useSeoMeta({
       />
     </ClientOnly>
     <PostFooter />
-  </main>
+  </UContainer>
 </template>
 
 <style scoped>
