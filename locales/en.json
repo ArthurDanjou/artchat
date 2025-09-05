@@ -206,7 +206,8 @@
       "uploaded": "Uploaded",
       "files": {
         "en": "English version",
-        "fr": "French version"
+        "fr": "French version",
+        "pdf": "PDF file"
       }
     }
   },

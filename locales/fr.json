@@ -13,7 +13,7 @@
     },
     "cmd": {
       "placeholder": "Utilisez les flèches pour naviguer parmi les prompts préfaits. Appuyez sur Entrer pour envoyer le message.",
-      "send": "Envoyer un nouveau message",
+      "send": "Envoyer un message",
       "sending": "Envoi en cours...",
       "chat": "ArtChat",
       "writings": "Voir les articles",
@@ -206,7 +206,8 @@
       "uploaded": "Uploadé",
       "files": {
         "en": "Version anglaise",
-        "fr": "Version française"
+        "fr": "Version française",
+        "pdf": "Fichier pdf"
       }
     }
   },

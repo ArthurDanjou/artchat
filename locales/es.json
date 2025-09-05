@@ -13,7 +13,7 @@
     },
     "cmd": {
       "placeholder": "Use las flechas para navegar entre los prefacios de inmediato. Presione Entrar para enviar el mensaje.",
-      "send": "Enviar un nuevo mensaje",
+      "send": "Enviar un mensaje",
       "sending": "Enviando...",
       "chat": "Regresar a Artchat"
     },
@@ -193,7 +193,8 @@
       "uploaded": "Cargado",
       "files": {
         "en": "Versión en inglés",
-        "fr": "Versión francesa"
+        "fr": "Versión francesa",
+        "pdf": "Archivo pdf"
       }
     },
     "projects": {

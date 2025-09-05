@@ -29,18 +29,18 @@ const resumes = ref<ResumeFile[]>([
         :key="resume.file"
         :to="resume.file"
         target="_blank"
-        class="md:max-w-1/2"
+        class="md:max-w-1/2 w-full"
       >
         <UCard
           variant="outline"
           class="w-full shadow-sm bg-white dark:bg-neutral-900"
-          :ui="{ body: 'flex justify-between items-center gap-4' }"
+          :ui="{ body: 'w-full flex justify-between items-center gap-4' }"
         >
           <UCard class="rounded-sm" :ui="{ body: 'p-2 sm:p-2 flex items-center justify-center' }">
             <UIcon name="i-ph-file-pdf-duotone" size="48" />
           </UCard>
           <p>
-            {{ resume.name }}
+            {{ resume.name }} - {{ t('tool.resume.files.pdf') }}
           </p>
         </UCard>
       </NuxtLink>
