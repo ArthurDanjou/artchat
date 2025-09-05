@@ -3,6 +3,7 @@ import type { ChatMessage } from '~~/types'
 import { ChatState, ChatType } from '~~/types'
 import ToolActivity from '~/components/tool/Activity.vue'
 import ToolContact from '~/components/tool/Contact.vue'
+import ToolCredits from '~/components/tool/Credits.vue'
 import ToolDuplicated from '~/components/tool/Duplicated.vue'
 import ToolHobbies from '~/components/tool/Hobbies.vue'
 import ToolLanguage from '~/components/tool/Language.vue'
@@ -44,7 +45,7 @@ const componentMap: Record<ChatType, Component | undefined> = {
   [ChatType.ABOUT]: undefined,
   [ChatType.EXPERIENCES]: undefined,
   [ChatType.STATUS]: undefined,
-  [ChatType.CREDITS]: undefined,
+  [ChatType.CREDITS]: ToolCredits,
   [ChatType.RESUME]: undefined,
 }
 

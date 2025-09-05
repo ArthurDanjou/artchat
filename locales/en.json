@@ -191,7 +191,16 @@
       "main": "I share my reflections on mathematics, artificial intelligence, development and my passions, by organizing them to follow the evolution of my ideas and projects. {space}Here you will find the two most recent articles, but all my writings are accessible in the {writings} page, to explore my universe more in depth, Maths and AI.",
       "link": "Articles"
     },
-    "hobbies": "Outside of programming and my technical projects, I dedicate much of my free time to my passions: sports, music, traveling, and spending time with friends. Sports teach me discipline and perseverance, music fuels my creativity, and traveling opens me up to new cultures and ways of thinking, which also nurtures my intellectual curiosity.\nThese passions help me maintain balance and strengthen the qualities I bring to both my studies and my career: curiosity, commitment, autonomy, and a constant desire to improve. They make me someone who is motivated, adaptable, and always ready to take on new challenges."
+    "hobbies": "Outside of programming and my technical projects, I dedicate much of my free time to my passions: sports, music, traveling, and spending time with friends. Sports teach me discipline and perseverance, music fuels my creativity, and traveling opens me up to new cultures and ways of thinking, which also nurtures my intellectual curiosity.\nThese passions help me maintain balance and strengthen the qualities I bring to both my studies and my career: curiosity, commitment, autonomy, and a constant desire to improve. They make me someone who is motivated, adaptable, and always ready to take on new challenges.",
+    "credits": {
+      "made": "This site was designed with {nuxt} and then deployed via {vercel}",
+      "heart": "Made with ❤️ and a lot of reflection.",
+      "chat": "A big thank you to {chat}, my personal assistant, always ready to answer your questions with clarity and speed.",
+      "copyrights": "© {year} Arthur Danjou - All rights reserved.",
+      "thank": "Thank you for visiting my portfolio.",
+      "message": "Do not hesitate to leave a message, a suggestion, a remark or just a nice word - everything is welcome!",
+      "tooltip": "My IA agent "
+    }
   },
   "error": {
     "main": "I think you're lost, let's go back to the",

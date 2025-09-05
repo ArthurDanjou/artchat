@@ -2,5 +2,16 @@
   "projects": {
     "description": "Una colección de mis proyectos realizados en R, Python o tecnologías de desarrollo web. Estos proyectos abarcan diversos campos, como análisis de datos, aprendizaje automático y aplicaciones web, mostrando mis habilidades en programación, resolución de problemas y desarrollo de proyectos.",
     "title": "Todos mis proyectos en los que he trabajado, académicos y personales"
+  },
+  "tool": {
+    "credits": {
+      "made": "Este sitio fue diseñado con {nuxt} y luego se implementó a través de {vercel}",
+      "heart": "Hecho con ❤️ y mucho reflexión.",
+      "chat": "Muchas gracias a {chat}, mi asistente personal, siempre listo para responder a sus preguntas con claridad y velocidad.",
+      "copyrights": "© {year} Arthur Danjou - Todos los derechos reservados.",
+      "thank": "Gracias por visitar mi cartera.",
+      "message": "No dude en dejar un mensaje, una sugerencia, un comentario o simplemente una buena palabra: ¡todo es bienvenido!",
+      "tooltip": "Mi agente ia"
+    }
   }
 }
