@@ -15,16 +15,14 @@
       "placeholder": "Use the arrow keys to navigate through the preset prompts. Press Enter to send the message.",
       "send": "Send new message",
       "sending": "Sending...",
-      "chat": "ArtChat",
-      "canva": "Canva"
+      "chat": "Return to Artchat"
     },
     "tooltip": {
       "send": "Send a new predefined message",
       "clear": "Delete all messages",
       "theme": "Change the theme",
       "language": "Change the language",
-      "chat": "Go back to ArtChat to resume the conversation",
-      "canva": "Return to Canva to explore"
+      "chat": "Go back to ArtChat to resume the conversation"
     }
   },
   "command": {

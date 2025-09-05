@@ -15,16 +15,14 @@
       "placeholder": "Use las flechas para navegar entre los prefacios de inmediato. Presione Entrar para enviar el mensaje.",
       "send": "Enviar un nuevo mensaje",
       "sending": "Enviando...",
-      "chat": "Regresar a Artchat",
-      "canva": "Lienzo"
+      "chat": "Regresar a Artchat"
     },
     "tooltip": {
       "send": "Enviar un nuevo mensaje predefinido",
       "clear": "Eliminar todos los mensajes",
       "theme": "Cambiar el tema",
       "language": "Cambiar la language",
-      "chat": "Vuelve a ArtChat para reanudar la conversación",
-      "canva": "Regresar a Canva para explorar"
+      "chat": "Vuelve a ArtChat para reanudar la conversación"
     }
   },
   "command": {

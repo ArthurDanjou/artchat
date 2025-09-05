@@ -48,7 +48,7 @@ defineShortcuts({
 const isMobile = computed(() => {
   if (!import.meta.client)
     return false
-  return isMobileDevice(navigator.userAgent, window.innerWidth)
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768
 })
 const activeElement = useActiveElement()
 watch(openMessageModal, async () => {
@@ -204,23 +204,6 @@ function goHome() {
             icon="i-ph-house-duotone"
             class="rounded-lg cursor-pointer p-2 w-full justify-center"
             @click.prevent="goHome"
-          />
-        </UTooltip>
-        <UTooltip
-          v-if="router.currentRoute.value.name !== 'canva'"
-          :text="t('palette.tooltip.canva')"
-          arrow
-          :content="toolTipContent"
-          :delay-duration="0"
-        >
-          <UButton
-            :label="t('palette.cmd.canva')"
-            variant="outline"
-            color="neutral"
-            size="xl"
-            icon="i-ph-presentation-duotone"
-            href="/canva"
-            class="rounded-lg cursor-pointer p-2 w-full justify-center"
           />
         </UTooltip>
       </UFieldGroup>

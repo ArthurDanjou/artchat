@@ -31,7 +31,6 @@
     "@vercel/speed-insights": "^1.2.0",
     "@vueuse/motion": "^3.0.3",
     "better-sqlite3": "^12.2.0",
-    "capture-website": "^4.2.0",
     "eslint": "^9.0.0",
     "nuxt": "^4.1.0",
     "rehype-katex": "^7.0.1",

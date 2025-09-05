@@ -37,7 +37,7 @@ To start, it is important to understand the three main categories of machine lea
 
 ::prose-img
 ---
-src: /writings/ML/types.png
+src: /writings/what-is-machine-learning/types.png
 label: ML Model Types
 caption: The different types of machine learning models
 ---
@@ -79,7 +79,7 @@ A machine learning project generally follows these steps:
 
 ::prose-img
 ---
-src: /writings/ML/model.png
+src: /writings/what-is-machine-learning/model.png
 label: Modelization in Progress
 caption: Modelization in Progress
 ---
@@ -100,7 +100,7 @@ A $$R^2$$ close to 1 indicates a good fit.
 
 ::prose-img
 ---
-src: /writings/ML/r2.png
+src: /writings/what-is-machine-learning/r2.png
 label: R² Score
 caption: R² Score
 ---

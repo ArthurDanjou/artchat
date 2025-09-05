@@ -14,7 +14,7 @@ While it's still fresh in my mind, I wanted to document how this version of the 
 
 ::prose-img
 ---
-src: /writings/website-work/website.png
+src: /writings/how-my-website-works/website.png
 label: Website
 caption: Website screenshot
 ---
@@ -70,7 +70,7 @@ Nuxt UI aims to provide everything you need for the UI when building a Nuxt app,
 
 ::prose-img
 ---
-src: /writings/website-work/nuxt-hub.png
+src: /writings/how-my-website-works/nuxt-hub.png
 label: NuxtHub
 caption: NuxtHub screenshot
 ---
@@ -94,7 +94,7 @@ One word : `If you know SQL — you know Drizzle.`
 
 ::prose-img
 ---
-src: /writings/website-work/nuxt-studio.png
+src: /writings/how-my-website-works/nuxt-studio.png
 label: Nuxt Studio
 caption: Nuxt Studio screenshot
 ---
