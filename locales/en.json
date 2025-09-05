@@ -205,7 +205,8 @@
         "fr": "French version",
         "pdf": "PDF file"
       }
-    }
+    },
+    "homelab": "I have had a homelab for several years, presented in my article: {article}.{space}\nI have also set up a status page, {status}, to monitor the real-time state of my applications, allowing me to continuously test, monitor, and improve my projects.{space}\nThis experience has given me solid expertise in infrastructure, automation, and system administration, which I apply to both my personal and professional projects."
   },
   "error": {
     "main": "I think you're lost, let's go back to the",

@@ -6,6 +6,7 @@ import ToolContact from '~/components/tool/Contact.vue'
 import ToolCredits from '~/components/tool/Credits.vue'
 import ToolDuplicated from '~/components/tool/Duplicated.vue'
 import ToolHobbies from '~/components/tool/Hobbies.vue'
+import ToolHomeLab from '~/components/tool/HomeLab.vue'
 import ToolLanguage from '~/components/tool/Language.vue'
 import ToolLocation from '~/components/tool/Location.vue'
 import ToolProjects from '~/components/tool/Projects.vue'
@@ -43,7 +44,7 @@ const componentMap: Record<ChatType, Component | undefined> = {
   [ChatType.WRITINGS]: ToolWritings,
   [ChatType.HOBBIES]: ToolHobbies,
   [ChatType.EXPERIENCES]: undefined,
-  [ChatType.STATUS]: undefined,
+  [ChatType.STATUS]: ToolHomeLab,
   [ChatType.CREDITS]: ToolCredits,
   [ChatType.RESUME]: ToolResume,
 }

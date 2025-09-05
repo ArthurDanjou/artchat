@@ -84,7 +84,3 @@ const groupedWritings = computed(() => {
     </div>
   </UContainer>
 </template>
-
-<style scoped>
-
-</style>

@@ -206,7 +206,8 @@
         "fr": "Version française",
         "pdf": "Fichier pdf"
       }
-    }
+    },
+    "homelab": "Je possède un homelab depuis quelques années, présenté dans mon article : {article}. {space}\nJ’ai également mis en place une page de statut, {status}, pour suivre en temps réel l’état de mes applications, ce qui me permet de surveiller, tester et améliorer continuellement mes projets.\nCette expérience m’a donné une solide expertise en infrastructure, automatisation et administration de systèmes, que j’applique à la fois dans mes projets personnels et professionnels."
   },
   "error": {
     "main": "Je pense que vous êtes perdu, retournons en arrière à la",
