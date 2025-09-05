@@ -200,6 +200,10 @@
       "thank": "Thank you for visiting my portfolio.",
       "message": "Do not hesitate to leave a message, a suggestion, a remark or just a nice word - everything is welcome!",
       "tooltip": "My IA agent "
+    },
+    "resume": {
+      "main": "Below are two versions of my résumé: one in French and one in English, tailored to suit different academic and professional contexts. {space} Feel free to choose the one that best fits your needs by clicking the corresponding button.",
+      "uploaded": "Uploaded"
     }
   },
   "error": {

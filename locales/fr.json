@@ -198,8 +198,12 @@
       "chat": "Un grand merci à {chat}, mon assistant personnel, toujours prêt à répondre à vos questions avec clarté et rapidité.",
       "copyrights": "© {year} Arthur DANJOU — Tous droits réservés.",
       "thank": "Merci de visiter mon portfolio.",
-      "message": "N’hésitez pas à laisser un message, une suggestion, une remarque ou simplement un mot sympa — tout est le bienvenu !",
+      "message": "N'hésitez pas à laisser un message, une suggestion, une remarque ou simplement un mot sympa — tout est le bienvenu!",
       "tooltip": "Mon agent IA"
+    },
+    "resume": {
+      "main": "Vous trouverez ci-dessous deux versions de mon CV : une en français et une en anglais, afin de répondre aux différents contextes académiques et professionnels.{space} Choisissez celle qui vous convient le mieux en cliquant sur le bouton correspondant.",
+      "uploaded": "Uploadé"
     }
   },
   "error": {

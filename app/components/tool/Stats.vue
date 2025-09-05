@@ -3,11 +3,10 @@ import type { Stats } from '~~/types'
 
 const { data: stats } = await useAsyncData<Stats>('stats', () => $fetch('/api/stats'))
 
-const { locale, locales, t } = useI18n()
-const currentLocale = computed(() => locales.value.find(l => l.code === locale.value))
+const { locale, t } = useI18n()
 
 const time = useTimeAgo(new Date(stats.value!.coding.data.range.start) ?? new Date()).value.split(' ')[0]
-const date = useDateFormat(new Date(stats.value!.coding.data.range.start ?? new Date()), 'DD MMMM YYYY', { locales: currentLocale.value?.code ?? 'en' })
+const date = useDateFormat(new Date(stats.value!.coding.data.range.start ?? new Date()), 'DD MMMM YYYY', { locales: locale.value ?? 'en' })
 const hours = usePrecision(stats.value!.coding.data.grand_total.total_seconds_including_other_language / 3600, 0)
 </script>
 

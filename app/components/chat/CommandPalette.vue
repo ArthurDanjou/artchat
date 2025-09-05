@@ -15,7 +15,7 @@ const searchTerm = ref('')
 const openMessageModal = ref(false)
 const openClearModal = ref(false)
 
-const { t, locale, locales } = useI18n()
+const { t, locale } = useI18n()
 const { messages, submitMessage } = useChat()
 const { clearMessages, messages: storeMessages } = useChatStore()
 
@@ -32,7 +32,6 @@ function onSelect(item: CommandPaletteItem) {
   submitMessage(item.type, item.prompt, item.fetchStates ?? [])
 }
 
-const currentLocale = computed(() => locales.value.filter(l => l.code === locale.value)[0])
 const { changeLocale } = useLanguage()
 const { dark, toggleDark } = useTheme()
 
@@ -41,7 +40,7 @@ defineShortcuts({
   enter: () => openMessageModal.value = !openMessageModal.value,
   meta_k: () => openMessageModal.value = !openMessageModal.value,
   meta_d: () => openClearModal.value = !openClearModal.value,
-  l: () => changeLocale(currentLocale.value!.code === 'en' ? 'fr' : currentLocale.value!.code === 'fr' ? 'es' : 'en'),
+  l: () => changeLocale(locale.value === 'en' ? 'fr' : locale.value === 'fr' ? 'es' : 'en'),
   t: () => toggleDark({ clientX: window.innerWidth / 2, clientY: window.innerHeight }),
 })
 
@@ -279,7 +278,7 @@ function isRoute(name: string): boolean {
               aria-label="Change language"
               class="cursor-pointer"
               size="xl"
-              @click.prevent="changeLocale(currentLocale!.code === 'en' ? 'fr' : currentLocale!.code === 'fr' ? 'es' : 'en')"
+              @click.prevent="changeLocale(locale === 'en' ? 'fr' : locale === 'fr' ? 'es' : 'en')"
             />
           </UTooltip>
         </UFieldGroup>

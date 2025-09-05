@@ -9,6 +9,7 @@ import ToolHobbies from '~/components/tool/Hobbies.vue'
 import ToolLanguage from '~/components/tool/Language.vue'
 import ToolLocation from '~/components/tool/Location.vue'
 import ToolProjects from '~/components/tool/Projects.vue'
+import ToolResume from '~/components/tool/Resume.vue'
 import ToolSkills from '~/components/tool/Skills.vue'
 import ToolStats from '~/components/tool/Stats.vue'
 import ToolTheme from '~/components/tool/Theme.vue'
@@ -20,9 +21,8 @@ const props = defineProps<{
   message: ChatMessage
 }>()
 
-const { locale, locales, t } = useI18n()
-const currentLocale = computed(() => locales.value.find(l => l.code === locale.value))
-const formatDate = computed(() => useDateFormat(props.message.createdAt, 'D MMMM YYYY, HH:mm', { locales: currentLocale.value?.code ?? 'en' }).value)
+const { locale, t } = useI18n()
+const formatDate = computed(() => useDateFormat(props.message.createdAt, 'D MMMM YYYY, HH:mm', { locales: locale.value ?? 'en' }).value)
 
 const componentMap: Record<ChatType, Component | undefined> = {
   [ChatType.INIT]: undefined,
@@ -46,7 +46,7 @@ const componentMap: Record<ChatType, Component | undefined> = {
   [ChatType.EXPERIENCES]: undefined,
   [ChatType.STATUS]: undefined,
   [ChatType.CREDITS]: ToolCredits,
-  [ChatType.RESUME]: undefined,
+  [ChatType.RESUME]: ToolResume,
 }
 
 const dynamicComponent = computed(() => componentMap[props.message.type])

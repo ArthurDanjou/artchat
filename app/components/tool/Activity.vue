@@ -3,7 +3,7 @@ import type { UseTimeAgoMessages } from '@vueuse/core'
 import type { Activity } from '~~/types'
 import { activityMessages, IDEs } from '~~/types'
 
-const { locale, locales, t } = useI18n()
+const { locale, t } = useI18n()
 const { data: activity, refresh } = await useAsyncData<Activity>('activity', () => $fetch<Activity>('/api/activity'))
 
 useIntervalFn(async () => await refresh(), 5000)
@@ -49,8 +49,7 @@ const getActivity = computed(() => {
   const ago = useTimeAgo(timestamps.start, {
     messages: activityMessages[locale.value as keyof typeof activityMessages] as UseTimeAgoMessages,
   }).value
-  const currentLocale = computed(() => locales.value.find(l => l.code === locale.value))
-  const formatDate = (date: number, format: string) => useDateFormat(date, format, { locales: currentLocale.value?.code ?? 'en' }).value
+  const formatDate = (date: number, format: string) => useDateFormat(date, format, { locales: locale.value ?? 'en' }).value
 
   return {
     name,
