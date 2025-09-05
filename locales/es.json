@@ -190,7 +190,11 @@
     },
     "resume": {
       "main": "A continuación encontrarás dos versiones de mi currículum: una en francés y otra en inglés, pensadas para distintos contextos académicos y profesionales. {space} Elige la que mejor se adapte a tus necesidades haciendo clic en el botón correspondiente.",
-      "uploaded": "Cargado"
+      "uploaded": "Cargado",
+      "files": {
+        "en": "Versión en inglés",
+        "fr": "Versión francesa"
+      }
     },
     "projects": {
       "main": "Una selección de mis proyectos realizados en R, Python y desarrollo web, cubriendo áreas variadas como análisis de datos, aprendizaje automático y aplicaciones web. Estos proyectos destacan mis habilidades en codificación, resolución de problemas y diseño de soluciones. {space} Aquí, presento los tres proyectos de los que estoy más orgulloso, pero puedes descubrir todos mis proyectos directamente en la página de {projects}.",

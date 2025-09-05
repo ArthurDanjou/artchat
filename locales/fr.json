@@ -203,7 +203,11 @@
     },
     "resume": {
       "main": "Vous trouverez ci-dessous deux versions de mon CV : une en français et une en anglais, afin de répondre aux différents contextes académiques et professionnels.{space} Choisissez celle qui vous convient le mieux en cliquant sur le bouton correspondant.",
-      "uploaded": "Uploadé"
+      "uploaded": "Uploadé",
+      "files": {
+        "en": "Version anglaise",
+        "fr": "Version française"
+      }
     }
   },
   "error": {
