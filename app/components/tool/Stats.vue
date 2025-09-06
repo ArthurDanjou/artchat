@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { Stats } from '~~/types'
+import { usePrecision } from '#imports'
 
 const { data: stats } = await useAsyncData<Stats>('stats', () => $fetch('/api/stats'))
 
