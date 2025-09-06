@@ -1,16 +1,16 @@
 ---
-slug: artsite
-title: 🌍 ArtSite
+slug: artchat
+title: 🌍 ArtChat
 description: My personal website, portfolio, and blog — all in one.
 publishedAt: 2024/06/01
 readingTime: 1
-cover: artsite/cover.png
+cover: artchat/cover.png
 favorite: true
 tags:
   - web
 ---
 
-[**ArtSite**](https://arthurdanjou.fr) is my personal space on the web — a portfolio, a blog, and a digital lab where I showcase my projects, write about topics I care about, and experiment with design and web technologies.
+[**ArtChat**](https://arthurdanjou.fr) is my personal space on the web — a portfolio, a blog, and a digital lab where I showcase my projects, write about topics I care about, and experiment with design and web technologies.
 
 It's designed to be fast, accessible, and fully responsive. The site also serves as a playground to explore and test modern frontend tools.
 
