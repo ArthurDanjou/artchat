@@ -16,8 +16,21 @@ watch(
   height,
   async () => {
     await nextTick()
-    if (lastLang.value === locale.value) {
-      window.scrollTo({ top: parents.value?.scrollHeight, behavior: 'smooth' })
+    if (lastLang.value === locale.value && parents.value) {
+      const children = parents.value.children
+      if (children.length > 0 && children[children.length - 2]) {
+        const lastChild = children[children.length - 2] as HTMLElement
+        window.scrollTo({
+          top: lastChild.offsetTop - 10,
+          behavior: 'smooth',
+        })
+      }
+      else {
+        window.scrollTo({
+          top: parents.value.scrollHeight,
+          behavior: 'smooth',
+        })
+      }
     }
     lastLang.value = locale.value
   },
