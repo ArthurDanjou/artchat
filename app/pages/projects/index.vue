@@ -14,7 +14,7 @@ const { data: projects } = await useAsyncData('all-projects', () => {
 </script>
 
 <template>
-  <UContainer class="space-y-12 mb-20 mt-16 md:mb-32 relative">
+  <UContainer class="space-y-12 mb-20 mt-8 md:mt-16 relative">
     <PostTitle
       :description="t('projects.description')"
       :title="t('projects.title')"

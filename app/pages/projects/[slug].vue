@@ -15,11 +15,19 @@ useSeoMeta({
   description: project.value?.description,
   author: 'Arthur Danjou',
 })
+
+const { t } = useI18n()
 </script>
 
 <template>
-  <UContainer v-if="project" class="mt-8 md:mt-16 md:mb-36 mb-20">
-    <PostAlert class="mb-8" />
+  <UContainer v-if="project" class="mt-16 mb-22">
+    <NuxtLink
+      to="/projects"
+      class="mb-4 text-sm text-neutral-500 duration-300 flex items-center gap-1 hover:text-black dark:hover:text-white"
+    >
+      <UIcon name="ph:arrow-left-duotone" size="16" />
+      <span>{{ t('projects.back') }}</span>
+    </NuxtLink>
     <div>
       <div class="flex items-end justify-between gap-2 flex-wrap">
         <h1
@@ -47,6 +55,7 @@ useSeoMeta({
         label="Project cover"
       />
     </div>
+    <PostAlert class="mb-8 font-bold" />
     <USeparator
       class="my-4"
       icon="i-ph-pencil-line-duotone"

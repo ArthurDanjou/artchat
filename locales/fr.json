@@ -26,7 +26,8 @@
       "language": "Changer la langue",
       "chat": "Retourner sur ArtChat pour reprendre la conversation",
       "writings": "Lire plus d'articles",
-      "projects": "Découvrir les autres projets"
+      "projects": "Découvrir les autres projets",
+      "back": "Revenir en arrière"
     }
   },
   "command": {
@@ -233,10 +234,12 @@
   },
   "writings": {
     "description": "Toutes mes réflexions sur la programmation, les mathématiques, la conception de l'intelligence artificielle, etc., sont mises en ordre chronologique.",
-    "title": "Écrits sur les maths, l'intelligence artificielle, le développement et mes passions."
+    "title": "Écrits sur les maths, l'intelligence artificielle, le développement et mes passions.",
+    "back": "Revenir aux écrits"
   },
   "projects": {
     "description": "Une collection de mes projets réalisés en R, Python, ou en développement web. Ces projets couvrent divers domaines, y compris l'analyse de données, l'apprentissage automatique et les applications web, mettant en avant mes compétences en codage, résolution de problèmes et développement de projets.",
-    "title": "Tous mes projets auxquels j'ai travaillé, académiques et personnels"
+    "title": "Tous mes projets auxquels j'ai travaillé, académiques et personnels",
+    "back": "Revenir aux projets"
   }
 }

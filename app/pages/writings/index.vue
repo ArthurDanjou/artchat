@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const { t } = useI18n()
 useSeoMeta({
-  title: 'My Shelf',
+  title: 'My Shelf - Arthur DANJOU',
   description: t('writings.description'),
 })
 
@@ -25,7 +25,7 @@ const groupedWritings = computed(() => {
 </script>
 
 <template>
-  <UContainer class="space-y-12 mb-20 mt-16 md:mb-32 relative">
+  <UContainer class="space-y-12 mb-20 mt-8 md:mt-16 relative">
     <PostTitle
       :description="t('writings.description')"
       :title="t('writings.title')"
