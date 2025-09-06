@@ -23,13 +23,13 @@ const resumes = ref<ResumeFile[]>([
     <p class="prose dark:prose-invert">
       {{ t('tool.resume.main') }}
     </p>
-    <div class="flex flex-wrap gap-4 m-1">
+    <div class="flex flex-wrap gap-2 m-1">
       <NuxtLink
         v-for="resume in resumes"
         :key="resume.file"
         :to="resume.file"
         target="_blank"
-        class="md:max-w-1/2 w-full"
+        class="w-full sm:w-[calc(50%-0.5rem)]"
       >
         <UCard
           variant="outline"
