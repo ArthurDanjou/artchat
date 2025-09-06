@@ -1,7 +1,7 @@
 ---
 slug: artchat
 title: 🌍 ArtChat
-description: 🌍 My personal IA assistant, my portfolio, and my blog - all in one
+description: My personal IA assistant, my portfolio, and my blog - all in one
 publishedAt: 2024/06/01
 readingTime: 1
 cover: artchat/cover.png
