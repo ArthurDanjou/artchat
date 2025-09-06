@@ -79,4 +79,26 @@ export const collections = {
       })),
     }),
   }),
+  experiences: defineCollection({
+    type: 'data',
+    source: 'experiences/*.json',
+    schema: z.object({
+      title: z.object({
+        en: z.string(),
+        fr: z.string(),
+        es: z.string(),
+      }),
+      company: z.string(),
+      companyUrl: z.string().url().optional(),
+      startDate: z.string(),
+      endDate: z.string().optional(),
+      location: z.string(),
+      description: z.object({
+        en: z.string(),
+        fr: z.string(),
+        es: z.string(),
+      }),
+      tags: z.array(z.string()),
+    }),
+  }),
 }

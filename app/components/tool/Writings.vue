@@ -2,7 +2,7 @@
 const { locale, t } = useI18n()
 
 const { data: writings } = await useAsyncData('writings-index', async () => await queryCollection('writings').order('publishedAt', 'DESC').select('title', 'description', 'id', 'publishedAt', 'tags', 'slug').limit(2).all())
-const date = (date: string) => useDateFormat(new Date(date), 'DD MMMM YYYY', { locales: locale.value ?? 'en' })
+const formatDate = (date: string) => useDateFormat(new Date(date), 'DD MMMM YYYY', { locales: locale.value ?? 'en' })
 </script>
 
 <template>
@@ -38,7 +38,7 @@ const date = (date: string) => useDateFormat(new Date(date), 'DD MMMM YYYY', { l
             </h3>
             <div class="flex items-center justify-between">
               <p class="text-sm text-muted-foreground">
-                {{ date(writing.publishedAt).value }}
+                {{ formatDate(writing.publishedAt).value }}
               </p>
               <div class="flex flex-wrap gap-2">
                 <UBadge

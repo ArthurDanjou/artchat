@@ -7,7 +7,7 @@ const { t, locale } = useI18n()
 <template>
   <section>
     <div class="prose dark:prose-invert">
-      <p>{{ t('skills.main') }}</p>
+      <p>{{ t('tool.skills') }}</p>
     </div>
     <div v-if="skills" class="space-y-12 m-1 my-4">
       <div v-for="item in skills.body" :key="item.id" class="space-y-8">

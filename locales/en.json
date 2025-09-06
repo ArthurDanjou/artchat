@@ -207,14 +207,16 @@
         "pdf": "PDF file"
       }
     },
-    "homelab": "I have had a homelab for several years, presented in my article: {article}.{space}\nI have also set up a status page, {status}, to monitor the real-time state of my applications, allowing me to continuously test, monitor, and improve my projects.{space}\nThis experience has given me solid expertise in infrastructure, automation, and system administration, which I apply to both my personal and professional projects."
+    "homelab": "I have had a homelab for several years, presented in my article: {article}.{space}\nI have also set up a status page, {status}, to monitor the real-time state of my applications, allowing me to continuously test, monitor, and improve my projects.{space}\nThis experience has given me solid expertise in infrastructure, automation, and system administration, which I apply to both my personal and professional projects.",
+    "skills": "As a software engineer and mathematics student, I combine scientific rigor with technical pragmatism to design solutions tailored to the challenges of data and mathematical projects. My approach focuses on a deep understanding of needs, from data preparation to deployment, while emphasizing modeling and performance optimization.Passionate about artificial intelligence and data science, I strive to balance innovation with statistical robustness. Always eager to learn, I explore both technological advancements and entrepreneurial or financial challenges. Curious and enthusiastic, I enjoy sharing knowledge and discovering new concepts, whether in theorems or emerging technologies.",
+    "experiences": {
+      "main": "Throughout my journey, I've had the opportunity to contribute to various projects — from student jobs and summer internships to self-taught experiences.\nEach one has deepened my practical understanding and strengthened my skills in statistics, software development, and data management, while exposing me to a range of technical environments.\nThey also taught me to work effectively in a team, while developing strong autonomy and adaptability.",
+      "today": "Today"
+    }
   },
   "error": {
     "main": "I think you're lost, let's go back to the",
     "redirect": "homepage"
-  },
-  "skills": {
-    "main": "As a software engineer and mathematics student, I combine scientific rigor with technical pragmatism to design solutions tailored to the challenges of data and mathematical projects. My approach focuses on a deep understanding of needs, from data preparation to deployment, while emphasizing modeling and performance optimization.Passionate about artificial intelligence and data science, I strive to balance innovation with statistical robustness. Always eager to learn, I explore both technological advancements and entrepreneurial or financial challenges. Curious and enthusiastic, I enjoy sharing knowledge and discovering new concepts, whether in theorems or emerging technologies."
   },
   "alert": "For lack of time, I did not have time to translate this content into English. Thank you for your understanding.",
   "post": {
