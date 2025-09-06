@@ -16,7 +16,7 @@ watch(
   height,
   async () => {
     await nextTick()
-    if (lastLang.value === locale.value && parents.value) {
+    if (lastLang.value === locale.value && parents.value && messages.length > 0) {
       const children = parents.value.children
       if (children.length > 0 && children[children.length - 2]) {
         const lastChild = children[children.length - 2] as HTMLElement
