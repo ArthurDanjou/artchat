@@ -13,7 +13,7 @@
           label="ArtStatus"
           trailing-icon="i-simple-icons-uptimekuma"
           variant="link"
-          to="https://status.arthurdanjou.fr"
+          to="https://go.arthurdanjou.fr/status"
           target="_blank"
           class="p-0"
         />

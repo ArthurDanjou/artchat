@@ -9,7 +9,7 @@ tags:
   - web
 ---
 
-[ArtHome](https://home.arthurdanjou.fr) is a customizable browser homepage that lets you organize all your favorite links in one place.
+[ArtHome](https://go.arthurdanjou.fr/arthome) is a customizable browser homepage that lets you organize all your favorite links in one place.
 
 Create categories and tabs to group your shortcuts, personalize them with icons and colors, and make the page private if you want to keep your links just for yourself. The interface is clean, responsive, and works across all modern browsers.
 

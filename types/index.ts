@@ -28,9 +28,9 @@ export const TAGS: readonly Tag[] = [
 ] as const
 
 export const socials = [
-  { icon: 'i-ph:x-logo-duotone', label: 'Twitter', to: 'https://twitter.com/ArthurDanj' },
-  { icon: 'i-ph:github-logo-duotone', label: 'GitHub', to: 'https://github.com/ArthurDanjou' },
-  { icon: 'i-ph:linkedin-logo-duotone', label: 'LinkedIn', to: 'https://www.linkedin.com/in/arthurdanjou/' },
-  { icon: 'i-ph:discord-logo-duotone', label: 'Discord', to: 'https://discordapp.com/users/179635349100691456' },
-  { icon: 'i-ph-envelope-duotone', label: 'Email', to: 'mailto:arthur.danjou@example.com' },
+  { icon: 'i-ph:x-logo-duotone', label: 'Twitter', to: 'https://go.arthurdanjou.fr/twitter' },
+  { icon: 'i-ph:github-logo-duotone', label: 'GitHub', to: 'https://go.arthurdanjou.fr/github' },
+  { icon: 'i-ph:linkedin-logo-duotone', label: 'LinkedIn', to: 'https://go.arthurdanjou.fr/linkedin' },
+  { icon: 'i-ph:discord-logo-duotone', label: 'Discord', to: 'https://go.arthurdanjou.fr/discord' },
+  { icon: 'i-ph-envelope-duotone', label: 'Email', to: 'https://go.arthurdanjou.fr/mail-perso' },
 ] as const

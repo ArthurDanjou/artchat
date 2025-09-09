@@ -19,7 +19,7 @@ Methods and algorithms implemented:
 - Cumulative density function
 - Empirical Quantile Function
 
-You can find the code here: [Monte Carlo Project Code](https://github.com/ArthurDanjou/ArtStudies/blob/0c83e7e381344675e113c43b6f8d32e88a5c00a7/M1/Monte%20Carlo%20Methods/Project%201/003_rapport_DANJOU_DUROUSSEAU.rmd)
+You can find the code here: [Monte Carlo Project Code](https://go.arthurdanjou.fr/monte-carlo-code)
 
 <iframe src="/projects/monte-carlo-project/Report.pdf" width="100%" height="1000px">
 </iframe>

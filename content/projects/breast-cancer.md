@@ -36,7 +36,7 @@ Model evaluation is primarily based on the F1-score, which is more suitable in a
 
 This project illustrates a concrete application of data science techniques to a public health issue, while implementing a rigorous methodology for supervised modeling.
 
-You can find the code here: [Breast Cancer Detection](https://github.com/ArthurDanjou/breast-cancer-detection)
+You can find the code here: [Breast Cancer Detection](https://go.arthurdanjou.fr/breast-cancer-detection-code)
 
 <iframe src="/projects/breast-cancer/report.pdf" width="100%" height="1000px">
 </iframe>

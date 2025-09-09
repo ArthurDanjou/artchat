@@ -11,7 +11,7 @@ tags:
   - r
 ---
 
-[ArtStudies](https://github.com/ArthurDanjou/artstudies) is a curated collection of academic projects completed throughout my mathematics studies. The repository showcases work in both _Python_ and _R_, focusing on mathematical modeling, data analysis, and numerical methods.
+[ArtStudies](https://go.arthurdanjou.fr/artstudies) is a curated collection of academic projects completed throughout my mathematics studies. The repository showcases work in both _Python_ and _R_, focusing on mathematical modeling, data analysis, and numerical methods.
 
 The projects are organized into two main sections:
 - **L3** – Third year of the Bachelor's degree in Mathematics

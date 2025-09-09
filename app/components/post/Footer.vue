@@ -16,7 +16,7 @@ const { t } = useI18n()
     >
       <template #linkedin>
         <PostLink
-          href="https://www.linkedin.com/in/arthurdanjou/"
+          href="https://go.arthurdanjou.fr/linkedin"
           icon="i-ph-linkedin-logo-duotone"
           label="LinkedIn"
           target="_blank"
@@ -25,7 +25,7 @@ const { t } = useI18n()
       </template>
       <template #github>
         <PostLink
-          href="https://github.com/arthurdanjou"
+          href="https://go.arthurdanjou.fr/github"
           icon="i-ph-github-logo-duotone"
           label="GitHub"
           target="_blank"

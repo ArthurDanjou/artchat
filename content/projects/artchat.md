@@ -10,7 +10,7 @@ tags:
   - web
 ---
 
-[**ArtChat**](https://arthurdanjou.fr) is my personal space on the web — a portfolio, a blog, and a digital lab where I showcase my projects, write about topics I care about, and experiment with design and web technologies.
+[**ArtChat**](https://go.arthurdanjou.fr/website) is my personal space on the web — a portfolio, a blog, and a digital lab where I showcase my projects, write about topics I care about, and experiment with design and web technologies.
 
 It's designed to be fast, accessible, and fully responsive. The site also serves as a playground to explore and test modern frontend tools.
 
