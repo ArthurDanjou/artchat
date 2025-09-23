@@ -9,11 +9,11 @@ interface ResumeFile {
 const resumes = ref<ResumeFile[]>([
   {
     name: t('tool.resume.files.en'),
-    file: '/resumes/CV M1 2025.pdf',
+    file: '/resumes/CV M1 2026 EN.pdf',
   },
   {
     name: t('tool.resume.files.fr'),
-    file: '/resumes/CV M1 2025 FR.pdf',
+    file: '/resumes/CV M1 2026 FR.pdf',
   },
 ])
 </script>
