@@ -51,6 +51,12 @@ export default defineNuxtConfig({
     },
   },
 
+  vite: {
+    build: {
+      sourcemap: false,
+    },
+  },
+
   // Nuxt Color Mode
   colorMode: {
     preference: 'system',
@@ -108,8 +114,12 @@ export default defineNuxtConfig({
   // Nitro
   nitro: {
     experimental: {
-      websocket: true,
       openAPI: true,
+    },
+    preset: 'cloudflare-module',
+    cloudflare: {
+      deployConfig: true,
+      nodeCompat: true,
     },
   },
 
