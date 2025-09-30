@@ -17,12 +17,12 @@ const year = ref(useNow().value.getFullYear())
           class="px-0"
         />
       </template>
-      <template #vercel>
+      <template #cloudflare>
         <UButton
-          label="Vercel"
-          trailing-icon="i-logos-vercel-icon"
+          label="Cloudflare"
+          trailing-icon="i-logos-cloudflare-icon"
           variant="link"
-          to="https://vercel.com"
+          to="https://cloudflare.com"
           target="_blank"
           class="px-0"
         />

@@ -97,10 +97,6 @@
           "icon": "i-logos-linux-tux"
         },
         {
-          "name": "Vercel",
-          "icon": "i-logos-vercel-icon"
-        },
-        {
           "name": "CloudFlare",
           "icon": "i-logos-cloudflare-icon"
         }
@@ -141,7 +137,7 @@
       "name": {
         "en": "Python Frameworks",
         "fr": "Frameworks Python",
-        "es": "Frameworks de Python"
+        "es": "Frameworks Python"
       },
       "items": [
         {

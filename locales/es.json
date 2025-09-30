@@ -182,7 +182,7 @@
       "wind": "Viento"
     },
     "credits": {
-      "made": "Este sitio fue diseñado con {nuxt} y luego se implementó a través de {vercel}",
+      "made": "Este sitio fue diseñado con {nuxt} y luego se implementó a través de {cloudflare}",
       "heart": "Hecho con ❤️ y mucho reflexión.",
       "chat": "Muchas gracias a {chat}, mi asistente personal, siempre listo para responder a sus preguntas con claridad y velocidad.",
       "copyrights": "© {year} Arthur Danjou - Todos los derechos reservados.",

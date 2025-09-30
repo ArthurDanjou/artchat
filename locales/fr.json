@@ -191,7 +191,7 @@
     },
     "hobbies": "En dehors de la programmation et de mes projets techniques, je consacre une grande partie de mon temps libre à mes passions : le sport, la musique, les voyages et les moments partagés entre amis. Le sport m'apporte rigueur et persévérance, la musique stimule ma créativité, et voyager m'ouvre à d'autres cultures, à d'autres façons de penser, ce qui nourrit aussi ma curiosité intellectuelle. Ces passions m'aident à garder un bon équilibre et renforcent les qualités que je mobilise dans mes études et ma carrière: curiosité, engagement, autonomie et volonté constante de progresser. Elles font de moi quelqu'un de motivé, adaptable, et toujours prêt à relever de nouveaux défis.",
     "credits": {
-      "made": "Ce site a été conçu avec {nuxt} et puis déployé via {vercel}",
+      "made": "Ce site a été conçu avec {nuxt} et puis déployé via {cloudflare}",
       "heart": "Réalisé avec ❤️ et beaucoup de réflexion.",
       "chat": "Un grand merci à {chat}, mon assistant personnel, toujours prêt à répondre à vos questions avec clarté et rapidité.",
       "copyrights": "© {year} Arthur DANJOU — Tous droits réservés.",

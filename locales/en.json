@@ -190,7 +190,7 @@
     },
     "hobbies": "Outside of programming and my technical projects, I dedicate much of my free time to my passions: sports, music, traveling, and spending time with friends. Sports teach me discipline and perseverance, music fuels my creativity, and traveling opens me up to new cultures and ways of thinking, which also nurtures my intellectual curiosity.\nThese passions help me maintain balance and strengthen the qualities I bring to both my studies and my career: curiosity, commitment, autonomy, and a constant desire to improve. They make me someone who is motivated, adaptable, and always ready to take on new challenges.",
     "credits": {
-      "made": "This site was designed with {nuxt} and then deployed via {vercel}",
+      "made": "This site was designed with {nuxt} and then deployed via {cloudflare}",
       "heart": "Made with ❤️ and a lot of reflection.",
       "chat": "A big thank you to {chat}, my personal assistant, always ready to answer your questions with clarity and speed.",
       "copyrights": "© {year} Arthur Danjou - All rights reserved.",
