@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/i18n',
+    '@nuxtjs/seo',
   ],
 
   // Nuxt Content
