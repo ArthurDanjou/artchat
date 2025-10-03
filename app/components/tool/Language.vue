@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { en, es, fr } from '@nuxt/ui/locale'
 
-const { locale, t } = useI18n()
+const { locale, t } = useI18n({ useScope: 'global' })
 const { changeLocale } = useLanguage()
 </script>
 

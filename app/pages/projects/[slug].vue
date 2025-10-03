@@ -18,7 +18,7 @@ useSeoMeta({
   author: 'Arthur Danjou',
 })
 
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 
 useSeoMeta(project.value.seo || {})
 </script>

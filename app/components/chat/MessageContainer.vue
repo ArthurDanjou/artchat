@@ -8,7 +8,7 @@ const props = defineProps<{
 
 const isArthur = computed(() => props.message.sender === ChatSender.ARTHUR)
 
-const { t, locale } = useI18n()
+const { t, locale } = useI18n({ useScope: 'global' })
 const formatDate = computed(() => useDateFormat(props.message.createdAt, 'D MMMM YYYY, HH:mm', { locales: locale.value ?? 'en' }).value)
 </script>
 

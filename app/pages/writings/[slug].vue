@@ -12,7 +12,7 @@ if (!writing.value) {
   })
 }
 
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 
 useSeoMeta(writing.value.seo || {})
 </script>

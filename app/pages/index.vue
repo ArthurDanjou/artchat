@@ -10,7 +10,7 @@ const { messages } = useChatStore()
 const parents = useTemplateRef('parents')
 const { height } = useElementBounding(parents)
 
-const { locale } = useI18n()
+const { locale } = useI18n({ useScope: 'global' })
 const lastLang = ref(locale.value)
 watch(
   height,

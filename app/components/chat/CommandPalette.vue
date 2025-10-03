@@ -15,7 +15,7 @@ const searchTerm = ref('')
 const openMessageModal = ref(false)
 const openClearModal = ref(false)
 
-const { t, locale } = useI18n()
+const { t, locale } = useI18n({ useScope: 'global' })
 const { messages, submitMessage } = useChat()
 const { clearMessages, messages: storeMessages } = useChatStore()
 
@@ -72,7 +72,7 @@ const toolTipContent = {
   align: 'center',
   side: 'top',
   sideOffset: 0,
-}
+} as any
 
 const router = useRouter()
 function goHome() {
@@ -134,7 +134,7 @@ function isRoute(name: string): boolean {
                   <div class="absolute inset-0 -m-1" />
                   <div class="flex items-center gap-2.5">
                     <UIcon :name="item.icon!" size="20" />
-                    <span>{{ t(item.label) }}</span>
+                    <span>{{ t(item.label || '') }}</span>
                   </div>
                   <div class="text-dimmed text-xs font-medium text-start">
                     {{ t(item.prompt) }}

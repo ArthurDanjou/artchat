@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const { data: experiences } = await useAsyncData('experiences', async () => await queryCollection('experiences').all())
 
-const { t, locale } = useI18n()
+const { t, locale } = useI18n({ useScope: 'global' })
 const formatDate = (date: string) => useDateFormat(new Date(date), 'MMM YYYY', { locales: locale.value ?? 'en' }).value
 function getLanguageForText(text: { en: string, es: string, fr: string }) {
   return locale.value === 'en' ? text.en : locale.value === 'es' ? text.es : text.fr

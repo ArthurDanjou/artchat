@@ -3,7 +3,7 @@ import type { UseTimeAgoMessages } from '@vueuse/core'
 import type { Activity } from '~~/types'
 import { activityMessages, IDEs } from '~~/types'
 
-const { locale, t } = useI18n()
+const { locale, t } = useI18n({ useScope: 'global' })
 const { data: activity, refresh } = await useAsyncData<Activity>('activity', () => $fetch<Activity>('/api/activity'))
 
 useIntervalFn(async () => await refresh(), 5000)

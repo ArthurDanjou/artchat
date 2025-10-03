@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 useSeoMeta({
   title: 'My Shelf - Arthur DANJOU',
   description: t('writings.description'),

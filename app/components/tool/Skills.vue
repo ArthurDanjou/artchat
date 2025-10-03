@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const { data: skills } = await useAsyncData('skills', async () => await queryCollection('skills').first())
 
-const { t, locale } = useI18n()
+const { t, locale } = useI18n({ useScope: 'global' })
 </script>
 
 <template>

@@ -5,7 +5,7 @@ import { ChatState } from '~~/types'
 const props = defineProps<{ messageId: number, fetchStates: ChatFetchState[] }>()
 const currentState = ref<ChatFetchState | undefined>(props.fetchStates[0] ?? undefined)
 const { setLoadingState } = useChatStore()
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 
 onMounted(() => {
   let index = 0

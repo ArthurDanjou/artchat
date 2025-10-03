@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const { locale, t } = useI18n()
+const { locale, t } = useI18n({ useScope: 'global' })
 
 const { data: projects } = await useAsyncData('projects-index', async () => await queryCollection('projects').where('favorite', '=', true).select('title', 'description', 'id', 'publishedAt', 'tags', 'slug').all())
 const date = (date: string) => useDateFormat(new Date(date), 'DD MMMM YYYY', { locales: locale.value ?? 'en' })

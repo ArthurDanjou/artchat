@@ -3,7 +3,7 @@ import type { Stats } from '~~/types'
 
 const { data: stats } = await useAsyncData<Stats>('stats', () => $fetch('/api/stats'))
 
-const { locale, t } = useI18n()
+const { locale, t } = useI18n({ useScope: 'global' })
 
 const time = useTimeAgo(new Date(stats.value!.coding.data.range.start) ?? new Date()).value.split(' ')[0]
 const date = useDateFormat(new Date(stats.value!.coding.data.range.start ?? new Date()), 'DD MMMM YYYY', { locales: locale.value ?? 'en' })

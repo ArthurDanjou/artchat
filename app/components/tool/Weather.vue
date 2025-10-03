@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Weather } from '~~/types'
 
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 const { data: weather } = await useAsyncData<Weather>('weather', () =>
   $fetch('/api/weather'))
 </script>

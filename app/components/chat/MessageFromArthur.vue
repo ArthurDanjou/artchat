@@ -23,7 +23,7 @@ const props = defineProps<{
   message: ChatMessage
 }>()
 
-const { locale, t } = useI18n()
+const { locale, t } = useI18n({ useScope: 'global' })
 const formatDate = computed(() => useDateFormat(props.message.createdAt, 'D MMMM YYYY, HH:mm', { locales: locale.value ?? 'en' }).value)
 
 const componentMap: Record<ChatType, Component | undefined> = {
@@ -66,9 +66,19 @@ const dynamicComponent = computed(() => componentMap[props.message.type])
       </UCard>
       <UCard
         v-else
+        v-motion
         variant="soft"
         class="mt-1 w-full max-w-none bg-transparent"
         :ui="{ body: 'p-0 sm:p-0', header: 'p-0 sm:p-0', footer: 'p-0 sm:p-0' }"
+        :initial="{
+          opacity: 0,
+          y: 20,
+        }"
+        :enter="{
+          opacity: 1,
+          y: 0,
+          transition: { ease: 'easeInOut', duration: 300, delay: 500 },
+        }"
       >
         <component
           :is="dynamicComponent"

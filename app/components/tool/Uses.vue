@@ -6,7 +6,7 @@ const props = defineProps({
   },
 })
 
-const { locale } = useI18n()
+const { locale } = useI18n({ useScope: 'global' })
 
 const { data: items } = await useAsyncData(`uses-${props.category}`, async () => await queryCollection('uses').where('category', '=', props.category).all())
 const { data: categoryData } = await useAsyncData(`category-${props.category}`, async () => await queryCollection('usesCategories').where('slug', '=', props.category).first())

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t, locale } = useI18n()
+const { t, locale } = useI18n({ useScope: 'global' })
 </script>
 
 <template>
