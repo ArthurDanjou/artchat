@@ -5,7 +5,7 @@ const { t } = useI18n()
 <template>
   <UCard class="mt-8 shadow-sm bg-white dark:bg-neutral-900">
     <NuxtImg
-      src="/arthur pro.webp"
+      src="/arthur-pro.webp"
       alt="Arthur Danjou"
       class="w-24 h-24 rounded-full float-left mr-4 mb-4"
     />

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useDateFormat } from '#imports'
+
 const route = useRoute()
 const { data: project } = await useAsyncData(`projects/${route.params.slug}`, () =>
   queryCollection('projects').path(`/projects/${route.params.slug}`).first())
@@ -17,6 +19,8 @@ useSeoMeta({
 })
 
 const { t } = useI18n()
+
+useSeoMeta(project.value.seo || {})
 </script>
 
 <template>

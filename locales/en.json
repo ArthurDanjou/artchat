@@ -230,9 +230,6 @@
     },
     "top": "Go to top"
   },
-  "canva": {
-    "title": "Loading the canva ..."
-  },
   "writings": {
     "description": "All my reflections on programming, mathematics, the conception of artificial intelligence, etc., are put in chronological order.",
     "title": "Writings on math, artificial intelligence, development, and my passions.",

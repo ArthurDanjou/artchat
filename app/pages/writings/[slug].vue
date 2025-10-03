@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useDateFormat } from '#imports'
+
 const route = useRoute()
 const { data: writing } = await useAsyncData(`writings/${route.params.slug}`, () =>
   queryCollection('writings').path(`/writings/${route.params.slug}`).first())
@@ -10,13 +12,9 @@ if (!writing.value) {
   })
 }
 
-useSeoMeta({
-  title: writing.value?.title,
-  description: writing.value?.description,
-  author: 'Arthur Danjou',
-})
-
 const { t } = useI18n()
+
+useSeoMeta(writing.value.seo || {})
 </script>
 
 <template>

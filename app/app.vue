@@ -28,7 +28,7 @@ const head = useLocaleHead()
     <ChatCommandPalette
       v-motion
       :active="messages.length > 0"
-      :mode="route.path.includes('/projects') || route.path.includes('/writings') || route.path.includes('/canva') ? 'work' : 'chat'"
+      :mode="route.path.includes('/projects') || route.path.includes('/writings') ? 'work' : 'chat'"
       :initial="{
         opacity: 0,
         y: 200,

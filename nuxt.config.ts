@@ -1,3 +1,5 @@
+import { definePerson } from 'nuxt-schema-org/schema'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-20',
 
@@ -19,6 +21,7 @@ export default defineNuxtConfig({
   // Nuxt Modules
   modules: [
     '@nuxt/ui',
+    '@nuxtjs/seo',
     '@nuxt/content',
     '@vueuse/nuxt',
     '@nuxtjs/google-fonts',
@@ -26,8 +29,42 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/i18n',
-    '@nuxtjs/seo',
   ],
+
+  ogImage: {
+    enabled: false,
+  },
+  linkChecker: {
+    enabled: false,
+  },
+
+  site: {
+    url: 'https://arthurdanjou.fr',
+    name: 'Developer enjoying Artificial Intelligence and Machine Learning. Mathematics Student at Paris Dauphine-PSL University specialised in Statistics and Data Science.',
+  },
+
+  schemaOrg: {
+    identity: definePerson({
+      // Basic Information, if applicable
+      name: 'Arthur Danjou',
+      givenName: 'Arthur',
+      familyName: 'Danjou',
+
+      // Profile Information, if applicable
+      image: '/arthur-pro.webp',
+      description: 'AI researcher and technical author specializing in machine learning and neural networks',
+      jobTitle: 'Principal AI Researcher',
+
+      // Contact & Social, if applicable
+      email: 'arthurdanjou@outlook.fr',
+      url: 'https://go.arthurdanjou.fr/website',
+      sameAs: [
+        'https://go.arthurdanjou.fr/twitter',
+        'https://go.arthurdanjou.fr/github',
+        'https://go.arthurdanjou.fr/linkedin',
+      ],
+    }),
+  },
 
   // Nuxt Content
   content: {
